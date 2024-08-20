@@ -42,23 +42,27 @@ function Experience() {
                       alt="Hero"
                       width={1080}
                       height={200}
-                      className="absolute bottom-0 opacity-80"
+                      className="absolute bottom-0 opacity-20 dark:opacity-80"
                     />
+
                     <div className="flex justify-center">
-                      <p className="text-xs sm:text-sm text-[#16f2b3]">
+                      <p className="text-xs sm:text-sm text-accent">
                         {experience.duration}
                       </p>
                     </div>
-                    <div className="flex items-center gap-x-8 px-3 py-5">
-                      <div className="text-violet-500  transition-all duration-300 hover:scale-125">
+                    <div className="flex items-start gap-x-8 px-3 py-5">
+                      <div className="text-violet-500">
                         <BsPersonWorkspace size={36} />
                       </div>
                       <div>
-                        <p className="text-base sm:text-xl mb-2 font-medium uppercase">
+                        <h6 className="text-base sm:text-xl font-semibold uppercase">
                           {experience.title}
-                        </p>
-                        <p className="text-sm sm:text-base">
+                        </h6>
+                        <p className="text-sm sm:text-base text-muted-foreground">
                           {experience.company}
+                        </p>
+                        <p className="text-xs sm:text-sm font-light text-balance text-muted-foreground/80 mt-2">
+                          {experience.description}
                         </p>
                       </div>
                     </div>

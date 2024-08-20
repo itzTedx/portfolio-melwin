@@ -26,21 +26,21 @@ export const personalData = {
 export const educations = [
   {
     id: 1,
-    title: 'Bachelor Degree',
-    duration: '2020 - Present',
-    institution: 'National University of Bangladesh',
+    title: 'B.Sc. Visual Communication',
+    duration: '2017 - 2020',
+    institution: 'Noorul Islam College of Arts & Science, Tamil Nadu,',
   },
   {
     id: 2,
-    title: 'Higher Secondary Certificate',
-    duration: '2018 - 2020',
-    institution: 'Noakhali Islamia Kamil Madrasah',
+    title: 'Higher Secondary Course',
+    duration: '2015 - 2017',
+    institution: 'St. Joseph’s Hr. Sec. School, Tamil Nadu',
   },
   {
     id: 3,
     title: 'Secondary School Certificate',
-    duration: '2008 - 2018',
-    institution: 'Baitus Saif Islamia Madrasah',
+    duration: '2004 - 2015',
+    institution: 'C.S.I. Public Matric School, Tamil Nadu',
   },
 ]
 
@@ -57,7 +57,6 @@ export const skillsData = [
   'React',
   'Next JS',
   'Tailwind',
-  'MySQL',
   'Git',
 ]
 
@@ -149,17 +148,23 @@ export const experiences = [
     title: 'Graphic Designer and Marketing',
     company: 'Digital Desk, Dubai.',
     duration: '(Jan 2023 - Mar 2024)',
+    description:
+      'Conceptualize & produce captivating designs for digital & print media. Manage printing process & ensure high-quality output. Proficient in Adobe Creative Suite. Strong communication & organizational skills. Passionate about creativity & innovation.',
   },
   {
     id: 2,
     title: 'Graphic Designer',
     company: 'Zoomin Editing Lab, Tamil Nadu.',
     duration: '(May 2020 - Dec 2022)',
+    description:
+      'Crafted bespoke designs tailored to local businesses, encompassing poster,title, logo, album, brochure, and social media post designs. Delivered visually compelling solutions that resonated with client`s brand identities and objectives.',
   },
   {
     id: 3,
     title: 'Designer and Junior Video Editor',
     company: 'Dreampixel, Tamil Nadu',
     duration: '(May 2019 - Mar 2020)',
+    description:
+      'Assisted the lead video editor with various tasks including trimming scenes and color grading, adding sound effects, graphics, reviewing video footage prior to publication.',
   },
 ]

@@ -12,7 +12,7 @@ function AboutSection() {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
         <div className="order-2 lg:order-1">
-          <h5 className="font-medium mb-5 text-[#16f2b3] text-xl uppercase">
+          <h5 className="font-medium mb-5 text-accent text-3xl uppercase">
             Who I am?
           </h5>
 
@@ -51,7 +51,7 @@ function AboutSection() {
               </div>
             </div>
             <div className="overflow-hidden border-t-[2px] p-3 lg:p-6">
-              <div className="aspect-[4/5] w-80 relative overflow-hidden rounded-lg ">
+              <div className="aspect-[4/5] w-96 relative overflow-hidden rounded-lg ">
                 <Image
                   src={personalData.profile}
                   fill

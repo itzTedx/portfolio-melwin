@@ -59,14 +59,14 @@ function Navbar() {
         <div className="flex flex-shrink-0 items-center">
           <Link
             href="/"
-            className=" text-[#16f2b3] text-3xl font-bold font-cookie"
+            className=" text-accent text-3xl font-bold font-cookie"
           >
             Melwin af
           </Link>
         </div>
 
         <ul
-          className="flex  max-h-0 w-full flex-col items-start text-sm opacity-0 md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 md:opacity-100"
+          className="md:flex max-h-0 w-full flex-col items-start text-sm hidden md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 "
           id="navbar-default"
         >
           {NAVLINKS.map((nav) => (
