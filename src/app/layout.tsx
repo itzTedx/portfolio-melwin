@@ -1,13 +1,24 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Cookie } from 'next/font/google'
+
 import './style/globals.css'
+
 import { cn } from '@/lib/utils'
 import ScrollToTop from '@/components/scroll-to-top'
 import Navbar from '@/components/layout/navbar'
 import { Toaster } from '@/components/ui/sonner'
 import Footer from '@/components/layout/footer'
+import { TracingBeam } from '@/components/ui/tracing-beam'
+import BreakpointIndicator from '@/components/breakpoint-indicator'
+import { ThemeProvider } from '@/provider/theme-provider'
 
 const inter = Inter({ subsets: ['latin'] })
+const cookie = Cookie({
+  variable: '--font-cookie',
+  subsets: ['latin'],
+  weight: ['400'],
+})
 
 export const metadata: Metadata = {
   title: 'Portfolio of Melwin Af - Graphic Designer',
@@ -22,14 +33,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={cn(inter.className, 'dark')}>
-        <Navbar />
-        <main className="min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white">
-          {children}
-        </main>
-        <Toaster />
-        <ScrollToTop />
-        <Footer />
+      <body className={cn(inter.className, cookie.variable, 'relative')}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <TracingBeam className="px-4">{children}</TracingBeam>
+          <Footer />
+          <Toaster />
+          <ScrollToTop />
+          <BreakpointIndicator />
+        </ThemeProvider>
       </body>
     </html>
   )

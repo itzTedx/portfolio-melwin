@@ -1,81 +1,106 @@
-// @flow strict
+'use client'
+
+import Image from 'next/image'
 import Link from 'next/link'
 
+import useScroll from '@/app/hooks/use-scroll'
+import { cn } from '@/lib/utils'
+import { ModeToggle } from '../theme-toggle'
+
 function Navbar() {
+  const isScrolled = useScroll(100)
+
+  const NAVLINKS = [
+    {
+      id: 1,
+      title: 'About',
+      href: '/#about',
+    },
+    {
+      id: 2,
+      title: 'Experience',
+      href: '/#experience',
+    },
+    {
+      id: 3,
+      title: 'Skills',
+      href: '/#skills',
+    },
+    {
+      id: 4,
+      title: 'Education',
+      href: '/#education',
+    },
+    {
+      id: 5,
+      title: 'Projects',
+      href: '/#projects',
+    },
+  ]
   return (
-    <nav className="bg-background/50 backdrop-blur-lg sticky top-0 mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] z-[9999999] border-b">
-      <div className="flex items-center justify-between py-5 w-full">
+    <nav
+      className={cn(
+        'sticky top-0 w-full z-[999999] transition-all duration-1000 ease-in-out',
+        isScrolled
+          ? 'bg-background/50 backdrop-blur-md'
+          : 'bg-transparent backdrop-blur-0'
+      )}
+      style={{ transitionProperty: 'background-color, backdrop-filter' }}
+    >
+      <div
+        className={cn(
+          'flex justify-center -z-40 transition-opacity duration-500 ease-in-out',
+          isScrolled ? 'opacity-100' : 'opacity-0'
+        )}
+      >
+        <div className="absolute bottom-0 h-px w-1/2  bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
+      </div>
+      <div className="flex items-center justify-between py-4 w-full container">
         <div className="flex flex-shrink-0 items-center">
-          <Link href="/" className=" text-[#16f2b3] text-3xl font-bold">
-            MELWIN AF
+          <Link
+            href="/"
+            className=" text-[#16f2b3] text-3xl font-bold font-cookie"
+          >
+            Melwin af
           </Link>
         </div>
 
         <ul
-          className="mt-4 flex h-screen max-h-0 w-full flex-col items-start text-sm opacity-0 md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 md:opacity-100"
+          className="flex  max-h-0 w-full flex-col items-start text-sm opacity-0 md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 md:opacity-100"
           id="navbar-default"
         >
-          <li>
-            <Link
-              className="block px-4 py-2 no-underline outline-none hover:no-underline"
-              href="/#about"
-            >
-              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                ABOUT
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="block px-4 py-2 no-underline outline-none hover:no-underline"
-              href="/#experience"
-            >
-              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                EXPERIENCE
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="block px-4 py-2 no-underline outline-none hover:no-underline"
-              href="/#skills"
-            >
-              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                SKILLS
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="block px-4 py-2 no-underline outline-none hover:no-underline"
-              href="/#education"
-            >
-              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                EDUCATION
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="block px-4 py-2 no-underline outline-none hover:no-underline"
-              href="/blog"
-            >
-              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                BLOGS
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link
-              className="block px-4 py-2 no-underline outline-none hover:no-underline"
-              href="/#projects"
-            >
-              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                PROJECTS
-              </div>
-            </Link>
-          </li>
+          {NAVLINKS.map((nav) => (
+            <li key={nav.id}>
+              <Link
+                className="block px-4 py-2 no-underline outline-none hover:no-underline"
+                href={nav.href}
+              >
+                <div className="text-sm text-foreground transition-colors duration-300 hover:text-primary">
+                  {nav.title}
+                </div>
+              </Link>
+            </li>
+          ))}
         </ul>
+        <div className="flex items-center gap-4">
+          <ModeToggle />
+          <div className="hidden lg:block">
+            <Link
+              href="tel:+971588102324"
+              className="py-2 flex gap-2 hover:bg-foreground-50 px-2 rounded-lg active:scale-95 scale-100 transition shrink-0"
+            >
+              <div className="w-9 h-9 relative">
+                <Image fill src="/phone.svg" alt="" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[8px] lg:text-[10px]">Call me now</span>
+                <span className="text-sm lg:text-base font-bold text-primary-800">
+                  058 810 2324
+                </span>
+              </div>
+            </Link>
+          </div>
+        </div>
       </div>
     </nav>
   )

@@ -1,5 +1,5 @@
 export const personalData = {
-  name: 'MELWIN AF',
+  name: 'Melwin Af',
   profile: '/melwin.jpg',
   designation: 'Graphic Designer',
   description:
@@ -10,6 +10,14 @@ export const personalData = {
   github: 'https://github.com/itzTedx',
   instagram: 'https://www.instagram.com/',
   linkedIn: 'https://www.linkedin.com/in/melwin-af/',
+  behance: 'https://www.linkedin.com/in/melwin-af/',
+
+  // social: [
+  //   { github: 'https://github.com/itzTedx' },
+  //   { instagram: 'https://www.instagram.com/' },
+  //   { linkedIn: 'https://www.linkedin.com/in/melwin-af/' },
+  //   { behance: 'https://www.linkedin.com/in/melwin-af/' },
+  // ],
 
   resume:
     'https://drive.google.com/file/d/1eyutpKFFhJ9X-qpQGKhUNnVRkB5Wer00/view?usp=sharing',
@@ -138,20 +146,20 @@ export const projectsData = [
 export const experiences = [
   {
     id: 1,
-    title: 'Software Engineer I',
-    company: 'Teton Private Ltd.',
-    duration: '(Jan 2022 - Present)',
+    title: 'Graphic Designer and Marketing',
+    company: 'Digital Desk, Dubai.',
+    duration: '(Jan 2023 - Mar 2024)',
   },
   {
     id: 2,
-    title: 'FullStack Developer',
-    company: 'Fiverr (freelance)',
-    duration: '(Jun 2021 - Jan 2022)',
+    title: 'Graphic Designer',
+    company: 'Zoomin Editing Lab, Tamil Nadu.',
+    duration: '(May 2020 - Dec 2022)',
   },
   {
     id: 3,
-    title: 'Self Employed',
-    company: 'Code and build something in everyday.',
-    duration: '(Jan 2018 - Present)',
+    title: 'Designer and Junior Video Editor',
+    company: 'Dreampixel, Tamil Nadu',
+    duration: '(May 2019 - Mar 2020)',
   },
 ]

@@ -1,5 +1,6 @@
 // @flow strict
 
+import HeadingCard from '@/components/heading-card'
 import { skillsData } from '@/utils/'
 import { skillsImage } from '@/utils/skill-icons'
 import Image from 'next/image'
@@ -11,7 +12,7 @@ function Skills() {
       id="skills"
       className="relative z-50 border-t my-12 lg:my-24 border-[#25213b]"
     >
-      <div className="w-[100px] h-[100px] bg-violet-100 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl  opacity-20"></div>
+      <div className="w-[100px] h-[100px] bg-violet-300 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl opacity-20"></div>
 
       <div className="flex justify-center -translate-y-[1px]">
         <div className="w-3/4">
@@ -19,17 +20,11 @@ function Skills() {
         </div>
       </div>
 
-      <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex  items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Skills
-          </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-        </div>
-      </div>
+      <HeadingCard heading="Skills" />
 
-      <div className="w-full my-12">
+      <div className="w-full my-12 relative">
+        <div className="absolute top-0 left-0 bg-gradient-to-r from-background to-transparent w-32 h-full z-50" />
+        <div className="absolute top-0 right-0 bg-gradient-to-l from-background to-transparent w-32 h-full z-50" />
         <Marquee
           gradient={false}
           speed={80}
@@ -60,7 +55,7 @@ function Skills() {
                       className="h-full w-auto rounded-lg"
                     />
                   </div>
-                  <p className="text-white text-sm sm:text-lg">{skill}</p>
+                  <p className="text-white text-sm ">{skill}</p>
                 </div>
               </div>
             </div>

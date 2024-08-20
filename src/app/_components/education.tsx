@@ -6,6 +6,7 @@ import { BsPersonWorkspace } from 'react-icons/bs'
 import lottieFile from '../../../public/lottie/study.json'
 import GlowCard from '@/components/glow-card'
 import AnimationLottie from '@/components/animation-lottie'
+import HeadingCard from '@/components/heading-card'
 
 function Education() {
   return (
@@ -26,15 +27,7 @@ function Education() {
         </div>
       </div>
 
-      <div className="flex justify-center my-5 lg:py-8">
-        <div className="flex  items-center">
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-          <span className="bg-[#1a1443] w-fit text-white p-2 px-5 text-xl rounded-md">
-            Educations
-          </span>
-          <span className="w-24 h-[2px] bg-[#1a1443]"></span>
-        </div>
-      </div>
+      <HeadingCard heading="Educations" />
 
       <div className="py-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">

@@ -70,6 +70,7 @@ const GlowCard: React.FC<GlowCardProps> = ({ children, identifier }) => {
     }
 
     RESTYLE()
+    // @ts-ignore: An argument for 'event' was not provided.
     UPDATE()
 
     return () => {
