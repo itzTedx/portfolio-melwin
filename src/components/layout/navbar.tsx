@@ -8,7 +8,7 @@ import { cn } from '@/lib/utils'
 import { ModeToggle } from '../theme-toggle'
 
 function Navbar() {
-  const isScrolled = useScroll(100)
+  const isScrolled = useScroll(100, 250)
 
   const NAVLINKS = [
     {
@@ -40,12 +40,15 @@ function Navbar() {
   return (
     <nav
       className={cn(
-        'sticky top-0 w-full z-[999999] transition-all duration-1000 ease-in-out',
+        'sticky w-full z-[999999] transition-all duration-700 ease-in-out',
         isScrolled
-          ? 'bg-background/50 backdrop-blur-md'
-          : 'bg-transparent backdrop-blur-0'
+          ? 'bg-background/50 backdrop-blur-md py-3 top-0'
+          : 'bg-transparent backdrop-blur-0 py-4 -top-24'
       )}
-      style={{ transitionProperty: 'background-color, backdrop-filter' }}
+      style={{
+        transitionProperty:
+          'background-color, backdrop-filter, padding-top, padding-bottom, top',
+      }}
     >
       <div
         className={cn(
@@ -55,11 +58,11 @@ function Navbar() {
       >
         <div className="absolute bottom-0 h-px w-1/2  bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
       </div>
-      <div className="flex items-center justify-between py-4 w-full container">
+      <div className="flex items-center justify-between w-full container">
         <div className="flex flex-shrink-0 items-center">
           <Link
             href="/"
-            className=" text-accent text-3xl font-bold font-cookie"
+            className=" text-foreground text-xl font-extrabold tracking-widest uppercase"
           >
             Melwin af
           </Link>

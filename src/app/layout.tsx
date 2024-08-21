@@ -35,7 +35,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={cn(plusJakarta.className, cookie.variable, 'relative')}>
+      <body
+        className={cn(
+          plusJakarta.className,
+          cookie.variable,
+          'relative w-screen overflow-x-hidden'
+        )}
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -43,11 +49,10 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-
-          <TracingBeam className="md:px-4">{children}</TracingBeam>
+          {children}
           <Footer />
           <Toaster />
-          <ScrollToTop />
+          {/* <ScrollToTop /> */}
           <BreakpointIndicator />
         </ThemeProvider>
       </body>

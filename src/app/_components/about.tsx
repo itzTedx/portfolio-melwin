@@ -1,14 +1,19 @@
-import { personalData } from '@/utils'
-import Image from 'next/image'
+import Lightbox from '@/components/lightbox'
+import AnimatedBorderTrail from '@/components/ui/animated-trail-border'
 
 function AboutSection() {
   return (
     <div id="about" className="py-6 md:py-12 lg:py-16 relative px-8 lg:px-0">
       <div className="hidden lg:flex flex-col items-center absolute top-16 -right-8">
-        <span className="bg-[#1a1443] w-fit text-white rotate-90 p-2 px-5 text-xl rounded-md">
+        <AnimatedBorderTrail
+          trailSize="sm"
+          trailColor="#8b5cf6"
+          className="rotate-90"
+          contentClassName="p-2 px-5 bg-secondary w-fit text-white text-xl rounded-md"
+        >
           ABOUT ME
-        </span>
-        <span className="h-36 w-[2px] bg-[#1a1443]"></span>
+        </AnimatedBorderTrail>
+        <span className="h-36 w-[2px] bg-secondary"></span>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 ">
         <div className="order-2 lg:order-1">
@@ -17,7 +22,7 @@ function AboutSection() {
           </h5>
 
           <p className="text-balance !leading-9 text-foreground text-sm lg:text-lg flex gap-9 mb-6">
-            <span className="size-4 rounded-full shadow-sm flex items-center justify-center relative mt-px md:mt-2 ">
+            <span className="size-4 rounded-full shadow-sm flex items-center justify-center relative mt-2.5 ">
               <span className="size-3 absolute rounded-full border border-primary animate-ping" />
               <span className="h-2 w-2 rounded-full border border-primary" />
             </span>
@@ -27,7 +32,7 @@ function AboutSection() {
             Digital Desk in Dubai and Zoomin Editing Lab in Tamil Nadu.
           </p>
           <p className="text-balance !leading-9 text-foreground text-sm lg:text-lg flex gap-9">
-            <span className="size-4 rounded-full  shadow-sm flex items-center justify-center relative mt-px md:mt-2 ">
+            <span className="size-4 rounded-full  shadow-sm flex items-center justify-center relative mt-2.5 ">
               <span className="size-3 absolute rounded-full border border-primary animate-ping" />
               <span className="size-2 rounded-full border border-primary" />
             </span>
@@ -51,14 +56,7 @@ function AboutSection() {
               </div>
             </div>
             <div className="overflow-hidden border-t-[2px] p-3 lg:p-6">
-              <div className="aspect-[4/5] w-80 md:w-96 relative overflow-hidden rounded-lg ">
-                <Image
-                  src={personalData.profile}
-                  fill
-                  alt="Melwin af"
-                  className="transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105 cursor-pointer"
-                />
-              </div>
+              <Lightbox />
             </div>
           </div>
         </div>

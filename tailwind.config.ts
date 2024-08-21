@@ -78,11 +78,16 @@ const config = {
             backgroundPosition: '-200% 0',
           },
         },
+        trail: {
+          '0%': { '--angle': '0deg' },
+          '100%': { '--angle': '360deg' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         shimmer: 'shimmer 2s linear infinite',
+        trail: 'trail var(--duration) linear infinite',
       },
     },
   },

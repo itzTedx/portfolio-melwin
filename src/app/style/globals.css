@@ -68,6 +68,17 @@
   }
 }
 
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: thin;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: thin;
+}
+
 .glow-container {
   --spread: 60;
 }
@@ -198,6 +209,12 @@
 #sticky-card-4 {
   --index: 4;
 }
+#sticky-card-5 {
+  --index: 5;
+}
+#sticky-card-6 {
+  --index: 6;
+}
 
 .sticky-card {
   /* padding-top: calc(var(--index) * 2.5rem); */
@@ -237,4 +254,10 @@
   100% {
     transform: rotate(0deg);
   }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
 }

@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import * as React from 'react'
 
 interface ProjectCardProps {
@@ -30,6 +31,9 @@ function ProjectCard({ project }: ProjectCardProps) {
       </div>
       <div className="overflow-hidden border-t-[2px] px-4 lg:px-8 py-4 lg:py-8">
         Project {project.id}
+        <div className="relative aspect-video">
+          <Image src={project.image} fill alt={project.name} />
+        </div>
       </div>
     </div>
   )

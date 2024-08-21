@@ -30,7 +30,7 @@ function HeroSection() {
         className="absolute -top-24 lg:-top-36 -z-10"
       />
 
-      <div className="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-12 gap-y-8 ">
+      <div className="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-12 gapy-3 md:gap-y-8 ">
         <div className="order-2 lg:order-1 flex flex-col items-center md:items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10">
           <h1 className="text-xl text-center md:text-left w-full md:leading-10 text-foreground md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
             <span className="text-3xl md:text-[2.6rem]">Hi, I{`'`}m </span>
@@ -46,7 +46,7 @@ function HeroSection() {
               <FlipWords words={designations} />
             </span>
           </h1>
-          <p className="leading-8 text-balance mt-2 font-light text-muted-foreground text-center mb-9">
+          <p className="leading-7 md:leading-8 text-balance mt-2 font-light text-muted-foreground text-center md:text-left mb-6 md:mb-9">
             In a digital world where the focus often lies on an efficient
             designs, I want to add an extra layer of joy. I believe that is what
             leaves a lasting impression.
@@ -54,7 +54,7 @@ function HeroSection() {
 
           <Social />
 
-          <div className="flex items-center gap-3 mt-9">
+          <div className="flex items-center gap-3 mt-6 md:mt-9">
             <HoverBorderGradient
               containerClassName="rounded-full"
               as="div"
@@ -84,7 +84,7 @@ function HeroSection() {
           </div>
         </div>
         <div className="order-1 lg:order-2 relative rounded-lg ">
-          <div className="size-80 md:size-full mx-auto">
+          <div className="size-80 md:size-full mx-auto ">
             {/* <DesignerAnimation /> */}
             <AnimationLottie animationPath={designer} />
           </div>

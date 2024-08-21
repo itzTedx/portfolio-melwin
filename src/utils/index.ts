@@ -63,7 +63,37 @@ export const skillsData = [
 export const projectsData = [
   {
     id: 1,
-    name: 'Vogue Fusion Brand Identity',
+    name: 'Vogue Fusion',
+    description:
+      'Vogue Fusion offers stylish wholesale dresses at unbeatable prices. We cater to boutique owners, event planners, and fashion enthusiasts seeking quality and value. Discover a curated selection that blends elegance with affordability',
+    tools: ['Illustrator', 'Photoshop'],
+
+    demo: '',
+    image: '/image/crefin.jpg',
+  },
+  {
+    id: 2,
+    name: 'Digitaldesk',
+    description:
+      'Vogue Fusion offers stylish wholesale dresses at unbeatable prices. We cater to boutique owners, event planners, and fashion enthusiasts seeking quality and value. Discover a curated selection that blends elegance with affordability',
+    tools: ['Illustrator', 'Photoshop'],
+
+    demo: '',
+    image: '/image/crefin.jpg',
+  },
+  {
+    id: 3,
+    name: 'Journey of kalki',
+    description:
+      'Vogue Fusion offers stylish wholesale dresses at unbeatable prices. We cater to boutique owners, event planners, and fashion enthusiasts seeking quality and value. Discover a curated selection that blends elegance with affordability',
+    tools: ['Illustrator', 'Photoshop'],
+
+    demo: '',
+    image: '/image/crefin.jpg',
+  },
+  {
+    id: 4,
+    name: 'App Good Food',
     description:
       'Vogue Fusion offers stylish wholesale dresses at unbeatable prices. We cater to boutique owners, event planners, and fashion enthusiasts seeking quality and value. Discover a curated selection that blends elegance with affordability',
     tools: ['Illustrator', 'Photoshop'],

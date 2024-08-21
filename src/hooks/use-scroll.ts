@@ -1,12 +1,25 @@
 import { useState, useEffect } from 'react'
 
-const useScroll = (threshold: number = 50) => {
+const useScroll = (
+  topThreshold: number = 50,
+  bottomThreshold: number = 100
+) => {
   const [isScrolled, setIsScrolled] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY
-      setIsScrolled(scrollTop > threshold)
+      const windowHeight = window.innerHeight
+      const documentHeight = document.documentElement.scrollHeight
+
+      if (
+        scrollTop > topThreshold &&
+        documentHeight - scrollTop - windowHeight > bottomThreshold
+      ) {
+        setIsScrolled(true)
+      } else {
+        setIsScrolled(false)
+      }
     }
 
     window.addEventListener('scroll', handleScroll)
@@ -14,7 +27,7 @@ const useScroll = (threshold: number = 50) => {
     return () => {
       window.removeEventListener('scroll', handleScroll)
     }
-  }, [threshold])
+  }, [topThreshold, bottomThreshold])
 
   return isScrolled
 }
