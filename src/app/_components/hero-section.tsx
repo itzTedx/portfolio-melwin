@@ -11,6 +11,7 @@ import { FaBehanceSquare, FaInstagramSquare, FaLinkedin } from 'react-icons/fa'
 import { MdDownload } from 'react-icons/md'
 import { RiContactsFill } from 'react-icons/ri'
 import designer from '../../../public/lottie/designer.json'
+import Social from '@/components/social-icons'
 
 function HeroSection() {
   const designations = [
@@ -30,56 +31,38 @@ function HeroSection() {
       />
 
       <div className="grid grid-cols-1 items-start lg:grid-cols-2 lg:gap-12 gap-y-8 ">
-        <div className="order-2 lg:order-1 flex flex-col items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10">
+        <div className="order-2 lg:order-1 flex flex-col items-center md:items-start justify-center p-2 pb-20 md:pb-10 lg:pt-10">
           <h1 className="text-xl text-center md:text-left w-full md:leading-10 text-foreground md:font-extrabold lg:text-[2.6rem] lg:leading-[3.5rem]">
-            <span className="text-3xl lg:text-[2.6rem]">Hi, I{`'`}m </span>
-            <span className="text-fuchsia-400 font-bold text-3xl lg:text-[2.6rem]">
+            <span className="text-3xl md:text-[2.6rem]">Hi, I{`'`}m </span>
+            <span className="text-fuchsia-400 font-bold text-3xl md:text-[2.6rem]">
               {personalData.name} <span className="animate-wave">🖐️</span>
             </span>
 
-            <br />
-            <span className="font-light text-sm md:text-2xl pb-6 md:pb-0 text-muted-foreground">
+            {/* <span className="font-light text-sm text-muted-foreground sr">
               an energetic
-            </span>
-            <span className="text-3xl lg:text-[2.6rem]">
+            </span> */}
+            <span className="text-3xl md:text-[2.6rem]">
               <br />
               <FlipWords words={designations} />
             </span>
           </h1>
+          <p className="leading-8 text-balance mt-2 font-light text-muted-foreground text-center mb-9">
+            In a digital world where the focus often lies on an efficient
+            designs, I want to add an extra layer of joy. I believe that is what
+            leaves a lasting impression.
+          </p>
 
-          <div className="my-12 mx-auto md:mx-0 flex items-center gap-6">
-            <Link
-              href={personalData.instagram}
-              target="_blank"
-              className="transition-all text-foreground hover:scale-125 duration-300"
-            >
-              <FaInstagramSquare className="rounded-md size-7" />
-            </Link>
-            <Link
-              href={personalData.linkedIn}
-              target="_blank"
-              className="transition-all text-foreground hover:scale-125 duration-300"
-            >
-              <FaLinkedin className=" size-7" />
-            </Link>
-            <Link
-              href={personalData.instagram}
-              target="_blank"
-              className="transition-all text-foreground hover:scale-125 duration-300"
-            >
-              <FaBehanceSquare className=" size-7" />
-            </Link>
-          </div>
+          <Social />
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 mt-9">
             <HoverBorderGradient
               containerClassName="rounded-full"
-              as="button"
+              as="div"
               className="bg-background"
             >
               <Link
                 href="#contact"
-                className="flex items-center gap-1 hover:gap-3 uppercase text-sm transition-all text-foreground duration-200 ease-out"
+                className="flex items-center gap-1 hover:gap-3 uppercase text-sm transition-all text-foreground duration-200 ease-out px-4 py-2 rounded-[inherit] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary-foreground"
               >
                 <span>Contact me</span>
                 <RiContactsFill size={16} />
@@ -88,8 +71,8 @@ function HeroSection() {
 
             <Link
               className={cn(
-                buttonVariants(),
-                'flex items-center gap-1 hover:gap-3 rounded-full text-center tracking-wider uppercase transition-all duration-200 ease-out'
+                buttonVariants({ variant: 'shimmer' }),
+                'items-center gap-1 hover:gap-3 uppercase text-sm transition-all text-foreground bg-primary ease-out'
               )}
               role="button"
               target="_blank"
@@ -101,7 +84,7 @@ function HeroSection() {
           </div>
         </div>
         <div className="order-1 lg:order-2 relative rounded-lg ">
-          <div className="size-80 md:size-full">
+          <div className="size-80 md:size-full mx-auto">
             {/* <DesignerAnimation /> */}
             <AnimationLottie animationPath={designer} />
           </div>

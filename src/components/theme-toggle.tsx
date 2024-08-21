@@ -12,9 +12,11 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { GrSystem } from 'react-icons/gr'
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 export function ModeToggle() {
   const { setTheme } = useTheme()
+  const isMobile = useMediaQuery('(max-width: 768px)')
 
   return (
     <DropdownMenu>
@@ -26,7 +28,7 @@ export function ModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        align="center"
+        align={isMobile ? 'end' : 'center'}
         className="space-y-2 p-2 z-[9999999999]"
       >
         <DropdownMenuItem

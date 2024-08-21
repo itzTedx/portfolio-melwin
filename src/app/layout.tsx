@@ -1,6 +1,5 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { Cookie } from 'next/font/google'
+import { Inter, Cookie, Plus_Jakarta_Sans } from 'next/font/google'
 
 import './style/globals.css'
 
@@ -19,6 +18,9 @@ const cookie = Cookie({
   subsets: ['latin'],
   weight: ['400'],
 })
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+})
 
 export const metadata: Metadata = {
   title: 'Portfolio of Melwin Af - Graphic Designer',
@@ -33,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={cn(inter.className, cookie.variable, 'relative')}>
+      <body className={cn(plusJakarta.className, cookie.variable, 'relative')}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -41,7 +43,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <TracingBeam className="px-4">{children}</TracingBeam>
+
+          <TracingBeam className="md:px-4">{children}</TracingBeam>
           <Footer />
           <Toaster />
           <ScrollToTop />

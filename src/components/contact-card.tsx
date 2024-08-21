@@ -4,6 +4,8 @@ import { useState } from 'react'
 import { TbMailForward } from 'react-icons/tb'
 
 import { isValidEmail } from '@/utils/check-email'
+import { Button } from './ui/button'
+import { cn } from '@/lib/utils'
 
 function ContactWithoutCaptcha() {
   const [error, setError] = useState({ email: false, required: false })
@@ -90,14 +92,17 @@ function ContactWithoutCaptcha() {
                 Email and Message are required!
               </p>
             )}
-            <button
-              className="flex items-center gap-1 hover:gap-3 rounded-full bg-gradient-to-r from-pink-500 to-violet-600 px-5 md:px-12 py-2.5 md:py-3 text-center text-xs md:text-sm font-medium uppercase tracking-wider text-white no-underline transition-all duration-200 ease-out hover:text-white hover:no-underline md:font-semibold"
+            <Button
+              variant={'shimmer'}
+              size={'lg'}
+              className={cn(
+                'items-center gap-1 hover:gap-3 uppercase text-sm transition-all text-foreground bg-primary ease-out'
+              )}
               role="button"
-              onClick={() => {}}
             >
               <span>Send Message</span>
               <TbMailForward className="mt-1" size={18} />
-            </button>
+            </Button>
           </div>
         </div>
       </div>

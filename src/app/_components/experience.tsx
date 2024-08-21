@@ -10,26 +10,26 @@ import HeadingCard from '@/components/heading-card'
 
 function Experience() {
   return (
-    <div id="experience" className="relative z-50 border-t my-12 lg:my-24">
-      <Image
-        src="/section.svg"
-        alt="Hero"
-        width={1572}
-        height={795}
-        className="absolute top-0 -z-10"
-      />
+    <section className="px-8 lg:px-0">
+      <div id="experience" className="relative z-50 border-t my-12 lg:my-24  ">
+        <Image
+          src="/section.svg"
+          alt="Hero"
+          width={1572}
+          height={795}
+          className="absolute top-0 -z-10 pointer-events-none"
+        />
 
-      <HeadingCard heading="Experiences" />
+        <HeadingCard heading="Experiences" />
 
-      <div className="py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
-          <div className="flex justify-center items-start">
-            <div className="w-full h-full">
-              <AnimationLottie animationPath={experience} />
+        <div className="py-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
+            <div className="flex justify-center items-start">
+              <div className="w-full h-full">
+                <AnimationLottie animationPath={experience} />
+              </div>
             </div>
-          </div>
 
-          <div>
             <div className="flex flex-col gap-6">
               {experiences.map((experience) => (
                 <GlowCard
@@ -73,7 +73,7 @@ function Experience() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

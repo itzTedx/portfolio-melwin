@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import useScroll from '@/app/hooks/use-scroll'
+import useScroll from '@/hooks/use-scroll'
 import { cn } from '@/lib/utils'
 import { ModeToggle } from '../theme-toggle'
 
@@ -66,7 +66,7 @@ function Navbar() {
         </div>
 
         <ul
-          className="md:flex max-h-0 w-full flex-col items-start text-sm hidden md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 "
+          className="md:flex max-h-0 w-full flex-col items-start text-sm hidden md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 absolute left-1/2 -translate-x-1/2"
           id="navbar-default"
         >
           {NAVLINKS.map((nav) => (

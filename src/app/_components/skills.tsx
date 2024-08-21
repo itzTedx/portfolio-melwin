@@ -8,7 +8,10 @@ import Marquee from 'react-fast-marquee'
 
 function Skills() {
   return (
-    <div id="skills" className="relative z-50 border-t my-12 lg:my-24">
+    <div
+      id="skills"
+      className="relative z-50 border-t my-12 lg:my-24 px-8 lg:px-0"
+    >
       <div className="w-[100px] h-[100px] bg-violet-300 rounded-full absolute top-6 left-[42%] translate-x-1/2 filter blur-3xl opacity-20"></div>
 
       <div className="flex justify-center -translate-y-[1px]">
