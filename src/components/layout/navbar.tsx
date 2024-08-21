@@ -5,7 +5,7 @@ import Link from 'next/link'
 
 import useScroll from '@/hooks/use-scroll'
 import { cn } from '@/lib/utils'
-import { ModeToggle } from '../theme-toggle'
+import { ModeToggle } from './theme-toggle'
 
 function Navbar() {
   const isScrolled = useScroll(100, 250)
@@ -52,7 +52,7 @@ function Navbar() {
     >
       <div
         className={cn(
-          'flex justify-center -z-40 transition-opacity duration-500 ease-in-out',
+          'flex justify-center -z-40 transition-opacity duration- 500 ease-in-out',
           isScrolled ? 'opacity-100' : 'opacity-0'
         )}
       >
@@ -62,7 +62,7 @@ function Navbar() {
         <div className="flex flex-shrink-0 items-center">
           <Link
             href="/"
-            className=" text-foreground text-xl font-extrabold tracking-widest uppercase"
+            className="text-foreground text-xl font-extrabold tracking-widest uppercase -mx-4 px-4 py-2"
           >
             Melwin af
           </Link>
@@ -75,7 +75,7 @@ function Navbar() {
           {NAVLINKS.map((nav) => (
             <li key={nav.id}>
               <Link
-                className="block px-4 py-2 no-underline outline-none hover:no-underline"
+                className="block px-4 py-2 ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus:ring-offset-secondary-foreground rounded-sm"
                 href={nav.href}
               >
                 <div className="text-sm text-foreground transition-colors duration-300 hover:text-primary">

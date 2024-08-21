@@ -40,7 +40,7 @@ function CarouselMP() {
         {IMAGES.map(({ id, src }) => {
           return (
             <CarouselItem key={id} className="p-3">
-              <div className="flex aspect-[4/5] items-center justify-center border relative">
+              <div className="flex aspect-[4/5] items-center justify-center border relative overflow-auto touch-pinch-zoom shadow-lg">
                 <Image
                   src={src}
                   fill
@@ -52,7 +52,7 @@ function CarouselMP() {
           )
         })}
       </CarouselContent>
-      <div className="flex w-full justify-center space-x-3 px-4">
+      <div className="flex w-full justify-center space-x-3 px-6 ">
         {IMAGES.map(({ id, src }) => {
           return (
             <button
@@ -60,13 +60,13 @@ function CarouselMP() {
               type="button"
               aria-label={`Go to slide ${id}`}
               onClick={() => setIndex(id - 1)}
-              className="size-12 border  relative"
+              className="size-12 relative shadow-lg"
             >
               <Image
                 src={src}
                 fill
                 alt=""
-                className="pointer-events-none object-cover rounded"
+                className="pointer-events-none object-cover rounded border "
               />
             </button>
           )

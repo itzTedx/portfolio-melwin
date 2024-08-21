@@ -5,19 +5,12 @@ import { projectsData } from '@/utils'
 const Projects = () => {
   return (
     <div id="projects" className="relative z-50 my-12 lg:my-24 ">
-      <div className="sticky -top-20">
-        {/* <div className="w-[80px] h-[80px] bg-violet-100 rounded-full absolute -top-3 left-0 translate-x-1/2 filter blur-3xl  opacity-30"></div>
-        <div className="flex items-center justify-start relative">
-          <span className="bg-secondary absolute left-0  w-fit text-foreground px-5 py-3 text-xl rounded-md">
-            PROJECTS
-          </span>
-          <span className="w-full h-[2px] bg-secondary"></span>
-        </div> */}
+      <div className="sticky -top-36">
         <ProjectsTitle />
       </div>
 
       <div className="pt-24 px-8 lg:px-0">
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4">
           {projectsData.map((project, index) => (
             <div
               id={`sticky-card-${index + 1}`}

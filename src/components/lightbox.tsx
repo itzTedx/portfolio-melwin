@@ -8,6 +8,7 @@ import { PlusIcon } from 'lucide-react'
 import { ImageCarousel } from './image-carousel'
 import { Dialog, DialogClose, DialogContent, DialogTrigger } from './ui/dialog'
 import { Cursor } from './ui/cursor'
+import { Button } from './ui/button'
 
 export default function Lightbox() {
   const [isHovering, setIsHovering] = useState(false)
@@ -75,9 +76,7 @@ export default function Lightbox() {
           />
         </div>
       </DialogTrigger>
-      <DialogContent className="rounded-md p-2 bg-transparent border-0">
-        <DialogClose className="absolute" />
-
+      <DialogContent className="rounded-md p-2 bg-transparent border-0 shadow-none">
         <ImageCarousel />
       </DialogContent>
     </Dialog>

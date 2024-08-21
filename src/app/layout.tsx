@@ -1,16 +1,15 @@
 import type { Metadata } from 'next'
-import { Inter, Cookie, Plus_Jakarta_Sans } from 'next/font/google'
+import { Cookie, Inter, Plus_Jakarta_Sans } from 'next/font/google'
 
 import './style/globals.css'
 
-import { cn } from '@/lib/utils'
-import ScrollToTop from '@/components/scroll-to-top'
+import BreakpointIndicator from '@/components/breakpoint-indicator'
+import Footer from '@/components/layout/footer'
 import Navbar from '@/components/layout/navbar'
 import { Toaster } from '@/components/ui/sonner'
-import Footer from '@/components/layout/footer'
-import { TracingBeam } from '@/components/ui/tracing-beam'
-import BreakpointIndicator from '@/components/breakpoint-indicator'
+import { cn } from '@/lib/utils'
 import { ThemeProvider } from '@/provider/theme-provider'
+import { LenisProvider } from '@/provider/lenis-provider'
 
 const inter = Inter({ subsets: ['latin'] })
 const cookie = Cookie({
@@ -42,6 +41,7 @@ export default function RootLayout({
           'relative w-screen overflow-x-hidden'
         )}
       >
+        {/* <LenisProvider> */}
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -55,6 +55,7 @@ export default function RootLayout({
           {/* <ScrollToTop /> */}
           <BreakpointIndicator />
         </ThemeProvider>
+        {/* </LenisProvider> */}
       </body>
     </html>
   )

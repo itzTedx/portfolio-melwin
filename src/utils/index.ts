@@ -67,37 +67,37 @@ export const projectsData = [
     description:
       'Vogue Fusion offers stylish wholesale dresses at unbeatable prices. We cater to boutique owners, event planners, and fashion enthusiasts seeking quality and value. Discover a curated selection that blends elegance with affordability',
     tools: ['Illustrator', 'Photoshop'],
-
+    tag: 'Logo Design',
     demo: '',
-    image: '/image/crefin.jpg',
+    image: '/image/vogue.jpg',
   },
   {
     id: 2,
     name: 'Digitaldesk',
     description:
       'Vogue Fusion offers stylish wholesale dresses at unbeatable prices. We cater to boutique owners, event planners, and fashion enthusiasts seeking quality and value. Discover a curated selection that blends elegance with affordability',
-    tools: ['Illustrator', 'Photoshop'],
-
+    tools: ['Figma', 'Illustrator', 'Photoshop'],
+    tag: 'Web UI/UX',
     demo: '',
-    image: '/image/crefin.jpg',
+    image: '/image/digitaldesk.jpg',
   },
   {
     id: 3,
     name: 'Journey of kalki',
     description:
       'Vogue Fusion offers stylish wholesale dresses at unbeatable prices. We cater to boutique owners, event planners, and fashion enthusiasts seeking quality and value. Discover a curated selection that blends elegance with affordability',
-    tools: ['Illustrator', 'Photoshop'],
-
+    tools: ['Illustrator'],
+    tag: 'Logo Design',
     demo: '',
-    image: '/image/crefin.jpg',
+    image: '/image/kalki.jpg',
   },
   {
     id: 4,
     name: 'App Good Food',
     description:
       'Vogue Fusion offers stylish wholesale dresses at unbeatable prices. We cater to boutique owners, event planners, and fashion enthusiasts seeking quality and value. Discover a curated selection that blends elegance with affordability',
-    tools: ['Illustrator', 'Photoshop'],
-
+    tools: ['Photoshop', 'Figma', 'After Effects', 'Premiere pro'],
+    tag: 'Social Media Marketing',
     demo: '',
     image: '/image/crefin.jpg',
   },
