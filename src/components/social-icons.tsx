@@ -1,8 +1,8 @@
-import { cn } from '@/lib/utils'
-import { personalData } from '@/utils'
 import Link from 'next/link'
-import React from 'react'
 import { FaBehanceSquare, FaInstagramSquare, FaLinkedin } from 'react-icons/fa'
+
+import { personalData } from '@/utils'
+import { cn } from '@/lib/utils'
 
 export default function Social({ className }: { className?: string }) {
   return (

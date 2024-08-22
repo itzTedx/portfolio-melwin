@@ -9,9 +9,9 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/animated-dialog'
+import { AnimatedTooltip } from '@/components/ui/animated-tooltip'
+import { NeonGradientCard } from '@/components/ui/neon-gradient-card'
 import Link from 'next/link'
-import { AnimatedTooltip } from './ui/animated-tooltip'
-import { NeonGradientCard } from './ui/neon-gradient-card'
 
 interface ProjectCardProps {
   project: {

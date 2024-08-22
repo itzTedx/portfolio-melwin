@@ -1,9 +1,10 @@
-import ContactWithoutCaptcha from '@/components/contact-card'
-import AnimatedBorderTrail from '@/components/ui/animated-trail-border'
-import { personalData } from '@/utils'
 import { CiLocationOn } from 'react-icons/ci'
 import { IoMdCall } from 'react-icons/io'
 import { MdAlternateEmail } from 'react-icons/md'
+
+import ContactWithoutCaptcha from '@/components/contact-card'
+import AnimatedBorderTrail from '@/components/ui/animated-trail-border'
+import { personalData } from '@/utils'
 
 function ContactSection() {
   return (

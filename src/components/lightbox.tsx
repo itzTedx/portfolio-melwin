@@ -1,14 +1,14 @@
 'use client'
 
-import { personalData } from '@/utils'
-import Image from 'next/image'
 import { useRef, useState } from 'react'
+import Image from 'next/image'
 import { AnimatePresence, motion } from 'framer-motion'
 import { PlusIcon } from 'lucide-react'
-import { ImageCarousel } from './image-carousel'
-import { Dialog, DialogClose, DialogContent, DialogTrigger } from './ui/dialog'
-import { Cursor } from './ui/cursor'
-import { Button } from './ui/button'
+
+import { personalData } from '@/utils'
+import { ImageCarousel } from '@/components/image-carousel'
+import { Cursor } from '@/components/ui/cursor'
+import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
 
 export default function Lightbox() {
   const [isHovering, setIsHovering] = useState(false)

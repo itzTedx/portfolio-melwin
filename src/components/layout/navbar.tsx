@@ -5,7 +5,8 @@ import Link from 'next/link'
 
 import useScroll from '@/hooks/use-scroll'
 import { cn } from '@/lib/utils'
-import { ModeToggle } from './theme-toggle'
+
+import { ModeToggle } from '@/components/layout/theme-toggle'
 
 function Navbar() {
   const isScrolled = useScroll(100, 250)

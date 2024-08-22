@@ -1,12 +1,13 @@
-// @flow strict
-
-import { experiences } from '@/utils'
 import Image from 'next/image'
 import { BsPersonWorkspace } from 'react-icons/bs'
-import AnimationLottie from '@/components/animation-lottie'
+
+import { experiences } from '@/utils'
+
 import GlowCard from '@/components/glow-card'
-import experience from '../../../public/lottie/code.json'
 import HeadingCard from '@/components/heading-card'
+
+import experience from '../../../public/lottie/code.json'
+import AnimationLottie from '@/components/animation-lottie'
 
 function Experience() {
   return (

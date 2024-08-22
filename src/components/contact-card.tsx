@@ -3,10 +3,11 @@
 import { useState } from 'react'
 import { TbMailForward } from 'react-icons/tb'
 
-import { isValidEmail } from '@/utils/check-email'
-import { Button } from './ui/button'
+import AnimatedBorderTrail from '@/components/ui/animated-trail-border'
+import { Button } from '@/components/ui/button'
+
 import { cn } from '@/lib/utils'
-import AnimatedBorderTrail from './ui/animated-trail-border'
+import { isValidEmail } from '@/utils/check-email'
 
 function ContactWithoutCaptcha() {
   const [error, setError] = useState({ email: false, required: false })

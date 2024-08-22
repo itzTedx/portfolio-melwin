@@ -3,6 +3,9 @@
 import * as React from 'react'
 import { Moon, Sun } from 'lucide-react'
 import { useTheme } from 'next-themes'
+import { GrSystem } from 'react-icons/gr'
+
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 import { Button } from '@/components/ui/button'
 import {
@@ -11,8 +14,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { GrSystem } from 'react-icons/gr'
-import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 export function ModeToggle() {
   const { setTheme } = useTheme()

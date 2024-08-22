@@ -1,12 +1,13 @@
 import Image from 'next/image'
-
-import { educations } from '@/utils'
 import { BsPersonWorkspace } from 'react-icons/bs'
 
-import lottieFile from '../../../public/lottie/study.json'
+import { educations } from '@/utils'
+
 import GlowCard from '@/components/glow-card'
-import AnimationLottie from '@/components/animation-lottie'
 import HeadingCard from '@/components/heading-card'
+
+import AnimationLottie from '@/components/animation-lottie'
+import lottieFile from '../../../public/lottie/study.json'
 
 function Education() {
   return (

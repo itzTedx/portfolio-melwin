@@ -1,4 +1,3 @@
-import AnimationLottie from '@/components/animation-lottie'
 import Social from '@/components/social-icons'
 import { buttonVariants } from '@/components/ui/button'
 import { FlipWords } from '@/components/ui/flip-words'
@@ -9,8 +8,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { MdDownload } from 'react-icons/md'
 import { RiContactsFill } from 'react-icons/ri'
-import designer from '../../../public/lottie/designer.json'
-import { NeonGradientCard } from '@/components/ui/neon-gradient-card'
 
 function HeroSection() {
   const designations = [

@@ -1,11 +1,13 @@
 'use client'
+
+import Image from 'next/image'
+
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   useCarousel,
 } from '@/components/ui/carousel'
-import Image from 'next/image'
 
 function CarouselMP() {
   const IMAGES = [
@@ -31,7 +33,6 @@ function CarouselMP() {
     },
   ]
 
-  const ITEMS = new Array(4).fill(null).map((_, index) => index + 1)
   const { index, setIndex, itemsCount } = useCarousel()
 
   return (

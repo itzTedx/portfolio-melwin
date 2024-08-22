@@ -1,7 +1,7 @@
+import { projectsData } from '@/utils'
+
 import ProjectCard from '@/components/project-card'
 import ProjectsTitle from '@/components/projects-title'
-import { Button } from '@/components/ui/button'
-import { projectsData } from '@/utils'
 
 const Projects = () => {
   return (

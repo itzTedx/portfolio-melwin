@@ -1,10 +1,10 @@
-// @flow strict
-
-import HeadingCard from '@/components/heading-card'
-import { skillsData } from '@/utils/'
-import { skillsImage } from '@/utils/skill-icons'
 import Image from 'next/image'
 import Marquee from 'react-fast-marquee'
+
+import { skillsData } from '@/utils/'
+import { skillsImage } from '@/utils/skill-icons'
+
+import HeadingCard from '@/components/heading-card'
 
 function Skills() {
   return (

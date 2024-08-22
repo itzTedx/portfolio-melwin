@@ -1,11 +1,11 @@
 'use client'
 
-import { personalData } from '@/utils'
 import Image from 'next/image'
-import React from 'react'
-import { Button } from '../ui/button'
 import Link from 'next/link'
-import { useMediaQuery } from '@/hooks/useMediaQuery'
+
+import { Button } from '@/components/ui/button'
+
+import { personalData } from '@/utils'
 
 export default function Content() {
   return (
@@ -35,7 +35,6 @@ const ImageSection = () => {
 }
 
 const Connect = () => {
-  const isMobile = useMediaQuery('(max-width: 768px)')
   return (
     <div className="flex flex-col justify-between lg:col-span-2">
       <div className="relative flex md:justify-between lg:justify-start lg:items-end">

@@ -1,4 +1,4 @@
-import AnimatedBorderTrail from './ui/animated-trail-border'
+import AnimatedBorderTrail from '@/components/ui/animated-trail-border'
 
 interface HeadingProps {
   heading: string

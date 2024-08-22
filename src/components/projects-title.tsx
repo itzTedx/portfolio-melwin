@@ -1,8 +1,10 @@
 'use client'
 
-import { useMediaQuery } from '@/hooks/useMediaQuery'
-import { LampContainer } from './ui/lamp'
 import { motion } from 'framer-motion'
+
+import { LampContainer } from '@/components/ui/lamp'
+
+import { useMediaQuery } from '@/hooks/useMediaQuery'
 
 export default function ProjectsTitle() {
   const isMobile = useMediaQuery('(max-width: 768px)')

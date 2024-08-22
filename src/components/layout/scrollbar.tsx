@@ -1,13 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
-import {
-  motion,
-  useScroll,
-  useSpring,
-  useTransform,
-  MotionValue,
-} from 'framer-motion'
+import { motion, useScroll, useSpring } from 'framer-motion'
 
 const Scrollbar = () => {
   const { scrollYProgress } = useScroll()
