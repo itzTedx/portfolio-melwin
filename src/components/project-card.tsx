@@ -39,7 +39,7 @@ function ProjectCard({ project }: ProjectCardProps) {
           <div className="w-2 h-2 bg-green-200 rounded-full lg:h-3 lg:w-3" />
         </div>
         <NeonGradientCard className="items-center justify-center text-center">
-          <span className="pointer-events-none whitespace-pre-wrap text-muted-foreground text-center text-sm dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)] px-3">
+          <span className="pointer-events-none whitespace-pre-wrap text-muted-foreground text-center text-sm dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)] px-3 h-full">
             {project.tag}
           </span>
         </NeonGradientCard>

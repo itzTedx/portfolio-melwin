@@ -55,7 +55,7 @@ function HeroSection() {
           >
             <Link
               href="#contact"
-              className="flex items-center gap-1 hover:gap-3 uppercase text-sm transition-all text-foreground duration-200 ease-out px-4 py-2 rounded-[inherit] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary-foreground"
+              className="font-bold flex items-center gap-1 hover:gap-3 uppercase text-sm transition-all text-secondary-foreground duration-200 ease-out px-4 py-2 rounded-[inherit] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2  focus:ring-offset-secondary-foreground"
             >
               <span>Contact me</span>
               <RiContactsFill size={16} />
@@ -65,7 +65,7 @@ function HeroSection() {
           <Link
             className={cn(
               buttonVariants({ variant: 'shimmer' }),
-              'items-center gap-1 hover:gap-3 uppercase text-sm transition-all text-foreground bg-primary ease-out'
+              'font-bold items-center gap-1 hover:gap-3  uppercase text-sm transition-all text-violet-200 bg-primary ease-out'
             )}
             role="button"
             target="_blank"

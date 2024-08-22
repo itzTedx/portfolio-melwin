@@ -10,6 +10,7 @@ import { cn } from '@/lib/utils'
 import LenisProvider from '@/provider/lenis-provider'
 import { ThemeProvider } from '@/provider/theme-provider'
 import { cookie, monument, plusJakarta } from './style/fonts/fonts'
+import Scrollbar from '@/components/layout/scrollbar'
 
 export const metadata: Metadata = {
   title: 'Portfolio of Melwin Af - Graphic Designer',
@@ -41,6 +42,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          {/* <Scrollbar /> */}
           <Toaster />
           {/* <ScrollToTop /> */}
           <BreakpointIndicator />
