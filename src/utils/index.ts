@@ -75,20 +75,20 @@ export const projectsData = [
     id: 2,
     name: 'Digitaldesk',
     description:
-      'Vogue Fusion offers stylish wholesale dresses at unbeatable prices. We cater to boutique owners, event planners, and fashion enthusiasts seeking quality and value. Discover a curated selection that blends elegance with affordability',
+      '🎨 Thrilled to propose a sleek, modern, and elegant UI/UX design for Digitaldesk eCommerce platform. Our vision is to create a user-friendly experience that enhances online shopping 🛒 while reflecting the quality and professionalism of your brand. By integrating cutting-edge web development 💻 with your exceptional printing services, corporate gifts, signage, and marketing materials, we can elevate your digital presence to new heights 🚀.',
     tools: ['Figma', 'Illustrator', 'Photoshop'],
     tag: 'Web UI/UX',
-    demo: '',
+    demo: 'https://digitaldesk.vercel.app',
     image: '/image/digitaldesk.jpg',
   },
   {
     id: 3,
     name: 'Journey of kalki',
     description:
-      'Vogue Fusion offers stylish wholesale dresses at unbeatable prices. We cater to boutique owners, event planners, and fashion enthusiasts seeking quality and value. Discover a curated selection that blends elegance with affordability',
+      '🌄 Excited to share my latest logo creation for Journey of Kalki a travel YouTube channel that embodies the spirit of adventure! 🏕️ This design captures the essence of a journey, with a natural sunset backdrop, lush green grass, a cozy tent with a campfire, and a bold adventurer scaling the letter "K." It’s all about exploring the great outdoors and finding new horizons. Looking forward to seeing this logo take "Journey of Kalki" to new heights! 🌍✨',
     tools: ['Illustrator'],
     tag: 'Logo Design',
-    demo: '',
+    demo: 'https://www.linkedin.com/posts/melwin-af_logodesign-branding-travelinspiration-activity-7232380839538380800-v0Lo',
     image: '/image/kalki.jpg',
   },
   {

@@ -98,13 +98,13 @@ function ProjectCard({ project }: ProjectCardProps) {
                       exit: { opacity: 0, scale: 0.8, y: 100 },
                     }}
                   >
-                    <p className="mt-3 text-muted-foreground text-pretty">
+                    <p className="mt-3 text-muted-foreground text-pretty leading-relaxed">
                       {project.description}
                     </p>
 
                     <Link
                       className="inline-flex mt-3 text-zinc-500"
-                      href="https://www.are.na/block/12759029"
+                      href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
