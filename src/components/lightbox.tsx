@@ -78,6 +78,9 @@ export default function Lightbox() {
       </DialogTrigger>
       <DialogContent className="p-2 bg-transparent border-0 rounded-md shadow-none">
         <ImageCarousel />
+        <div className="absolute -bottom-16 md:-bottom-9 left-1/2 -translate-x-1/2 text-xs text-muted-foreground/50">
+          Photo Courtesy: Nibish
+        </div>
       </DialogContent>
     </Dialog>
   )

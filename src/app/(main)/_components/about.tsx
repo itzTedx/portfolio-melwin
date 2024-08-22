@@ -17,7 +17,7 @@ function AboutSection() {
       </div>
       <div className="grid items-center justify-center grid-cols-1 gap-12 lg:grid-cols-2">
         <div className="order-2 lg:order-1">
-          <h5 className="mb-5 text-3xl font-medium tracking-wider uppercase text-accent font-monument">
+          <h5 className="mb-5 text-3xl font-extrabold text-accent font-bricolage">
             Who I am?
           </h5>
 

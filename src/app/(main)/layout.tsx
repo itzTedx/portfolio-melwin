@@ -1,12 +1,12 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 
 import './style/globals.css'
 
-import { monument, plusJakarta } from './style/fonts/fonts'
+import { bricolage, monument, plusJakarta } from '@/fonts/fonts'
 import { cn } from '@/lib/utils'
 
-import { ThemeProvider } from '@/provider/theme-provider'
 import LenisProvider from '@/provider/lenis-provider'
+import { ThemeProvider } from '@/provider/theme-provider'
 
 import BreakpointIndicator from '@/components/breakpoint-indicator'
 import Footer from '@/components/layout/footer'
@@ -24,6 +24,13 @@ export const metadata: Metadata = {
     shortcut: '/favicon.png',
     apple: '/favicon.png',
   },
+  authors: [
+    {
+      name: siteConfig.shortName,
+      url: siteConfig.url,
+    },
+  ],
+  creator: siteConfig.shortName,
   openGraph: {
     type: 'website',
     locale: 'en_AE',
@@ -41,6 +48,15 @@ export const metadata: Metadata = {
     images: [siteConfig.ogImage],
     creator: '@digitaldesk_uae',
   },
+  metadataBase: new URL(siteConfig.url),
+  alternates: { canonical: '/' },
+}
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
+  ],
 }
 
 export default function RootLayout({
@@ -54,6 +70,7 @@ export default function RootLayout({
         className={cn(
           plusJakarta.className,
           monument.variable,
+          bricolage.variable,
           'relative w-screen overflow-x-hidden antialiased'
         )}
       >

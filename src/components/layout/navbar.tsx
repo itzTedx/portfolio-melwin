@@ -7,37 +7,11 @@ import useScroll from '@/hooks/use-scroll'
 import { cn } from '@/lib/utils'
 
 import { ModeToggle } from '@/components/layout/theme-toggle'
+import { links } from '@/utils/nav-links'
 
 function Navbar() {
   const isScrolled = useScroll(100, 250)
 
-  const NAVLINKS = [
-    {
-      id: 1,
-      title: 'About',
-      href: '/#about',
-    },
-    {
-      id: 2,
-      title: 'Experience',
-      href: '/#experience',
-    },
-    {
-      id: 3,
-      title: 'Skills',
-      href: '/#skills',
-    },
-    {
-      id: 4,
-      title: 'Education',
-      href: '/#education',
-    },
-    {
-      id: 5,
-      title: 'Projects',
-      href: '/#projects',
-    },
-  ]
   return (
     <nav
       className={cn(
@@ -57,29 +31,29 @@ function Navbar() {
           isScrolled ? 'opacity-100' : 'opacity-0'
         )}
       >
-        <div className="absolute bottom-0 h-px w-1/2  bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
+        <div className="absolute bottom-0 w-1/2 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
       </div>
-      <div className="flex items-center justify-between w-full container">
-        <div className="flex flex-shrink-0 items-center">
+      <div className="container flex items-center justify-between w-full">
+        <div className="flex items-center flex-shrink-0">
           <Link
             href="/"
-            className="text-foreground text-xl font-extrabold tracking-widest uppercase -mx-4 px-4 py-2"
+            className="px-4 py-2 -mx-4 text-3xl font-extrabold text-foreground font-bricolage"
           >
             Melwin af
           </Link>
         </div>
 
         <ul
-          className="md:flex max-h-0 w-full flex-col items-start text-sm hidden md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 absolute left-1/2 -translate-x-1/2"
+          className="absolute flex-col items-start hidden w-full text-sm -translate-x-1/2 md:flex max-h-0 md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0 left-1/2"
           id="navbar-default"
         >
-          {NAVLINKS.map((nav) => (
+          {links.map((nav) => (
             <li key={nav.id}>
               <Link
-                className="block px-4 py-2 ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus:ring-offset-secondary-foreground rounded-sm"
+                className="block px-4 py-2 transition-colors rounded-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus:ring-offset-secondary-foreground"
                 href={nav.href}
               >
-                <div className="text-sm text-foreground transition-colors duration-300 hover:text-primary">
+                <div className="text-sm transition-colors duration-300 text-foreground hover:text-primary">
                   {nav.title}
                 </div>
               </Link>
@@ -91,14 +65,14 @@ function Navbar() {
           <div className="hidden lg:block">
             <Link
               href="tel:+971588102324"
-              className="py-2 flex gap-2 hover:bg-foreground-50 px-2 rounded-lg active:scale-95 scale-100 transition shrink-0"
+              className="flex gap-2 px-2 py-2 transition scale-100 rounded-lg hover:bg-foreground-50 active:scale-95 shrink-0"
             >
-              <div className="w-9 h-9 relative">
+              <div className="relative w-9 h-9">
                 <Image fill src="/phone.svg" alt="" />
               </div>
               <div className="flex flex-col">
                 <span className="text-[8px] lg:text-[10px]">Call me now</span>
-                <span className="text-sm lg:text-base font-bold text-primary-800">
+                <span className="text-sm font-bold lg:text-base text-primary-800">
                   058 810 2324
                 </span>
               </div>

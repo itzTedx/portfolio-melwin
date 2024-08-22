@@ -1,10 +1,9 @@
-import { Cookie, Plus_Jakarta_Sans } from 'next/font/google'
+import { Bricolage_Grotesque, Plus_Jakarta_Sans } from 'next/font/google'
 import localFont from 'next/font/local'
 
-const cookie = Cookie({
-  variable: '--font-cookie',
+const bricolage = Bricolage_Grotesque({
+  variable: '--font-bricolage',
   subsets: ['latin'],
-  weight: ['400'],
 })
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
@@ -31,4 +30,4 @@ const monument = localFont({
   variable: '--font-monument',
 })
 
-export { cookie, plusJakarta, monument }
+export { bricolage, plusJakarta, monument }

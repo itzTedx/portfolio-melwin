@@ -6,7 +6,7 @@ import { experiences } from '@/utils'
 import GlowCard from '@/components/glow-card'
 import HeadingCard from '@/components/heading-card'
 
-import experience from '../../../public/lottie/code.json'
+import experience from '../../../../public/lottie/code.json'
 import AnimationLottie from '@/components/animation-lottie'
 
 function Experience() {
@@ -56,7 +56,7 @@ function Experience() {
                         <BsPersonWorkspace size={36} />
                       </div>
                       <div>
-                        <h6 className="text-base font-semibold uppercase sm:text-xl">
+                        <h6 className="text-base font-semibold sm:text-xl font-bricolage">
                           {experience.title}
                         </h6>
                         <p className="text-sm sm:text-base text-muted-foreground">

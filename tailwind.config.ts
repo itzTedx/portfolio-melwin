@@ -19,7 +19,7 @@ const config = {
     },
     extend: {
       fontFamily: {
-        cookie: ['var(--font-cookie)'],
+        bricolage: ['var(--font-bricolage)'],
         monument: ['var(--font-monument)'],
       },
       colors: {

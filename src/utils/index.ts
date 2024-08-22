@@ -8,9 +8,10 @@ export const personalData = {
   phone: '+971588102324',
   address: 'Al Qusais, Dubai, United Arab Emirates',
   github: 'https://github.com/itzTedx',
-  instagram: 'https://www.instagram.com/',
+  instagram: 'https://www.instagram.com/itzTed._x',
   linkedIn: 'https://www.linkedin.com/in/melwin-af/',
-  behance: 'https://www.linkedin.com/in/melwin-af/',
+  behance: 'https://www.behance.net/melwinaf',
+  youtube: 'https://www.youtube.com/@NammaPayakaDiaries',
 
   // social: [
   //   { github: 'https://github.com/itzTedx' },
@@ -19,8 +20,7 @@ export const personalData = {
   //   { behance: 'https://www.linkedin.com/in/melwin-af/' },
   // ],
 
-  resume:
-    'https://drive.google.com/file/d/1eyutpKFFhJ9X-qpQGKhUNnVRkB5Wer00/view?usp=sharing',
+  resume: '/Resume-Melwin.pdf',
 }
 
 export const educations = [
