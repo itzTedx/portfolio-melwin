@@ -1,11 +1,25 @@
+// LenisEffect.js - Client component
 'use client'
 
-import { ReactLenis, useLenis } from 'lenis/react'
+import { useEffect } from 'react'
+import Lenis from 'lenis'
 
-export function LenisProvider({ children }: { children: React.ReactNode }) {
-  const lenis = useLenis(({ scroll }) => {
-    // called every scroll
-  })
+export default function LenisProvider() {
+  useEffect(() => {
+    const lenis = new Lenis()
 
-  return <ReactLenis root>{children}</ReactLenis>
+    function raf(time: DOMHighResTimeStamp) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+
+    // Cleanup to prevent memory leaks
+    return () => {
+      lenis.destroy()
+    }
+  }, [])
+
+  return null // No need to render anything
 }

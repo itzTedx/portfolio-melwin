@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Cookie, Inter, Plus_Jakarta_Sans } from 'next/font/google'
 
 import './style/globals.css'
 
@@ -8,18 +7,9 @@ import Footer from '@/components/layout/footer'
 import Navbar from '@/components/layout/navbar'
 import { Toaster } from '@/components/ui/sonner'
 import { cn } from '@/lib/utils'
+import LenisProvider from '@/provider/lenis-provider'
 import { ThemeProvider } from '@/provider/theme-provider'
-import { LenisProvider } from '@/provider/lenis-provider'
-
-const inter = Inter({ subsets: ['latin'] })
-const cookie = Cookie({
-  variable: '--font-cookie',
-  subsets: ['latin'],
-  weight: ['400'],
-})
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-})
+import { cookie, monument, plusJakarta } from './style/fonts/fonts'
 
 export const metadata: Metadata = {
   title: 'Portfolio of Melwin Af - Graphic Designer',
@@ -37,11 +27,11 @@ export default function RootLayout({
       <body
         className={cn(
           plusJakarta.className,
-          cookie.variable,
-          'relative w-screen overflow-x-hidden'
+          monument.variable,
+          'relative w-screen overflow-x-hidden antialiased'
         )}
       >
-        {/* <LenisProvider> */}
+        <LenisProvider />
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -55,7 +45,6 @@ export default function RootLayout({
           {/* <ScrollToTop /> */}
           <BreakpointIndicator />
         </ThemeProvider>
-        {/* </LenisProvider> */}
       </body>
     </html>
   )

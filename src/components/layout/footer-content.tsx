@@ -10,7 +10,7 @@ import { useMediaQuery } from '@/hooks/useMediaQuery'
 export default function Content() {
   return (
     <>
-      <footer className="bg-foreground py-4 lg:py-8 px-4 lg:px-9 h-full w-full grid md:grid-cols-2 lg:grid-cols-3 text-background gap-x-6 ">
+      <footer className="grid w-full h-full px-4 py-4 bg-foreground lg:py-8 lg:px-9 md:grid-cols-2 lg:grid-cols-3 text-background gap-x-6 ">
         <ImageSection />
         <Connect />
         <div className="py-2 mt-auto">
@@ -28,7 +28,7 @@ const ImageSection = () => {
         src={personalData.profile}
         fill
         alt="Melwin af"
-        className="transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105 cursor-pointer object-cover"
+        className="object-cover transition-all duration-700 cursor-pointer grayscale group-hover:grayscale-0 group-hover:scale-105"
       />
     </div>
   )
@@ -37,38 +37,37 @@ const ImageSection = () => {
 const Connect = () => {
   const isMobile = useMediaQuery('(max-width: 768px)')
   return (
-    <div className="lg:col-span-2 flex flex-col justify-between">
-      <div className="flex md:justify-between lg:justify-start lg:items-end relative">
+    <div className="flex flex-col justify-between lg:col-span-2">
+      <div className="relative flex md:justify-between lg:justify-start lg:items-end">
         <div className="text-[calc(7.143vw_+_1.071rem)] leading-[calc(7.143vw_+_1.071rem)] w-[7ch]">
-          LETS CONNECT
+          {`LET'S CONNECT`}
         </div>
-        <div className="absolute xl:static -top-1 md:top-0 right-0">
+        <div className="absolute -top-1 md:top-0 right-3">
           <Button
             variant="shimmer"
-            size={'lg'}
-            className="uppercase bg-background hover:scale-105 transition-all"
+            className="flex items-center font-bold uppercase transition-all font-monument bg-amber-600 text-amber-950 hover:scale-105"
           >
-            <span className="size-2 bg-white rounded-full mr-2 uppercase" />
+            <span className="mr-2 uppercase rounded-full bg-amber-900 size-2" />
             Get in touch
           </Button>
         </div>
       </div>
-      <div className="flex flex-col lg:flex-row py-2 gap-2 sm:gap-0 lg:gap-3">
+      <div className="flex flex-col gap-2 py-2 lg:flex-row sm:gap-0 lg:gap-3">
         <Link
           href="/"
-          className="md:text-xl hover:text-muted-foreground transition-colors"
+          className="transition-colors md:text-xl hover:text-muted-foreground"
         >
           Instagram
         </Link>
         <Link
           href="/"
-          className="md:text-xl hover:text-muted-foreground transition-colors"
+          className="transition-colors md:text-xl hover:text-muted-foreground"
         >
           Linkedin
         </Link>
         <Link
           href="/"
-          className="md:text-xl hover:text-muted-foreground transition-colors"
+          className="transition-colors md:text-xl hover:text-muted-foreground"
         >
           Behance
         </Link>

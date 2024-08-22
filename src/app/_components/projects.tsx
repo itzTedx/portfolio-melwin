@@ -1,5 +1,6 @@
 import ProjectCard from '@/components/project-card'
 import ProjectsTitle from '@/components/projects-title'
+import { Button } from '@/components/ui/button'
 import { projectsData } from '@/utils'
 
 const Projects = () => {
@@ -9,13 +10,13 @@ const Projects = () => {
         <ProjectsTitle />
       </div>
 
-      <div className="pt-24 px-8 lg:px-0">
+      <div className="px-8 pt-24 lg:px-0">
         <div className="flex flex-col gap-4">
           {projectsData.map((project, index) => (
             <div
               id={`sticky-card-${index + 1}`}
               key={index}
-              className="sticky-card w-full mx-auto max-w-2xl sticky"
+              className="sticky w-full max-w-2xl mx-auto sticky-card"
             >
               <div className="box-border flex items-center justify-center rounded shadow-[0_0_20px_0_rgba(0,0,0,0.05)] dark:shadow-[0_0_30px_0_rgba(0,0,0,0.2)] transition-all duration-500">
                 <ProjectCard project={project} />

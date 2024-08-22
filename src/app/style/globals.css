@@ -218,7 +218,7 @@
 
 .sticky-card {
   /* padding-top: calc(var(--index) * 2.5rem); */
-  top: calc(var(--index) * 3.4rem);
+  top: calc(var(--index) * 3.9rem);
 }
 
 .animate-wave {
@@ -260,4 +260,25 @@
   syntax: '<angle>';
   initial-value: 0deg;
   inherits: false;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
 }

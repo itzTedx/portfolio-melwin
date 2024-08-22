@@ -53,10 +53,10 @@ export default function Lightbox() {
                 initial={{ opacity: 0, scale: 0.6 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.6 }}
-                className="inline-flex w-full items-center justify-center"
+                className="inline-flex items-center justify-center w-full"
               >
                 <div className="inline-flex items-center text-sm text-background">
-                  More <PlusIcon className="ml-1 h-4 w-4" />
+                  More <PlusIcon className="w-4 h-4 ml-1" />
                 </div>
               </motion.div>
             ) : null}
@@ -72,11 +72,11 @@ export default function Lightbox() {
             src={personalData.profile}
             fill
             alt="Melwin af"
-            className="transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105"
+            className="object-cover transition-all duration-700 grayscale group-hover:grayscale-0 group-hover:scale-105"
           />
         </div>
       </DialogTrigger>
-      <DialogContent className="rounded-md p-2 bg-transparent border-0 shadow-none">
+      <DialogContent className="p-2 bg-transparent border-0 rounded-md shadow-none">
         <ImageCarousel />
       </DialogContent>
     </Dialog>

@@ -62,7 +62,7 @@ export const TracingBeam = ({
           }}
           className="ml-[27px] size-4 rounded-full border border-primary shadow-sm flex items-center justify-center relative"
         >
-          <span className="size-3 absolute rounded-full border border-primary animate-ping" />
+          <span className="absolute border rounded-full size-3 border-primary animate-ping" />
           <motion.div
             transition={{
               duration: 0.2,
@@ -74,14 +74,14 @@ export const TracingBeam = ({
               borderColor:
                 scrollYProgress.get() > 0 ? 'white' : 'var(--emerald-600)',
             }}
-            className="h-2 w-2 rounded-full border border-neutral-300 bg-white"
+            className="w-2 h-2 bg-white border rounded-full border-neutral-300"
           />
         </motion.div>
         <svg
           viewBox={`0 0 20 ${svgHeight}`}
           width="20"
           height={svgHeight} // Set the SVG height
-          className=" ml-4 block"
+          className="block ml-4 "
           aria-hidden="true"
         >
           <motion.path

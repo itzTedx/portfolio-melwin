@@ -9,7 +9,7 @@ export default function ProjectsTitle() {
 
   return (
     <LampContainer>
-      <motion.h1
+      <motion.h2
         initial={{ opacity: 0.5, y: isMobile ? 0 : 100 }}
         whileInView={{ opacity: 1, y: isMobile ? -100 : 0 }}
         transition={{
@@ -17,10 +17,11 @@ export default function ProjectsTitle() {
           duration: 0.8,
           ease: 'easeInOut',
         }}
-        className="bg-gradient-to-br from-foreground to-muted-foreground bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl z-50"
+        className="z-50 text-4xl font-bold leading-[1] tracking-wide text-center text-transparent font-monument bg-gradient-to-br from-foreground to-gray-200 bg-clip-text md:text-7xl md:leading-[0.8] uppercase"
       >
-        Projects <br /> I have done
-      </motion.h1>
+        Projects <br />{' '}
+        <span className="text-2xl md:text-4xl">{`I’ve worked on`}</span>
+      </motion.h2>
     </LampContainer>
   )
 }
