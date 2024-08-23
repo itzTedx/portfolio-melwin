@@ -9,7 +9,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { MdDownload } from 'react-icons/md'
 import { RiContactsFill } from 'react-icons/ri'
-import designer from '../../../../public/lottie/designer.json'
+import designer from '../../../public/lottie/designer.json'
 
 function HeroSection() {
   const designations = [

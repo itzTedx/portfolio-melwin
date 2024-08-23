@@ -6,7 +6,7 @@ import { experiences } from '@/utils'
 import GlowCard from '@/components/glow-card'
 import HeadingCard from '@/components/heading-card'
 
-import experience from '../../../../public/lottie/code.json'
+import experience from '../../../public/lottie/code.json'
 import AnimationLottie from '@/components/animation-lottie'
 
 function Experience() {

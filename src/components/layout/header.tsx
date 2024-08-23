@@ -1,50 +1,65 @@
 'use client'
-import { useState } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
-import Button from './nav-button'
-import Nav from './nav'
 
-const menu = {
-  open: {
-    width: '480px',
-    height: '650px',
-    top: '-25px',
-    right: '-25px',
-    transition: { duration: 0.75, type: 'tween', ease: [0.76, 0, 0.24, 1] },
-  },
-  closed: {
-    width: '100px',
-    height: '40px',
-    top: '0px',
-    right: '0px',
-    transition: {
-      duration: 0.75,
-      delay: 0.35,
-      type: 'tween',
-      ease: [0.76, 0, 0.24, 1],
-    },
-  },
-}
+import Image from 'next/image'
+import Link from 'next/link'
 
-export default function Header() {
-  const [isActive, setIsActive] = useState(false)
+import useScroll from '@/hooks/use-scroll'
+import { cn } from '@/lib/utils'
+
+import { ModeToggle } from '@/components/layout/theme-toggle'
+import { links } from '@/utils/nav-links'
+
+function Header() {
+  const isScrolled = useScroll(100, 250)
 
   return (
-    <div className="fixed right-12 top-12 group">
-      <motion.div
-        className="w-[480px] h-[650px] bg-[#c9fb74] rounded-3xl relative"
-        variants={menu}
-        animate={isActive ? 'open' : 'closed'}
-        initial="closed"
+    <header
+      className={cn('w-full py-3 transition-all duration-700 ease-in-out')}
+      style={{
+        transitionProperty:
+          'background-color, backdrop-filter, padding-top, padding-bottom, top',
+      }}
+    >
+      <div
+        className={cn(
+          'flex justify-center -z-40 transition-opacity duration- 500 ease-in-out',
+          isScrolled ? 'opacity-100' : 'opacity-0'
+        )}
       >
-        <AnimatePresence>{isActive && <Nav />}</AnimatePresence>
-      </motion.div>
-      <Button
-        isActive={isActive}
-        toggleMenu={() => {
-          setIsActive(!isActive)
-        }}
-      />
-    </div>
+        <div className="absolute bottom-0 w-1/2 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
+      </div>
+      <div className="container flex items-center justify-between w-full">
+        <div className="flex items-center flex-shrink-0">
+          <Link
+            href="/"
+            className="px-4 py-2 -mx-4 text-3xl font-extrabold text-foreground font-bricolage"
+          >
+            Melwin af
+          </Link>
+        </div>
+
+        <div className="flex items-center gap-4">
+          <ModeToggle />
+          <div className="hidden lg:block">
+            <Link
+              href="tel:+971588102324"
+              className="flex gap-2 px-2 py-2 transition scale-100 rounded-lg hover:bg-foreground-50 active:scale-95 shrink-0"
+            >
+              <div className="relative w-9 h-9">
+                <Image fill src="/phone.svg" alt="" />
+              </div>
+              <div className="flex flex-col">
+                <span className="text-[8px] lg:text-[10px]">Call me now</span>
+                <span className="text-sm font-bold lg:text-base text-primary-800">
+                  058 810 2324
+                </span>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </div>
+    </header>
   )
 }
+
+export default Header

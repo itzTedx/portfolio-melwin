@@ -7,7 +7,7 @@ import GlowCard from '@/components/glow-card'
 import HeadingCard from '@/components/heading-card'
 
 import AnimationLottie from '@/components/animation-lottie'
-import lottieFile from '../../../../public/lottie/study.json'
+import lottieFile from '../../../public/lottie/study.json'
 
 function Education() {
   return (

@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 
 interface NavButtonProps {
   isActive: boolean
-  toggleMenu: () => void
+  toggleMenu: Function
 }
 
 export default function NavButton({ isActive, toggleMenu }: NavButtonProps) {

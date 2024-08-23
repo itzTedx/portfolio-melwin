@@ -71,12 +71,12 @@
 /* ===== Scrollbar CSS ===== */
 /* Firefox */
 * {
-  scrollbar-width: thin;
+  scrollbar-width: none;
 }
 
 /* Chrome, Edge, and Safari */
 *::-webkit-scrollbar {
-  width: thin;
+  width: none;
 }
 
 .glow-container {

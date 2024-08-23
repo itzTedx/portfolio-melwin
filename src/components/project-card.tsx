@@ -38,14 +38,14 @@ function ProjectCard({ project }: ProjectCardProps) {
           <div className="w-2 h-2 bg-orange-400 rounded-full lg:h-3 lg:w-3" />
           <div className="w-2 h-2 bg-green-200 rounded-full lg:h-3 lg:w-3" />
         </div>
-        <NeonGradientCard className="items-center justify-center text-center">
+        {/* <NeonGradientCard className="items-center justify-center text-center">
           <span className="pointer-events-none whitespace-pre-wrap text-muted-foreground text-center text-sm dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)] px-3 h-full">
             {project.tag}
           </span>
-        </NeonGradientCard>
-        {/* <p className="ml-3 text-base text-center text-accent lg:text-xl">
+        </NeonGradientCard> */}
+        <p className="ml-3 text-base text-center text-accent lg:text-xl font-bricolage">
           {project.tag}
-        </p> */}
+        </p>
       </div>
       <div className="overflow-hidden border-t-[2px] px-4 lg:px-8 py-4 lg:py-8">
         <div className="relative aspect-video">

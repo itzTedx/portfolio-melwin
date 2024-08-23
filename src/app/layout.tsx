@@ -10,10 +10,12 @@ import { ThemeProvider } from '@/provider/theme-provider'
 
 import BreakpointIndicator from '@/components/breakpoint-indicator'
 import Footer from '@/components/layout/footer'
-import Navbar from '@/components/layout/navbar'
 import { Toaster } from '@/components/ui/sonner'
 
+import Header from '@/components/layout/header'
+import Navbar from '@/components/layout/navbar'
 import { siteConfig } from '@/utils/siteConfig'
+import ScrollBar from '@/components/layout/custom-scroll-bar'
 
 export const metadata: Metadata = {
   title: 'Portfolio of Melwin Af - Graphic Designer',
@@ -71,7 +73,7 @@ export default function RootLayout({
           plusJakarta.className,
           monument.variable,
           bricolage.variable,
-          'relative w-screen overflow-x-hidden antialiased'
+          'relative w-screen overflow-x-hidden antialiased no-scrollbar'
         )}
       >
         <LenisProvider />
@@ -81,10 +83,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <ScrollBar />
+          <Header />
           <Navbar />
           {children}
           <Footer />
-          {/* <Scrollbar /> */}
           <Toaster />
           {/* <ScrollToTop /> */}
           <BreakpointIndicator />
