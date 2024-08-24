@@ -6,16 +6,13 @@ import { bricolage, monument, plusJakarta } from '@/fonts/fonts'
 import { cn } from '@/lib/utils'
 import { siteConfig } from '@/utils/siteConfig'
 
-import LenisProvider from '@/provider/lenis-provider'
-import { ThemeProvider } from '@/provider/theme-provider'
-
-import ScrollBar from '@/components/layout/custom-scroll-bar'
-import Header from '@/components/layout/header'
-import Footer from '@/components/layout/footer'
-import { Toaster } from '@/components/ui/sonner'
 import BreakpointIndicator from '@/components/breakpoint-indicator'
+import Footer from '@/components/layout/footer'
+import Header from '@/components/layout/header'
 import Navbar from '@/components/layout/navbar'
 import ScrollToTop from '@/components/layout/scroll-to-top'
+import { Toaster } from '@/components/ui/sonner'
+import Provider from '@/provider'
 
 export const metadata: Metadata = {
   title: 'Portfolio of Melwin Af - Graphic Designer',
@@ -48,7 +45,7 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: '@digitaldesk_uae',
+    creator: '@itzTedx_',
   },
   metadataBase: new URL(siteConfig.url),
   alternates: { canonical: '/' },
@@ -76,13 +73,7 @@ export default function RootLayout({
           'relative w-screen overflow-x-hidden antialiased no-scrollbar'
         )}
       >
-        <LenisProvider />
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <Provider>
           {/* <ScrollBar /> */}
           <div vaul-drawer-wrapper="">
             <Header />
@@ -93,7 +84,7 @@ export default function RootLayout({
             <ScrollToTop />
           </div>
           <BreakpointIndicator />
-        </ThemeProvider>
+        </Provider>
       </body>
     </html>
   )

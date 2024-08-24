@@ -2,14 +2,13 @@
 
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
-import { toast } from 'sonner'
 
 import AnimatedBorderTrail from '@/components/ui/animated-trail-border'
 import { Button } from '@/components/ui/button'
 
-import { cn } from '@/lib/utils'
 import { contactSchema, zContactSchema } from '@/types/contact-schema'
 
+import { sendEmail } from '@/actions/send-email'
 import {
   Form,
   FormControl,
@@ -20,13 +19,18 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import { Loader } from 'lucide-react'
+import { useState } from 'react'
+import { useAction } from 'next-safe-action/hooks'
+import { toast } from 'sonner'
 
 interface ContactFormProps {
-  setOpen?: (open: boolean) => void | ''
+  setOpen?: (open: boolean) => void
 }
 
 export default function ContactForm({ setOpen }: ContactFormProps) {
-  // 1. Define your form.
+  const [loading, setLoading] = useState(false)
+
   const form = useForm<zContactSchema>({
     mode: 'onBlur',
     resolver: zodResolver(contactSchema),
@@ -37,15 +41,33 @@ export default function ContactForm({ setOpen }: ContactFormProps) {
     },
   })
 
-  // 2. Define a submit handler.
-  function onSubmit(values: zContactSchema) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    console.log(values)
+  const { execute, status } = useAction(sendEmail, {
+    onExecute: () => {
+      setLoading(true)
+    },
+    onSuccess: ({ data }) => {
+      if (data?.success) {
+        toast.success('Email sent!', {
+          description: `Thanks for reaching out, ${data.success.name}`,
+        })
+        setLoading(false)
+      }
+    },
+
+    onError: (error) => {
+      console.log(error)
+      toast.error('Something went wrong')
+      setLoading(false)
+    },
+  })
+
+  async function onSubmit(values: zContactSchema) {
+    execute(values)
 
     if (setOpen) setOpen(false)
-
-    toast.success(`Thanks for contacting me ${values.name}`)
+    toast.success(`Thanks ${values.name}!`, {
+      description: `For reaching out me, `,
+    })
   }
 
   return (
@@ -106,11 +128,11 @@ export default function ContactForm({ setOpen }: ContactFormProps) {
 
             <div className="flex">
               <Button
-                disabled={!form.formState.isValid || !form.formState.isDirty}
+                disabled={!form.formState.isValid}
                 type="submit"
-                className="w-full"
+                className="w-full rounded-full py-3"
               >
-                Send Message
+                {loading ? <Loader className="animate-spin" /> : 'Send Message'}
               </Button>
             </div>
           </div>
