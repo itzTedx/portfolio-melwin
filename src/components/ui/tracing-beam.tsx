@@ -118,9 +118,9 @@ export const TracingBeam = ({
           </defs>
         </svg>
       </div>
-      <main ref={contentRef} className="max-w-6xl mx-auto">
+      <div ref={contentRef} className="max-w-6xl mx-auto">
         {children}
-      </main>
+      </div>
     </motion.div>
   )
 }

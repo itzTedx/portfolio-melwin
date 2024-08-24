@@ -84,12 +84,14 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {/* <ScrollBar /> */}
-          <Header />
-          <Navbar />
-          {children}
-          <Footer />
-          <Toaster />
-          <ScrollToTop />
+          <div vaul-drawer-wrapper="">
+            <Header />
+            <Navbar />
+            {children}
+            <Footer />
+            <Toaster />
+            <ScrollToTop />
+          </div>
           <BreakpointIndicator />
         </ThemeProvider>
       </body>

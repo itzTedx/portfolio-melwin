@@ -9,7 +9,7 @@ import Skills from './_components/skills'
 
 export default function Home() {
   return (
-    <>
+    <main>
       <TracingBeam className="md:px-4">
         <HeroSection />
         <AboutSection />
@@ -19,6 +19,6 @@ export default function Home() {
         <Skills />
       </TracingBeam>
       <ContactSection />
-    </>
+    </main>
   )
 }

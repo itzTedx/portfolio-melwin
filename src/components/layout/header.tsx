@@ -35,7 +35,7 @@ function Header() {
       </div> */}
       <div className="container flex items-center justify-between w-full">
         <div className="flex items-center flex-shrink-0 gap-4">
-          <Drawer shouldScaleBackground={true}>
+          <Drawer>
             <DrawerTrigger asChild>
               <Button
                 variant="outline"
