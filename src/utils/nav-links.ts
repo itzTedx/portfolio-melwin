@@ -2,45 +2,44 @@ export const links = [
   {
     id: 1,
     title: 'About',
-    href: '/#about',
+    href: '/about',
   },
   {
     id: 2,
-    title: 'Experience',
-    href: '/#experience',
+    title: 'Works',
+    href: '/works',
   },
   {
     id: 3,
-    title: 'Skills',
-    href: '/#skills',
+    title: 'Blogs',
+    href: '/blogs',
   },
   {
     id: 4,
-    title: 'Education',
-    href: '/#education',
-  },
-  {
-    id: 5,
-    title: 'Projects',
-    href: '/#projects',
+    title: 'Contact',
+    href: '/contact',
   },
 ]
 
 export const footerLinks = [
   {
-    title: 'Facebook',
-    href: '/',
-  },
-  {
-    title: 'LinkedIn',
-    href: '/',
+    title: 'Github',
+    href: 'https://github.com/itzTedx',
   },
   {
     title: 'Instagram',
-    href: '/',
+    href: 'https://www.instagram.com/itzTed._x',
   },
   {
-    title: 'Twitter',
-    href: '/',
+    title: 'Linkedin',
+    href: 'https://www.linkedin.com/in/melwin-af/',
+  },
+  {
+    title: 'Behance',
+    href: 'https://www.behance.net/melwinaf',
+  },
+  {
+    title: 'Youtube',
+    href: 'https://www.youtube.com/@NammaPayakaDiaries',
   },
 ]

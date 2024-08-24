@@ -13,13 +13,6 @@ export const personalData = {
   behance: 'https://www.behance.net/melwinaf',
   youtube: 'https://www.youtube.com/@NammaPayakaDiaries',
 
-  // social: [
-  //   { github: 'https://github.com/itzTedx' },
-  //   { instagram: 'https://www.instagram.com/' },
-  //   { linkedIn: 'https://www.linkedin.com/in/melwin-af/' },
-  //   { behance: 'https://www.linkedin.com/in/melwin-af/' },
-  // ],
-
   resume: '/Resume-Melwin.pdf',
 }
 
@@ -108,7 +101,7 @@ export const experiences = [
     id: 1,
     title: 'Graphic Designer and Marketing',
     company: 'Digital Desk, Dubai.',
-    duration: '(Jan 2023 - Mar 2024)',
+    duration: 'Jan’23 - Mar’24',
     description:
       'Conceptualize & produce captivating designs for digital & print media. Manage printing process & ensure high-quality output. Proficient in Adobe Creative Suite. Strong communication & organizational skills. Passionate about creativity & innovation.',
   },
@@ -116,7 +109,7 @@ export const experiences = [
     id: 2,
     title: 'Graphic Designer',
     company: 'Zoomin Editing Lab, Tamil Nadu.',
-    duration: '(May 2020 - Dec 2022)',
+    duration: 'May’20 - Dec’22',
     description:
       'Crafted bespoke designs tailored to local businesses, encompassing poster,title, logo, album, brochure, and social media post designs. Delivered visually compelling solutions that resonated with client`s brand identities and objectives.',
   },
@@ -124,7 +117,7 @@ export const experiences = [
     id: 3,
     title: 'Designer and Junior Video Editor',
     company: 'Dreampixel, Tamil Nadu',
-    duration: '(May 2019 - Mar 2020)',
+    duration: 'May’19 - Mar’20',
     description:
       'Assisted the lead video editor with various tasks including trimming scenes and color grading, adding sound effects, graphics, reviewing video footage prior to publication.',
   },

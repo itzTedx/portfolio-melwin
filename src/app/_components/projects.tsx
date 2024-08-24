@@ -6,11 +6,11 @@ import ProjectsTitle from '@/components/projects-title'
 const Projects = () => {
   return (
     <div id="projects" className="relative z-50 my-12 lg:my-24 ">
-      <div className="sticky -top-36">
+      <div className="sticky -top-48 md:-top-36">
         <ProjectsTitle />
       </div>
 
-      <div className="px-8 pt-24 lg:px-0">
+      <div className="px-6 pt-24 lg:px-0">
         <div className="flex flex-col gap-4">
           {projectsData.map((project, index) => (
             <div

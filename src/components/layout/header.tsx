@@ -1,17 +1,22 @@
-'use client'
-
 import Image from 'next/image'
 import Link from 'next/link'
 
-import useScroll from '@/hooks/use-scroll'
 import { cn } from '@/lib/utils'
 
 import { ModeToggle } from '@/components/layout/theme-toggle'
+import { GiHamburgerMenu } from 'react-icons/gi'
+
+import {
+  Drawer,
+  DrawerContent,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from '@/components/ui/drawer'
 import { links } from '@/utils/nav-links'
+import { Button } from '../ui/button'
 
 function Header() {
-  const isScrolled = useScroll(100, 250)
-
   return (
     <header
       className={cn('w-full py-3 transition-all duration-700 ease-in-out')}
@@ -20,16 +25,46 @@ function Header() {
           'background-color, backdrop-filter, padding-top, padding-bottom, top',
       }}
     >
-      <div
+      {/* <div
         className={cn(
           'flex justify-center -z-40 transition-opacity duration- 500 ease-in-out',
           isScrolled ? 'opacity-100' : 'opacity-0'
         )}
       >
         <div className="absolute bottom-0 w-1/2 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
-      </div>
+      </div> */}
       <div className="container flex items-center justify-between w-full">
-        <div className="flex items-center flex-shrink-0">
+        <div className="flex items-center flex-shrink-0 gap-4">
+          <Drawer shouldScaleBackground={true}>
+            <DrawerTrigger asChild>
+              <Button
+                variant="outline"
+                className="text-foreground p-3 block md:hidden"
+              >
+                <GiHamburgerMenu />
+              </Button>
+            </DrawerTrigger>
+            <DrawerContent>
+              <DrawerHeader>
+                <DrawerTitle>
+                  <Link
+                    href="/"
+                    className="px-4 py-2 -mx-4 text-3xl font-extrabold text-foreground font-bricolage"
+                  >
+                    Melwin af
+                  </Link>
+                </DrawerTitle>
+              </DrawerHeader>
+              <ul className="px-6 pb-4 text-center font-bold font-monument tracking-widest space-y-6 text-lg">
+                {links.map((link, index) => (
+                  <li className="px-4 py-3" key={index}>
+                    <Link href={link.href}>{link.title}</Link>
+                  </li>
+                ))}
+              </ul>
+            </DrawerContent>
+          </Drawer>
+
           <Link
             href="/"
             className="px-4 py-2 -mx-4 text-3xl font-extrabold text-foreground font-bricolage"

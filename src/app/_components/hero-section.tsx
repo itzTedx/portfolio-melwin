@@ -6,16 +6,9 @@ import { cn } from '@/lib/utils'
 import { personalData } from '@/utils'
 import Image from 'next/image'
 import Link from 'next/link'
-import { MdDownload } from 'react-icons/md'
-import { RiContactsFill } from 'react-icons/ri'
+import HeroTextAnimation from './hero-text-animation'
 
 function HeroSection() {
-  const designations = [
-    'Graphic Designer',
-    'Visual Creator',
-    'UI/UX Designer',
-    'Web Developer',
-  ]
   return (
     <section className="relative flex flex-col items-center justify-center my-4 md:my-12">
       <Image
@@ -34,7 +27,7 @@ function HeroSection() {
           </span>
 
           <br />
-          <FlipWords words={designations} />
+          <HeroTextAnimation />
         </h1>
         <p className="font-light leading-7 md:leading-8 text-balance text-muted-foreground w-[30ch] sm:w-[50ch]">
           In a digital world where the focus often lies on an efficient designs,
@@ -52,24 +45,22 @@ function HeroSection() {
           >
             <Link
               href="#contact"
-              className="font-bold flex items-center gap-1 hover:gap-3 uppercase text-sm transition-all text-secondary-foreground duration-200 ease-out px-4 py-2 rounded-[inherit] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2  focus:ring-offset-secondary-foreground"
+              className="font-bold flex items-center gap-1 hover:gap-3 text-sm transition-all text-secondary-foreground duration-200 ease-out px-4 md:px-6 py-2.5 rounded-[inherit] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary-foreground md:text-lg font-bricolage"
             >
               <span>Contact me</span>
-              <RiContactsFill size={16} />
             </Link>
           </HoverBorderGradient>
 
           <Link
             className={cn(
               buttonVariants({ variant: 'shimmer' }),
-              'font-bold items-center gap-1 hover:gap-3  uppercase text-sm transition-all text-violet-200 bg-primary ease-out'
+              'font-bold items-center gap-1 hover:gap-3 text-sm md:text-lg transition-all text-violet-200 bg-primary ease-out md:px-6 py-2.5 font-bricolage'
             )}
             role="button"
             target="_blank"
             href={personalData.resume}
           >
             <span>Get Resume</span>
-            <MdDownload size={16} />
           </Link>
         </div>
       </div>

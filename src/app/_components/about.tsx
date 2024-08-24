@@ -1,5 +1,8 @@
-import Lightbox from '@/components/lightbox'
 import AnimatedBorderTrail from '@/components/ui/animated-trail-border'
+import dynamic from 'next/dynamic'
+
+const Particles = dynamic(() => import('@/components/particles'))
+const Lightbox = dynamic(() => import('@/components/lightbox'))
 
 function AboutSection() {
   return (
@@ -8,7 +11,7 @@ function AboutSection() {
         <AnimatedBorderTrail
           trailSize="sm"
           trailColor="#8b5cf6"
-          className="rotate-90"
+          className="rotate-90 pointer-events-none"
           contentClassName="p-2 px-5 bg-secondary w-fit text-white text-xl rounded-md font-monument font-light tracking-wider"
         >
           ABOUT ME
@@ -42,7 +45,7 @@ function AboutSection() {
             contribute creatively while advancing my career.
           </p>
         </div>
-        <div className="flex justify-center order-1 md:justify-start lg:order-2">
+        <div className="flex justify-center order-1 lg:justify-start lg:order-2">
           <div className="relative order-1 border rounded-lg lg:order-2 from-background bg-gradient-to-r to-primary/5 group">
             <div className="flex flex-row">
               <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-pink-500 to-violet-600"></div>
@@ -61,6 +64,7 @@ function AboutSection() {
           </div>
         </div>
       </div>
+      <Particles className="absolute inset-0 pointer-events-none" />
     </div>
   )
 }

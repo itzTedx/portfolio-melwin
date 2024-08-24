@@ -1,20 +1,25 @@
 'use client'
 
+import { usePathname } from 'next/navigation'
+
+import { motion } from 'framer-motion'
+
 import useScroll from '@/hooks/use-scroll'
 import { cn } from '@/lib/utils'
 import { links } from '@/utils/nav-links'
 import Link from 'next/link'
 
-export default function Navbar() {
+const Navbar = () => {
+  const pathname = usePathname()
   const isScrolled = useScroll(100, 0)
 
   return (
     <nav
       className={cn(
-        'z-[999999] fixed hidden sm:block left-1/2 -translate-x-1/2 rounded-full  py-2 px-4 top-2 lg:top-3',
+        'z-[999999] fixed hidden md:block left-1/2 -translate-x-1/2 rounded-full py-3 px-5 top-3 transition-all duration-500 ease-in-out',
         isScrolled
-          ? 'bg-background/50 backdrop-blur-md border mt-0'
-          : 'bg-transparent backdrop-blur-0 mt-1'
+          ? 'bg-background/50 backdrop-blur-md border-b'
+          : 'bg-transparent backdrop-blur-0'
       )}
       style={{
         transitionProperty: 'background-color, backdrop-filter, margin-top',
@@ -22,29 +27,50 @@ export default function Navbar() {
     >
       <div
         className={cn(
-          'flex justify-center -z-40 transition-opacity duration- 500 ease-in-out',
+          'flex justify-center -z-40 transition-opacity duration-500 ease-in-out',
           isScrolled ? 'opacity-100' : 'opacity-0'
         )}
       >
         <div className="absolute bottom-0 w-1/2 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
       </div>
-      <ul
-        className="flex-col items-start hidden text-sm md:flex max-h-0 md:mt-0 md:h-auto md:max-h-screen md:w-auto md:flex-row md:space-x-1 md:border-0"
-        id="navbar"
-      >
-        {links.map((nav) => (
-          <li key={nav.id}>
-            <Link
-              className="block px-4 py-2 transition-colors rounded-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus:ring-offset-secondary-foreground"
-              href={nav.href}
-            >
-              <div className="text-sm transition-colors duration-300 text-foreground hover:text-primary">
-                {nav.title}
-              </div>
-            </Link>
-          </li>
-        ))}
+      <ul className="flex flex-row items-center bg-transparent w-full">
+        {links.map((link, index) => {
+          const active = link.href === pathname
+
+          return (
+            <li key={link.id}>
+              <Link
+                href={link.href}
+                className={'flex gap-1.5 items-center relative px-4'}
+              >
+                <span
+                  className={cn(
+                    active && 'text-foreground z-10',
+                    'hidden sm:block'
+                  )}
+                >
+                  {link.title}
+                </span>
+                {active ? <Span /> : null}
+              </Link>
+            </li>
+          )
+        })}
       </ul>
     </nav>
+  )
+}
+
+export default Navbar
+
+const Span = () => {
+  return (
+    <motion.span
+      layoutId="pill-tab"
+      transition={{ type: 'spring', duration: 0.5 }}
+      className={cn(
+        'absolute left-1/2 -translate-x-1/2 -bottom-4 z-0 size-2 bg-gradient-to-br rounded-full bg-amber-400 -ml-[2px]'
+      )}
+    />
   )
 }

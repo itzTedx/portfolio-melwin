@@ -3,7 +3,7 @@ import ScrollBar from '@/components/layout/custom-scroll-bar'
 export default function TestPage() {
   return (
     <>
-      {/* <ScrollBar /> */}
+      <ScrollBar />
       <div className="min-h-screen">TestPage</div>
       <div className="min-h-screen">TestPage 2</div>
     </>

@@ -22,7 +22,7 @@ const buttonVariants = cva(
           'inline-flex animate-shimmer items-center justify-center rounded-full bg-[linear-gradient(110deg,rgba(0,0,0,0),45%,rgba(255,255,255,0.5),55%,rgba(0,0,0,0))] bg-[length:200%_100%] font-medium text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 rounded-full text-sm',
       },
       size: {
-        default: 'h-10 px-4 py-2',
+        default: 'px-4 py-2',
         sm: 'h-9 rounded-md px-3',
         lg: 'h-11 rounded-full px-8',
         icon: 'h-10 w-10',

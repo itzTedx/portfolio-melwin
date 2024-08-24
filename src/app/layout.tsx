@@ -4,18 +4,18 @@ import './style/globals.css'
 
 import { bricolage, monument, plusJakarta } from '@/fonts/fonts'
 import { cn } from '@/lib/utils'
+import { siteConfig } from '@/utils/siteConfig'
 
 import LenisProvider from '@/provider/lenis-provider'
 import { ThemeProvider } from '@/provider/theme-provider'
 
-import BreakpointIndicator from '@/components/breakpoint-indicator'
+import ScrollBar from '@/components/layout/custom-scroll-bar'
+import Header from '@/components/layout/header'
 import Footer from '@/components/layout/footer'
 import { Toaster } from '@/components/ui/sonner'
-
-import Header from '@/components/layout/header'
+import BreakpointIndicator from '@/components/breakpoint-indicator'
 import Navbar from '@/components/layout/navbar'
-import { siteConfig } from '@/utils/siteConfig'
-import ScrollBar from '@/components/layout/custom-scroll-bar'
+import ScrollToTop from '@/components/layout/scroll-to-top'
 
 export const metadata: Metadata = {
   title: 'Portfolio of Melwin Af - Graphic Designer',
@@ -83,13 +83,13 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <ScrollBar />
+          {/* <ScrollBar /> */}
           <Header />
           <Navbar />
           {children}
           <Footer />
           <Toaster />
-          {/* <ScrollToTop /> */}
+          <ScrollToTop />
           <BreakpointIndicator />
         </ThemeProvider>
       </body>
