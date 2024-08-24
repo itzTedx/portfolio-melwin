@@ -1,12 +1,23 @@
-import Social from '@/components/social-icons'
-import { buttonVariants } from '@/components/ui/button'
-import { FlipWords } from '@/components/ui/flip-words'
-import { HoverBorderGradient } from '@/components/ui/hover-border-gradient'
-import { cn } from '@/lib/utils'
-import { personalData } from '@/utils'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import Social from '@/components/social-icons'
+import { buttonVariants } from '@/components/ui/button'
+import { HoverBorderGradient } from '@/components/ui/hover-border-gradient'
 import HeroTextAnimation from './hero-text-animation'
+
+import ContactForm from '@/components/contact-form'
+import {
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from '@/components/ui/drawer'
+import { cn } from '@/lib/utils'
+import { personalData } from '@/utils'
+import ContactButton from './hero-contact-button'
 
 function HeroSection() {
   return (
@@ -38,18 +49,7 @@ function HeroSection() {
         <Social className="my-9 md:my-12" />
 
         <div className="flex items-center justify-center w-full gap-3">
-          <HoverBorderGradient
-            containerClassName="rounded-full"
-            as="div"
-            className="bg-background"
-          >
-            <Link
-              href="#contact"
-              className="font-bold flex items-center gap-1 hover:gap-3 text-sm transition-all text-secondary-foreground duration-200 ease-out px-4 md:px-6 py-2.5 rounded-[inherit] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary-foreground md:text-lg font-bricolage"
-            >
-              <span>Contact me</span>
-            </Link>
-          </HoverBorderGradient>
+          <ContactButton />
 
           <Link
             className={cn(

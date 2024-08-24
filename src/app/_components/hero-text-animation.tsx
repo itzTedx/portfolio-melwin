@@ -1,11 +1,10 @@
 'use client'
 
+import TextFlip from '@/components/text-flip'
 import { FlipWords } from '@/components/ui/flip-words'
+import { Skeleton } from '@/components/ui/skeleton'
 import { useIsMounted } from '@/hooks/useIsMounted'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
-import dynamic from 'next/dynamic'
-
-const TextFlip = dynamic(() => import('@/components/text-flip'))
 
 export default function HeroTextAnimation() {
   const isMounted = useIsMounted()
@@ -17,7 +16,11 @@ export default function HeroTextAnimation() {
     'Web Developer',
   ]
   if (!isMounted) {
-    return null
+    return (
+      <div className="flex flex-col overflow-hidden h-[31px] md:h-16 text-accent">
+        Visual Creator
+      </div>
+    )
   }
 
   if (isMobile) return <TextFlip text={designations} />

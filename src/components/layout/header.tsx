@@ -4,17 +4,6 @@ import Link from 'next/link'
 import { cn } from '@/lib/utils'
 
 import { ModeToggle } from '@/components/layout/theme-toggle'
-import { GiHamburgerMenu } from 'react-icons/gi'
-
-import {
-  Drawer,
-  DrawerContent,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from '@/components/ui/drawer'
-import { links } from '@/utils/nav-links'
-import { Button } from '../ui/button'
 
 function Header() {
   return (
@@ -35,36 +24,6 @@ function Header() {
       </div> */}
       <div className="container flex items-center justify-between w-full">
         <div className="flex items-center flex-shrink-0 gap-4">
-          <Drawer>
-            <DrawerTrigger asChild>
-              <Button
-                variant="outline"
-                className="text-foreground p-3 block md:hidden"
-              >
-                <GiHamburgerMenu />
-              </Button>
-            </DrawerTrigger>
-            <DrawerContent>
-              <DrawerHeader>
-                <DrawerTitle>
-                  <Link
-                    href="/"
-                    className="px-4 py-2 -mx-4 text-3xl font-extrabold text-foreground font-bricolage"
-                  >
-                    Melwin af
-                  </Link>
-                </DrawerTitle>
-              </DrawerHeader>
-              <ul className="px-6 pb-4 text-center font-bold font-monument tracking-widest space-y-6 text-lg">
-                {links.map((link, index) => (
-                  <li className="px-4 py-3" key={index}>
-                    <Link href={link.href}>{link.title}</Link>
-                  </li>
-                ))}
-              </ul>
-            </DrawerContent>
-          </Drawer>
-
           <Link
             href="/"
             className="px-4 py-2 -mx-4 text-3xl font-extrabold text-foreground font-bricolage"

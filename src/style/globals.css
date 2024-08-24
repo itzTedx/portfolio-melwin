@@ -21,7 +21,7 @@
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 20% 98%;
     --border: 249, 68%, 86%;
-    --input: 220 13% 91%;
+    --input: 220 13% 80%;
     --ring: 262.1 83.3% 57.8%;
     --radius: 0.75rem;
     --chart-1: 12 76% 61%;
@@ -46,7 +46,7 @@
     --muted-foreground: 217.9 10.6% 64.9%;
     --accent: 188.7 94.5% 52.7%;
     --accent-foreground: 210 20% 98%;
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 73.7% 41.8%;
     --destructive-foreground: 210 20% 98%;
     --border: 249, 28%, 18%;
     --input: 215 27.9% 16.9%;
@@ -64,7 +64,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply !bg-background text-foreground;
   }
 }
 

@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 
-import './style/globals.css'
+import '../style/globals.css'
 
 import { bricolage, monument, plusJakarta } from '@/fonts/fonts'
 import { cn } from '@/lib/utils'
@@ -89,7 +89,7 @@ export default function RootLayout({
             <Navbar />
             {children}
             <Footer />
-            <Toaster />
+            <Toaster richColors />
             <ScrollToTop />
           </div>
           <BreakpointIndicator />
