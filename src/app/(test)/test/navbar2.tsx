@@ -38,10 +38,10 @@ export default function Navbar() {
           <li key={nav.id}>
             <Link
               className="block px-4 py-2 transition-colors rounded-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus:ring-offset-secondary-foreground relative text-sm duration-300 text-foreground hover:text-amber-500"
-              href={nav.href}
+              href={nav.link}
             >
               <span className="" />
-              {nav.title}
+              {nav.name}
             </Link>
           </li>
         ))}
