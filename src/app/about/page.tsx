@@ -88,7 +88,7 @@ export default function About() {
     },
   ];
   return (
-    <section className="dot-animation">
+    <section className="bg-dot">
       <span className="absolute inset-0 -z-10 bg-[radial-gradient(200px_100px_at_50%_0%,#131f33_20%,#131e3100)] md:bg-[radial-gradient(500px_200px_at_50%_0%,#131f33_20%,#131e3100)]" />
       <div className="h-fit w-full">
         <Timeline data={data} />

@@ -213,7 +213,7 @@ type DialogContainerProps = {
 };
 
 function DialogContainer({ children }: DialogContainerProps) {
-  const { isOpen, uniqueId } = useDialog();
+  const { isOpen, setIsOpen, uniqueId } = useDialog();
   const isMounted = useIsMounted();
 
   if (!isMounted) return null;

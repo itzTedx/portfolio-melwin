@@ -102,7 +102,7 @@
 .glows::after,
 .glows::before {
   --alpha: 0;
-  content: '';
+  content: "";
   background: conic-gradient(
     from 180deg at 50% 70%,
     #f626af 0deg,
@@ -134,7 +134,7 @@
   position: absolute;
   inset: 0;
   border: 2px solid transparent;
-  content: '';
+  content: "";
   border-radius: 12px;
   pointer-events: none;
   background: #84738c;
@@ -159,7 +159,7 @@
 
 .glow-card::after {
   --bg-size: 100%;
-  content: '';
+  content: "";
   pointer-events: none;
   position: absolute;
   background: conic-gradient(
@@ -257,7 +257,7 @@
 }
 
 @property --angle {
-  syntax: '<angle>';
+  syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
 }
@@ -283,17 +283,17 @@ html.lenis body {
   pointer-events: none;
 }
 
-.dot-animation {
+.bg-dot {
   --dot-size: 1.25px;
 }
 @media (min-width: 640px) {
-  .dot-animation {
+  .bg-dot {
     --dot-size: 2px;
   }
 }
 
-.dot-animation:after {
-  content: '';
+.bg-dot:after {
+  content: "";
   animation: dotScroll 16s linear infinite;
   background-image: radial-gradient(
     circle,
@@ -316,82 +316,82 @@ html.lenis body {
   }
 }
 
-.dot-animation:after {
+.bg-dot:after {
   position: absolute;
   inset: 0;
   z-index: -10;
 }
 
 @media (min-width: 768px) {
-  .dot-animation:after {
+  .bg-dot:after {
     background-size: calc(8.3333333333% - 1px) 140px;
   }
 }
 
 @media (min-width: 768px) {
-  .dot-animation:after {
+  .bg-dot:after {
     background-size: calc(8.3333333333% - 1px) 140px;
   }
 }
 
 @media (min-width: 640px) {
-  .dot-animation:after {
+  .bg-dot:after {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
 @media (min-width: 768px) {
-  .dot-animation:after {
+  .bg-dot:after {
     padding-left: 3rem;
     padding-right: 3rem;
   }
 }
 
-.dot-animation:after {
+.bg-dot:after {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
 }
 
 @media (min-width: 360px) {
-  .dot-animation:after {
+  .bg-dot:after {
     max-width: 360px;
   }
 }
 
 @media (min-width: 400px) {
-  .dot-animation:after {
+  .bg-dot:after {
     max-width: 400px;
   }
 }
 
 @media (min-width: 640px) {
-  .dot-animation:after {
+  .bg-dot:after {
     max-width: 640px;
   }
 }
 
 @media (min-width: 768px) {
-  .dot-animation:after {
+  .bg-dot:after {
     max-width: 768px;
   }
 }
 
 @media (min-width: 1024px) {
-  .dot-animation:after {
+  .bg-dot:after {
     max-width: 1024px;
   }
 }
 
 @media (min-width: 1280px) {
-  .dot-animation:after {
+  .bg-dot:after {
     max-width: 1280px;
   }
 }
 
 @media (min-width: 1536px) {
-  .dot-animation:after {
+  .bg-dot:after {
     max-width: 1536px;
   }
 }

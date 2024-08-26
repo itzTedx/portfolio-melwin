@@ -1,39 +1,39 @@
-'use client'
-import Image from 'next/image'
-import React, { useState } from 'react'
+"use client";
+import Image from "next/image";
+import React, { useState } from "react";
 import {
   motion,
   useTransform,
   AnimatePresence,
   useMotionValue,
   useSpring,
-} from 'framer-motion'
-import { skillsImage } from '@/utils/skill-icons'
+} from "framer-motion";
+import { skillsImage } from "@/utils/skill-icons";
 
 export const AnimatedTooltip = ({ tools }: { tools: string[] }) => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-  const springConfig = { stiffness: 100, damping: 5 }
-  const x = useMotionValue(0) // going to set this value on mouse move
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const springConfig = { stiffness: 100, damping: 5 };
+  const x = useMotionValue(0); // going to set this value on mouse move
   // rotate the tooltip
   const rotate = useSpring(
     useTransform(x, [-100, 100], [-45, 45]),
-    springConfig
-  )
+    springConfig,
+  );
   // translate the tooltip
   const translateX = useSpring(
     useTransform(x, [-100, 100], [-50, 50]),
-    springConfig
-  )
+    springConfig,
+  );
   const handleMouseMove = (event: any) => {
-    const halfWidth = event.target.offsetWidth / 2
-    x.set(event.nativeEvent.offsetX - halfWidth) // set the x value, which is then used in transform and rotate
-  }
+    const halfWidth = event.target.offsetWidth / 2;
+    x.set(event.nativeEvent.offsetX - halfWidth); // set the x value, which is then used in transform and rotate
+  };
 
   return (
     <>
       {tools.map((tool, idx) => (
         <div
-          className="-mr-4  relative group"
+          className="group relative -mr-4"
           key={tool}
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -47,7 +47,7 @@ export const AnimatedTooltip = ({ tools }: { tools: string[] }) => {
                   y: 0,
                   scale: 1,
                   transition: {
-                    type: 'spring',
+                    type: "spring",
                     stiffness: 260,
                     damping: 10,
                   },
@@ -56,26 +56,18 @@ export const AnimatedTooltip = ({ tools }: { tools: string[] }) => {
                 style={{
                   translateX: translateX,
                   rotate: rotate,
-                  whiteSpace: 'nowrap',
+                  whiteSpace: "nowrap",
                 }}
-                className="absolute -top-10 -left-1/2 translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md dark:bg-black bg-white z-50 shadow-xl px-4 py-2"
+                className="absolute -left-1/2 -top-10 z-50 flex translate-x-1/2 flex-col items-center justify-center rounded-md bg-white px-4 py-2 text-xs shadow-xl dark:bg-black"
               >
-                <div className="absolute inset-x-10 z-30 w-[30%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px " />
-                <div className="absolute left-6 w-[50%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px " />
-                <div className="font-bold text-white relative z-30 text-base">
-                  {/* <Image
-                    src={skillsImage(tool)}
-                    alt={tool}
-                    width={40}
-                    height={40}
-                    className="size-6"
-                  /> */}
-                </div>
-                <div className="text-foreground text-xs">{tool}</div>
+                <div className="absolute inset-x-10 -bottom-px z-30 h-px w-[30%] bg-gradient-to-r from-transparent via-emerald-500 to-transparent" />
+                <div className="absolute -bottom-px left-6 z-30 h-px w-[50%] bg-gradient-to-r from-transparent via-sky-500 to-transparent" />
+
+                <div className="text-xs text-foreground">{tool}</div>
               </motion.div>
             )}
           </AnimatePresence>
-          <div className="relative ml-1 flex size-10 shrink-0 scale-100 select-none appearance-none items-center justify-center rounded-full border bg-primary-foreground transition-colors hover:bg-muted active:scale-[0.98] ">
+          <div className="relative ml-1 flex size-10 shrink-0 scale-100 select-none appearance-none items-center justify-center rounded-full border bg-primary-foreground/50 backdrop-blur-md transition-colors hover:bg-muted active:scale-[0.98]">
             <Image
               onMouseMove={handleMouseMove}
               height={40}
@@ -88,5 +80,5 @@ export const AnimatedTooltip = ({ tools }: { tools: string[] }) => {
         </div>
       ))}
     </>
-  )
-}
+  );
+};
