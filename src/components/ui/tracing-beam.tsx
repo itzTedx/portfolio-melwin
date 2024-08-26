@@ -1,13 +1,7 @@
 'use client'
-import React, { useEffect, useRef, useState } from 'react'
-import {
-  motion,
-  useTransform,
-  useScroll,
-  useVelocity,
-  useSpring,
-} from 'framer-motion'
 import { cn } from '@/lib/utils'
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
+import React, { useEffect, useRef, useState } from 'react'
 
 export const TracingBeam = ({
   children,
@@ -19,7 +13,7 @@ export const TracingBeam = ({
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start start', 'end start'],
+    offset: ['start start', '110% start'],
   })
 
   const contentRef = useRef<HTMLDivElement>(null)

@@ -5,7 +5,10 @@ import ProjectsTitle from '@/components/projects-title'
 
 const Projects = () => {
   return (
-    <div id="projects" className="relative z-50 my-12 lg:my-24 ">
+    <section
+      id="projects"
+      className="relative z-50 my-12 lg:my-24 dot-animation"
+    >
       <div className="sticky -top-48 md:-top-36">
         <ProjectsTitle />
       </div>
@@ -25,7 +28,7 @@ const Projects = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

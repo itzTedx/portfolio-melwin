@@ -6,7 +6,10 @@ const Lightbox = dynamic(() => import('@/components/lightbox'))
 
 function AboutSection() {
   return (
-    <div id="about" className="relative px-8 pb-6 md:py-12 lg:py-16 lg:px-0">
+    <section
+      id="about"
+      className="relative px-8 pb-6 md:py-12 lg:py-16 lg:px-0"
+    >
       <div className="absolute flex-col items-center hidden top-[8.5rem] lg:flex -right-8">
         <AnimatedBorderTrail
           trailSize="sm"
@@ -65,7 +68,7 @@ function AboutSection() {
         </div>
       </div>
       <Particles className="absolute inset-0 pointer-events-none" />
-    </div>
+    </section>
   )
 }
 

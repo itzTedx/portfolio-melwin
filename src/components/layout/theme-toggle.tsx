@@ -1,23 +1,23 @@
-'use client'
+"use client";
 
-import * as React from 'react'
-import { Moon, Sun } from 'lucide-react'
-import { useTheme } from 'next-themes'
-import { GrSystem } from 'react-icons/gr'
+import * as React from "react";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { GrSystem } from "react-icons/gr";
 
-import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
-import { Button } from '@/components/ui/button'
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu'
+} from "@/components/ui/dropdown-menu";
 
 export function ModeToggle() {
-  const { setTheme } = useTheme()
-  const isMobile = useMediaQuery('(max-width: 768px)')
+  const { setTheme } = useTheme();
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   return (
     <DropdownMenu>
@@ -29,29 +29,29 @@ export function ModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        align={isMobile ? 'end' : 'center'}
-        className="space-y-2 p-2 z-[9999999999]"
+        align={isMobile ? "end" : "center"}
+        className="z-[9999999999] space-y-2 bg-white/50 p-2 backdrop-blur dark:bg-gray-950/50"
       >
         <DropdownMenuItem
-          onClick={() => setTheme('light')}
-          className="flex gap-2 cursor-pointer hover:bg-primary/20 px-3 py-2"
+          onClick={() => setTheme("light")}
+          className="flex cursor-pointer gap-2 px-3 py-2 hover:bg-primary/20"
         >
           <Sun className="h-[1.2rem] w-[1.2rem]" /> Light
         </DropdownMenuItem>
         <DropdownMenuItem
-          onClick={() => setTheme('dark')}
-          className="flex gap-2 cursor-pointer hover:bg-primary/20 px-3 py-2"
+          onClick={() => setTheme("dark")}
+          className="flex cursor-pointer gap-2 px-3 py-2 hover:bg-primary/20"
         >
-          <Moon className="w-[1.2rem] h-[1.2rem]" /> Dark
+          <Moon className="h-[1.2rem] w-[1.2rem]" /> Dark
         </DropdownMenuItem>
         <DropdownMenuItem
-          onClick={() => setTheme('system')}
-          className="flex gap-2 cursor-pointer hover:bg-primary/20 px-3 py-2"
+          onClick={() => setTheme("system")}
+          className="flex cursor-pointer gap-2 px-3 py-2 hover:bg-primary/20"
         >
-          <GrSystem className="w-[1.2rem] h-[1.2rem]" />
+          <GrSystem className="h-[1.2rem] w-[1.2rem]" />
           System
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
-  )
+  );
 }

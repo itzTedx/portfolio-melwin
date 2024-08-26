@@ -8,7 +8,7 @@ import { personalData } from '@/utils'
 
 function ContactSection() {
   return (
-    <div
+    <section
       id="contact"
       className="my-12 lg:my-16 relative text-white px-8 lg:px-0 max-w-5xl mx-auto"
     >
@@ -52,7 +52,7 @@ function ContactSection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

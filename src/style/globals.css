@@ -14,7 +14,7 @@
     --primary-foreground: 262.1 73.3% 98%;
     --secondary: 248, 84%, 92%;
     --secondary-foreground: 220.9 39.3% 11%;
-    --muted: 220 14.3% 95.9%;
+    --muted: 220 14.3% 78%;
     --muted-foreground: 220 8.9% 46.1%;
     --accent: 187.9 85.7% 53.3%;
     --accent-foreground: 220.9 39.3% 11%;
@@ -38,7 +38,7 @@
     --card-foreground: 210 20% 98%;
     --popover: 224 71.4% 4.1%;
     --popover-foreground: 210 20% 98%;
-    --primary: 263.4 70% 50.4%;
+    --primary: 258.3 89.5% 66.3%;
     --primary-foreground: 263.4 65.7% 9.8%;
     --secondary: 248, 54%, 17%;
     --secondary-foreground: 210 20% 98%;
@@ -281,4 +281,117 @@ html.lenis body {
 
 .lenis.lenis-smooth iframe {
   pointer-events: none;
+}
+
+.dot-animation {
+  --dot-size: 1.25px;
+}
+@media (min-width: 640px) {
+  .dot-animation {
+    --dot-size: 2px;
+  }
+}
+
+.dot-animation:after {
+  content: '';
+  animation: dotScroll 16s linear infinite;
+  background-image: radial-gradient(
+    circle,
+    hsla(var(--muted)) var(--dot-size),
+    transparent 0
+  );
+  background-size: calc(14.2857142857% - 1px) 100px;
+  background-position: 5px 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@keyframes dotScroll {
+  0% {
+    background-position-y: 140px;
+  }
+
+  to {
+    background-position-y: 0;
+  }
+}
+
+.dot-animation:after {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+}
+
+@media (min-width: 768px) {
+  .dot-animation:after {
+    background-size: calc(8.3333333333% - 1px) 140px;
+  }
+}
+
+@media (min-width: 768px) {
+  .dot-animation:after {
+    background-size: calc(8.3333333333% - 1px) 140px;
+  }
+}
+
+@media (min-width: 640px) {
+  .dot-animation:after {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .dot-animation:after {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.dot-animation:after {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 360px) {
+  .dot-animation:after {
+    max-width: 360px;
+  }
+}
+
+@media (min-width: 400px) {
+  .dot-animation:after {
+    max-width: 400px;
+  }
+}
+
+@media (min-width: 640px) {
+  .dot-animation:after {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .dot-animation:after {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .dot-animation:after {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .dot-animation:after {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .dot-animation:after {
+    max-width: 1536px;
+  }
 }

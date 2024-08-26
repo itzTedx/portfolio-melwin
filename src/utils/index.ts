@@ -61,7 +61,7 @@ export const projectsData = [
       'Vogue Fusion offers stylish wholesale dresses at unbeatable prices. We cater to boutique owners, event planners, and fashion enthusiasts seeking quality and value. Discover a curated selection that blends elegance with affordability',
     tools: ['Illustrator', 'Photoshop'],
     tag: 'Logo Design',
-    demo: '',
+    demo: 'https://www.behance.net/gallery/203973883/Vogue-Fusion-Brand-Presentation',
     image: '/image/vogue.jpg',
   },
   {

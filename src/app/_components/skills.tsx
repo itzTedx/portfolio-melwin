@@ -8,7 +8,7 @@ import HeadingCard from '@/components/heading-card'
 
 function Skills() {
   return (
-    <div
+    <section
       id="skills"
       className="relative z-50 border-t my-12 lg:my-24 px-8 lg:px-0"
     >
@@ -62,7 +62,7 @@ function Skills() {
           ))}
         </Marquee>
       </div>
-    </div>
+    </section>
   )
 }
 

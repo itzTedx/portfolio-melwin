@@ -2,7 +2,6 @@
 
 import TextFlip from '@/components/text-flip'
 import { FlipWords } from '@/components/ui/flip-words'
-import { Skeleton } from '@/components/ui/skeleton'
 import { useIsMounted } from '@/hooks/useIsMounted'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 
