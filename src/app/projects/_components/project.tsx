@@ -1,7 +1,7 @@
 import { Card, CardContent, CardDescription } from "@/components/ui/card";
 import { Link2, Mail } from "lucide-react";
 import Image from "next/image";
-import { BsLinkedin, BsTwitterX } from "react-icons/bs";
+import { BsLinkedin, BsMailbox, BsTwitterX } from "react-icons/bs";
 
 interface ProjectsCardProps {
   project: {
@@ -52,7 +52,7 @@ export default function Project({ project }: ProjectsCardProps) {
                 <Link2 />
               </div>
               <div className="group flex h-10 w-10 items-center justify-center rounded-lg bg-muted p-2 transition-colors duration-300 hover:border sm:h-12 sm:w-12">
-                <Mail />
+                <BsMailbox />
               </div>
             </div>
           </aside>
