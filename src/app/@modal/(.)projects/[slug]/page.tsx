@@ -1,4 +1,4 @@
-import getProjectBySlug from "@/actions/get-project";
+import { getProjectBySlug } from "@/actions/get-project";
 import { FullScreenModal } from "@/components/full-screen-modal";
 import { notFound } from "next/navigation";
 import ModalContent from "./_components/modal-content";

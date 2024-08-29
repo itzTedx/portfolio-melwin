@@ -85,7 +85,7 @@ export default function SwipeableStackCards() {
   };
 
   return (
-    <div className="relative size-60" style={{ perspective: 600 }}>
+    <div className="relative h-80 w-60" style={{ perspective: 600 }}>
       {cards.map((card, index) => {
         return (
           <CardRotate key={card.id} onSendToBack={() => sendToBack(card.id)}>
