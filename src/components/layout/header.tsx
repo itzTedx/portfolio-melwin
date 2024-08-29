@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
 
@@ -9,7 +7,6 @@ import { ModeToggle } from "@/components/layout/theme-toggle";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 function Header() {
-  const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <header
       className={cn(
@@ -21,15 +18,9 @@ function Header() {
           "background-color, backdrop-filter, padding-top, padding-bottom, top",
       }}
     >
-      {isMobile && (
-        <div
-          className={cn(
-            "-z-40 flex justify-center transition-opacity duration-500 ease-in-out",
-          )}
-        >
-          <div className="absolute bottom-0 h-px w-1/2 bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
-        </div>
-      )}
+      <div className={cn("-z-40 flex justify-center md:hidden")}>
+        <div className="absolute bottom-0 h-px w-1/2 bg-gradient-to-r from-transparent via-violet-500 to-transparent md:h-0" />
+      </div>
 
       <div className="container flex w-full items-center justify-between">
         <div className="flex flex-shrink-0 items-center gap-4">
