@@ -30,7 +30,7 @@ export default function Project({ project }: ProjectsCardProps) {
   const formattedDate = `${month}, ${year}`;
 
   return (
-    <Card className="group overflow-hidden" key={project.id}>
+    <Card className="group overflow-hidden p-12" key={project.id}>
       <Link href={`projects/${project.slug}`}>
         <CardContent>
           <div className="relative aspect-video">
@@ -41,13 +41,14 @@ export default function Project({ project }: ProjectsCardProps) {
               className="object-cover"
             />
           </div>
-          <div className="flex flex-col gap-2 p-4 transition-colors duration-300 group-hover:bg-muted/30 md:gap-3 md:p-6">
+          <div className="flex flex-col gap-2 p-4 md:gap-3 md:p-6">
             <CardTitle>{project.name}</CardTitle>
             <CardDescription>
               <span className="text-primary"> {project.tag} </span> ✦{"  "}
               {formattedDate}
             </CardDescription>
           </div>
+          <article></article>
         </CardContent>
       </Link>
     </Card>

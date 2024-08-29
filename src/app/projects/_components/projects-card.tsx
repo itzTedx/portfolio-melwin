@@ -33,7 +33,7 @@ export default function ProjectsCard({ project }: ProjectsCardProps) {
     <Card className="group overflow-hidden" key={project.id}>
       <Link href={`projects/${project.slug}`}>
         <CardContent>
-          <div className="relative aspect-video">
+          <div className="relative aspect-[16/7]">
             <Image
               src={project.image}
               fill
