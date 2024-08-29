@@ -1,5 +1,7 @@
 "use client";
 
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { Link2 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -21,25 +23,47 @@ export default function ShareIcons({ referer }: { referer: string }) {
   };
 
   return (
-    <div className="mt-20 hidden flex-col gap-2 text-muted-foreground sm:flex">
+    <div className="mt-9 flex gap-2 text-muted-foreground sm:mt-20 sm:flex-col">
       <Link
-        href="/"
-        className="group flex h-10 w-10 items-center justify-center rounded-lg bg-muted transition-colors duration-300 hover:border sm:h-12 sm:w-12"
+        href={`https://twitter.com/intent/tweet?url=${referer}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(
+          buttonVariants({
+            variant: "outline",
+            className:
+              "flex h-10 w-10 items-center justify-center rounded-lg border-muted bg-muted p-0 transition-colors duration-300 hover:border-muted-foreground/50 sm:h-12 sm:w-12",
+          }),
+        )}
       >
         <BsTwitterX className="size-[22px]" />
       </Link>
       <Link
         href="/"
-        className="group flex h-10 w-10 items-center justify-center rounded-lg bg-muted transition-colors duration-300 hover:border sm:h-12 sm:w-12"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(
+          buttonVariants({
+            variant: "outline",
+            className:
+              "flex h-10 w-10 items-center justify-center rounded-lg border-muted bg-muted p-0 transition-colors duration-300 hover:border-muted-foreground/50 sm:h-12 sm:w-12",
+          }),
+        )}
       >
-        <BsLinkedin className="size-[22px]" />
+        <BsLinkedin className="size-5" />
       </Link>
 
       <Link
         href={referer as string}
         onClick={handleCopyClick}
         scroll={false}
-        className="group relative flex h-10 w-10 items-center justify-center rounded-lg bg-muted transition-colors duration-300 hover:border sm:h-12 sm:w-12"
+        className={cn(
+          buttonVariants({
+            variant: "outline",
+            className:
+              "flex h-10 w-10 items-center justify-center rounded-lg border-muted bg-muted p-0 transition-colors duration-300 hover:border-muted-foreground/50 sm:h-12 sm:w-12",
+          }),
+        )}
       >
         <Link2 className="size-[22px]" />
         {showCopiedPopup && (
@@ -50,7 +74,13 @@ export default function ShareIcons({ referer }: { referer: string }) {
       </Link>
       <Link
         href={`mailto:?body=Hey!%0A%0ACheck%20out%20this%20awesome%20project:%20${referer}`}
-        className="group flex h-10 w-10 items-center justify-center rounded-lg bg-muted transition-colors duration-300 hover:border sm:h-12 sm:w-12"
+        className={cn(
+          buttonVariants({
+            variant: "outline",
+            className:
+              "flex h-10 w-10 items-center justify-center rounded-lg border-muted bg-muted p-0 transition-colors duration-300 hover:border-muted-foreground/50 sm:h-12 sm:w-12",
+          }),
+        )}
       >
         <MdMail className="size-[22px]" />
       </Link>

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Project from "../_components/project";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import AnimatedBorderTrail from "@/components/ui/animated-trail-border";
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
   const project = getProjectBySlug(params.slug);
@@ -22,7 +23,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           <ArrowLeft className="mr-2 size-4" /> Back to Projects
         </Link>
       </Button>
-      <Project project={project} key={project.id} />
+      <AnimatedBorderTrail duration="10s" trailSize="sm" trailColor="#8b5cf6">
+        <Project project={project} key={project.id} />
+      </AnimatedBorderTrail>
     </section>
   );
 }

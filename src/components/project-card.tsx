@@ -59,7 +59,7 @@ function ProjectCard({ project }: ProjectCardProps) {
               quality={1}
             />
             <div className="absolute bottom-0 z-50 flex w-full flex-grow flex-row items-end justify-between p-4 md:p-6">
-              <h3 className="rounded-md px-2.5 py-1.5 font-monument text-sm font-bold tracking-wide text-amber-500 backdrop-blur-md sm:px-4 sm:py-3 sm:text-xl">
+              <h3 className="rounded-md px-2.5 py-1.5 font-bricolage text-sm font-bold tracking-wide text-amber-500 backdrop-blur-md sm:px-4 sm:py-3 sm:text-xl">
                 {project.name}
               </h3>
 

@@ -2,6 +2,7 @@ import { getProjects } from "@/actions/get-project";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ProjectsCard from "./_components/projects-card";
+import AnimatedBorderTrail from "@/components/ui/animated-trail-border";
 
 export default function ProjectsPage() {
   const projects = getProjects();
@@ -11,7 +12,15 @@ export default function ProjectsPage() {
       <span className="absolute inset-0 -z-50 bg-[radial-gradient(200px_100px_at_50%_0%,#bfdbfe_20%,#131e3100)] dark:bg-[radial-gradient(200px_100px_at_50%_0%,#131f33_20%,#e0f2fe00)] md:bg-[radial-gradient(500px_200px_at_50%_0%,#bfdbfe_20%,#e0f2fe00)] dark:md:bg-[radial-gradient(500px_200px_at_50%_0%,#131f33_20%,#131e3100)]" />
 
       {[...projects, ...projects].map((project) => (
-        <ProjectsCard project={project} key={project.id} />
+        <AnimatedBorderTrail
+          key={project.id}
+          duration="10s"
+          trailSize="sm"
+          className="h-full w-full"
+          trailColor="#8b5cf6"
+        >
+          <ProjectsCard project={project} />
+        </AnimatedBorderTrail>
       ))}
 
       <div className="grid grid-cols-2 gap-6 pb-24 pt-9">

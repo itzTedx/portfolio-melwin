@@ -13,11 +13,11 @@ const buttonVariants = cva(
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
-          "border border hover:border-primary bg-background hover:bg-primary/10 hover:text-accent-foreground ",
+          "border hover:border-primary bg-background hover:bg-primary/10 hover:text-accent-foreground ",
         secondary:
           "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline px-0",
+        link: "text-link underline-offset-4 hover:underline hover:text-link-foreground !px-0",
         shimmer:
           "inline-flex animate-shimmer items-center justify-center rounded-full bg-[linear-gradient(110deg,rgba(0,0,0,0),45%,rgba(255,255,255,0.5),55%,rgba(0,0,0,0))] bg-[length:200%_100%] font-medium text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 rounded-full text-sm",
       },

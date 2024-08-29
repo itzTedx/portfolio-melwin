@@ -56,9 +56,9 @@ export const skillsData = [
 export const projectsData = [
   {
     id: 1,
-    name: "Vogue Fusion",
+    name: "Vogue Fusion Brand Identity",
     description:
-      "Vogue Fusion offers stylish wholesale dresses at unbeatable prices. We cater to boutique owners, event planners, and fashion enthusiasts seeking quality and value. Discover a curated selection that blends elegance with affordability",
+      "Vogue Fusion offers stylish wholesale dresses at unbeatable prices. We cater to boutique owners, event planners, and fashion enthusiasts seeking quality and value. Discover a curated selection that blends elegance with affordability.",
     tools: ["Illustrator", "Photoshop"],
     tag: "Logo Design",
     demo: "https://www.behance.net/gallery/203973883/Vogue-Fusion-Brand-Presentation",
@@ -67,18 +67,18 @@ export const projectsData = [
   },
   {
     id: 2,
-    name: "Digitaldesk",
+    name: "Digitaldesk Website",
     description:
       "🎨 Thrilled to propose a sleek, modern, and elegant UI/UX design for Digitaldesk eCommerce platform. Our vision is to create a user-friendly experience that enhances online shopping 🛒 while reflecting the quality and professionalism of your brand. By integrating cutting-edge web development 💻 with your exceptional printing services, corporate gifts, signage, and marketing materials, we can elevate your digital presence to new heights 🚀.",
     tools: ["Figma", "Illustrator", "Photoshop"],
-    tag: "Web UI/UX",
+    tag: "Web UI/UX & Development",
     demo: "https://digitaldesk.vercel.app",
     image: "/image/digitaldesk.jpg",
     slug: "digitaldesk-web-ui",
   },
   {
     id: 3,
-    name: "Journey of kalki",
+    name: "Journey of Kalki Logo Design",
     description:
       '🌄 Excited to share my latest logo creation for Journey of Kalki a travel YouTube channel that embodies the spirit of adventure! 🏕️ This design captures the essence of a journey, with a natural sunset backdrop, lush green grass, a cozy tent with a campfire, and a bold adventurer scaling the letter "K." It’s all about exploring the great outdoors and finding new horizons. Looking forward to seeing this logo take "Journey of Kalki" to new heights! 🌍✨',
     tools: ["Illustrator"],

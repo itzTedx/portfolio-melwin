@@ -43,10 +43,12 @@ export default function ProjectsCard({ project }: ProjectsCardProps) {
           </div>
           <div className="flex flex-col gap-2 p-4 transition-colors duration-300 group-hover:bg-muted/30 md:gap-3 md:p-6">
             <CardTitle>{project.name}</CardTitle>
-            <CardDescription>
-              <span className="text-primary"> {project.tag} </span> ✦{"  "}
-              {formattedDate}
-            </CardDescription>
+            <div>
+              <div className="flex gap-1.5">
+                <span className="text-primary"> {project.tag} </span> ✦
+                <span> {formattedDate}</span>
+              </div>
+            </div>
           </div>
         </CardContent>
       </Link>
