@@ -1,19 +1,29 @@
-import Image from 'next/image'
-import Link from 'next/link'
+import Image from "next/image";
+import Link from "next/link";
 
-import { cn } from '@/lib/utils'
+import { cn } from "@/lib/utils";
 
-import { ModeToggle } from '@/components/layout/theme-toggle'
+import { ModeToggle } from "@/components/layout/theme-toggle";
 
 function Header() {
   return (
     <header
-      className={cn('w-full py-3 transition-all duration-700 ease-in-out')}
+      className={cn(
+        "w-full py-3 transition-all duration-700 ease-in-out",
+        "relative border-b bg-background/50 backdrop-blur-md md:border-none md:bg-transparent",
+      )}
       style={{
         transitionProperty:
-          'background-color, backdrop-filter, padding-top, padding-bottom, top',
+          "background-color, backdrop-filter, padding-top, padding-bottom, top",
       }}
     >
+      <div
+        className={cn(
+          "-z-40 flex justify-center transition-opacity duration-500 ease-in-out",
+        )}
+      >
+        <div className="absolute bottom-0 h-px w-1/2 bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
+      </div>
       {/* <div
         className={cn(
           'flex justify-center -z-40 transition-opacity duration- 500 ease-in-out',
@@ -22,11 +32,11 @@ function Header() {
       >
         <div className="absolute bottom-0 w-1/2 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
       </div> */}
-      <div className="container flex items-center justify-between w-full">
-        <div className="flex items-center flex-shrink-0 gap-4">
+      <div className="container flex w-full items-center justify-between">
+        <div className="flex flex-shrink-0 items-center gap-4">
           <Link
             href="/"
-            className="px-4 py-2 -mx-4 text-3xl font-extrabold text-foreground font-bricolage"
+            className="-mx-4 px-4 py-2 font-bricolage text-3xl font-extrabold text-foreground"
           >
             Melwin af
           </Link>
@@ -37,14 +47,14 @@ function Header() {
           <div className="hidden lg:block">
             <Link
               href="tel:+971588102324"
-              className="flex gap-2 px-2 py-2 transition scale-100 rounded-lg hover:bg-foreground-50 active:scale-95 shrink-0"
+              className="hover:bg-foreground-50 flex shrink-0 scale-100 gap-2 rounded-lg px-2 py-2 transition active:scale-95"
             >
-              <div className="relative w-9 h-9">
+              <div className="relative h-9 w-9">
                 <Image fill src="/phone.svg" alt="" />
               </div>
               <div className="flex flex-col">
                 <span className="text-[8px] lg:text-[10px]">Call me now</span>
-                <span className="text-sm font-bold lg:text-base text-primary-800">
+                <span className="text-primary-800 text-sm font-bold lg:text-base">
                   058 810 2324
                 </span>
               </div>
@@ -53,7 +63,7 @@ function Header() {
         </div>
       </div>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;
