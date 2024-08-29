@@ -50,7 +50,7 @@ function HeroSection() {
 
         <div className="flex w-full items-center justify-center gap-3 font-bricolage font-semibold sm:text-lg">
           <Link
-            className={cn("btn-outline")}
+            className={cn("btn-outline text-foreground")}
             role="button"
             target="_blank"
             href={personalData.resume}
