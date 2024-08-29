@@ -10,7 +10,7 @@ import { personalData } from "@/utils";
 export default function Content() {
   return (
     <>
-      <footer className="grid h-full w-full gap-x-6 bg-foreground px-4 py-4 text-background dark:bg-foreground/80 md:grid-cols-2 lg:grid-cols-3 lg:px-9 lg:py-8">
+      <footer className="grid h-full w-full gap-x-6 bg-foreground px-4 py-4 text-background dark:bg-foreground/90 md:grid-cols-2 lg:grid-cols-3 lg:px-9 lg:py-8">
         <ImageSection />
         <Connect />
         <div className="mt-auto py-2">
