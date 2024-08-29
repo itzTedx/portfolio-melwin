@@ -1,9 +1,9 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
+import { useState } from "react";
 
-import { HoverBorderGradient } from '@/components/ui/hover-border-gradient'
-import ContactForm from '@/components/contact-form'
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import ContactForm from "@/components/contact-form";
 import {
   Drawer,
   DrawerContent,
@@ -11,7 +11,7 @@ import {
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
-} from '@/components/ui/drawer'
+} from "@/components/ui/drawer";
 import {
   Dialog,
   DialogContent,
@@ -19,28 +19,22 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog'
+} from "@/components/ui/dialog";
 
-import { useMediaQuery } from '@/hooks/useMediaQuery'
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 export default function ContactButton() {
-  const isDesktop = useMediaQuery('(min-width: 768px)')
+  const isDesktop = useMediaQuery("(min-width: 768px)");
 
-  const [open, setOpen] = useState<boolean>(false)
+  const [open, setOpen] = useState<boolean>(false);
 
   if (isDesktop)
     return (
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogTrigger asChild>
-          <HoverBorderGradient
-            containerClassName="rounded-full"
-            as="button"
-            className="bg-background"
-          >
-            <span className="font-bold flex items-center gap-1 hover:gap-3 text-sm transition-all text-secondary-foreground duration-200 ease-out px-4 md:px-6 py-2.5 rounded-[inherit] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary-foreground md:text-lg font-bricolage">
-              Contact me
-            </span>
-          </HoverBorderGradient>
+          <span className="flex items-center gap-1 rounded-[inherit] px-4 py-2.5 font-bricolage text-sm font-bold text-secondary-foreground transition-all duration-200 ease-out hover:gap-3 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary-foreground md:px-6 md:text-lg">
+            Contact me
+          </span>
         </DialogTrigger>
         <DialogContent className="sm:max-w-lg">
           <DialogHeader>
@@ -54,20 +48,14 @@ export default function ContactButton() {
           <ContactForm setOpen={setOpen} />
         </DialogContent>
       </Dialog>
-    )
+    );
 
   return (
     <Drawer noBodyStyles open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-        <HoverBorderGradient
-          containerClassName="rounded-full"
-          as="button"
-          className="bg-background"
-        >
-          <span className="font-bold flex items-center gap-1 hover:gap-3 text-sm transition-all text-secondary-foreground duration-200 ease-out px-4 md:px-6 py-2.5 rounded-[inherit] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary-foreground md:text-lg font-bricolage">
-            Contact me
-          </span>
-        </HoverBorderGradient>
+        <span className="flex items-center gap-1 rounded-[inherit] px-4 py-2.5 font-bricolage text-sm font-bold text-secondary-foreground transition-all duration-200 ease-out hover:gap-3 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-secondary-foreground md:px-6 md:text-lg">
+          Contact me
+        </span>
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
@@ -81,5 +69,5 @@ export default function ContactButton() {
         <ContactForm setOpen={setOpen} />
       </DrawerContent>
     </Drawer>
-  )
+  );
 }

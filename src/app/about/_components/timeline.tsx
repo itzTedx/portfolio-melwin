@@ -34,7 +34,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div className="w-full font-sans md:px-10" ref={containerRef}>
-      <div className="mx-auto max-w-7xl px-4 py-20 md:px-8 lg:px-10">
+      <div className="mx-auto max-w-7xl px-4 py-12 md:px-8 md:py-20 lg:px-10">
         <h2 className="mb-4 max-w-4xl font-monument text-xl md:text-4xl">
           Changelog from my journey
         </h2>
@@ -44,14 +44,14 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
         </p>
       </div>
 
-      <div ref={ref} className="relative mx-auto max-w-7xl pb-12">
+      <div ref={ref} className="relative mx-auto max-w-7xl bg-background pb-12">
         {data.map((item, index) => (
           <div
             key={index}
             className="flex justify-start pt-10 md:gap-10 md:pt-40"
           >
             <div className="sticky top-40 z-40 flex max-w-[15rem] flex-col items-center self-start md:w-full md:flex-row lg:max-w-sm">
-              <div className="absolute left-3 flex h-10 w-10 items-center justify-center rounded-full bg-background md:left-3">
+              <div className="absolute left-3 flex h-10 w-10 items-center justify-center rounded-full md:left-3">
                 <div className="h-4 w-4 rounded-full border border-neutral-300 bg-neutral-200 p-2 dark:border-neutral-700 dark:bg-neutral-800" />
               </div>
               <h3 className="hidden font-bricolage text-2xl font-bold text-primary md:block md:pl-20 lg:text-4xl">
@@ -59,7 +59,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               </h3>
             </div>
 
-            <div className="relative w-full bg-background pl-20 pr-4 md:pl-4">
+            <div className="relative w-full pl-20 pr-4 md:pl-4">
               <h3 className="mb-4 block text-left font-bricolage text-2xl font-bold text-accent md:hidden">
                 {item.title}
               </h3>

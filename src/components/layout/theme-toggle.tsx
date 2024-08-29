@@ -16,8 +16,23 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 export function ModeToggle() {
-  const { setTheme } = useTheme();
+  const { setTheme, theme } = useTheme();
   const isMobile = useMediaQuery("(max-width: 768px)");
+
+  interface VarCss extends React.CSSProperties {
+    "--width": number;
+    "--deg": number;
+    "--duration": number;
+  }
+
+  const handleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+    }
+    if (theme === "dark") {
+      setTheme("light");
+    }
+  };
 
   return (
     <DropdownMenu>
@@ -53,5 +68,124 @@ export function ModeToggle() {
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
+    // <>
+    //   <div className="toggle-cont">
+    //     <input
+    //       className="toggle-input"
+    //       id="toggle"
+    //       name="toggle"
+    //       type="checkbox"
+    //     />
+    //     <label className="toggle-label" htmlFor="toggle">
+    //       <div className="cont-icon">
+    //         <span
+    //           style={{ "--width": 2, "--deg": 25, "--duration": 11 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 1, "--deg": 100, "--duration": 18 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 1, "--deg": 280, "--duration": 5 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 2, "--deg": 200, "--duration": 3 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 2, "--deg": 30, "--duration": 20 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 2, "--deg": 300, "--duration": 9 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 1, "--deg": 250, "--duration": 4 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 2, "--deg": 210, "--duration": 8 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 2, "--deg": 100, "--duration": 9 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 1, "--deg": 15, "--duration": 13 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 1, "--deg": 75, "--duration": 18 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 2, "--deg": 65, "--duration": 6 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 2, "--deg": 50, "--duration": 7 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 1, "--deg": 320, "--duration": 5 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 1, "--deg": 220, "--duration": 5 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 1, "--deg": 215, "--duration": 2 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 2, "--deg": 135, "--duration": 9 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 2, "--deg": 45, "--duration": 4 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 1, "--deg": 78, "--duration": 16 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 1, "--deg": 89, "--duration": 19 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 2, "--deg": 65, "--duration": 14 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 2, "--deg": 97, "--duration": 1 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 1, "--deg": 174, "--duration": 10 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <span
+    //           style={{ "--width": 1, "--deg": 236, "--duration": 5 } as VarCss}
+    //           className="sparkle"
+    //         ></span>
+    //         <svg
+    //           xmlns="http://www.w3.org/2000/svg"
+    //           fill="none"
+    //           viewBox="0 0 30 30"
+    //           className="icon"
+    //         >
+    //           <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+    //           <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+    //         </svg>
+    //       </div>
+    //     </label>
+    //   </div>
+    // </>
   );
 }

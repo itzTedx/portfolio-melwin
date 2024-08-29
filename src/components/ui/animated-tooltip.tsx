@@ -67,14 +67,14 @@ export const AnimatedTooltip = ({ tools }: { tools: string[] }) => {
               </motion.div>
             )}
           </AnimatePresence>
-          <div className="relative ml-1 flex size-10 shrink-0 scale-100 select-none appearance-none items-center justify-center rounded-full border bg-primary-foreground/50 backdrop-blur-md transition-colors hover:bg-muted active:scale-[0.98]">
+          <div className="relative ml-1 flex size-9 shrink-0 scale-100 select-none appearance-none items-center justify-center rounded-full border bg-primary-foreground/50 backdrop-blur-md transition-colors hover:bg-muted active:scale-[0.98] sm:size-10">
             <Image
               onMouseMove={handleMouseMove}
               height={40}
               width={40}
               src={skillsImage(tool)}
               alt={tool}
-              className="size-6"
+              className="size-5 sm:size-6"
             />
           </div>
         </div>

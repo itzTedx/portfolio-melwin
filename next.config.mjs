@@ -8,11 +8,15 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'assets.aceternity.com',
+        protocol: "https",
+        hostname: "assets.aceternity.com",
+      },
+      {
+        protocol: "https",
+        hostname: "i.pinimg.com",
       },
     ],
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;
