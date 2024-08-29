@@ -1,13 +1,12 @@
-import { headers } from "next/headers";
 import Image from "next/image";
 
-import { Card, CardContent, CardDescription } from "@/components/ui/card";
-import ShareIcons from "./share-icons";
-import { skillsImage } from "@/utils/skill-icons";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import { skillsImage } from "@/utils/skill-icons";
 import { ExternalLink } from "lucide-react";
+import Link from "next/link";
+import ShareIcons from "./share-icons";
 
 interface ProjectsCardProps {
   project: {
@@ -31,8 +30,7 @@ export default function Project({ project }: ProjectsCardProps) {
 
   const formattedDate = `${month}, ${year}`;
 
-  const headersList = headers();
-  const referer = headersList.get("referer");
+  const pathname = `${process.env.BASE_URL}/projects/${project.slug}`;
 
   return (
     <Card className="group overflow-hidden" key={project.id}>
@@ -52,7 +50,7 @@ export default function Project({ project }: ProjectsCardProps) {
               V
             </div>
             <div className="hidden sm:flex">
-              <ShareIcons referer={referer as string} />
+              <ShareIcons pathname={pathname} />
             </div>
           </aside>
           <article className="">
@@ -104,7 +102,7 @@ export default function Project({ project }: ProjectsCardProps) {
             </div>
 
             <div className="sm:hidden">
-              <ShareIcons referer={referer as string} />
+              <ShareIcons pathname={pathname} />
             </div>
           </article>
         </div>

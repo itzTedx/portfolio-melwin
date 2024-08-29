@@ -8,11 +8,11 @@ import { useState } from "react";
 import { BsLinkedin, BsTwitterX } from "react-icons/bs";
 import { MdMail } from "react-icons/md";
 
-export default function ShareIcons({ referer }: { referer: string }) {
+export default function ShareIcons({ pathname }: { pathname: string }) {
   const [showCopiedPopup, setShowCopiedPopup] = useState(false);
   const handleCopyClick = async () => {
     try {
-      await navigator.clipboard.writeText(referer);
+      await navigator.clipboard.writeText(pathname);
       setShowCopiedPopup(true);
       setTimeout(() => {
         setShowCopiedPopup(false);
@@ -25,7 +25,7 @@ export default function ShareIcons({ referer }: { referer: string }) {
   return (
     <div className="mt-9 flex gap-2 text-muted-foreground sm:mt-20 sm:flex-col">
       <Link
-        href={`https://twitter.com/intent/tweet?url=${referer}`}
+        href={`https://twitter.com/intent/tweet?url=${pathname}`}
         target="_blank"
         rel="noopener noreferrer"
         className={cn(
@@ -39,7 +39,7 @@ export default function ShareIcons({ referer }: { referer: string }) {
         <BsTwitterX className="size-[22px]" />
       </Link>
       <Link
-        href="/"
+        href={`https://www.linkedin.com/sharing/share-offsite/?url=${pathname}`}
         target="_blank"
         rel="noopener noreferrer"
         className={cn(
@@ -54,7 +54,7 @@ export default function ShareIcons({ referer }: { referer: string }) {
       </Link>
 
       <Link
-        href={referer as string}
+        href={pathname}
         onClick={handleCopyClick}
         scroll={false}
         className={cn(
@@ -73,7 +73,7 @@ export default function ShareIcons({ referer }: { referer: string }) {
         )}
       </Link>
       <Link
-        href={`mailto:?body=Hey!%0A%0ACheck%20out%20this%20awesome%20project:%20${referer}`}
+        href={`mailto:?body=Hey!%0A%0ACheck%20out%20this%20awesome%20project:%20${pathname}`}
         className={cn(
           buttonVariants({
             variant: "outline",
