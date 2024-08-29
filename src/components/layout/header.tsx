@@ -1,11 +1,15 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 
 import { ModeToggle } from "@/components/layout/theme-toggle";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 function Header() {
+  const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <header
       className={cn(
@@ -17,21 +21,16 @@ function Header() {
           "background-color, backdrop-filter, padding-top, padding-bottom, top",
       }}
     >
-      <div
-        className={cn(
-          "-z-40 flex justify-center transition-opacity duration-500 ease-in-out",
-        )}
-      >
-        <div className="absolute bottom-0 h-px w-1/2 bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
-      </div>
-      {/* <div
-        className={cn(
-          'flex justify-center -z-40 transition-opacity duration- 500 ease-in-out',
-          isScrolled ? 'opacity-100' : 'opacity-0'
-        )}
-      >
-        <div className="absolute bottom-0 w-1/2 h-px bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
-      </div> */}
+      {isMobile && (
+        <div
+          className={cn(
+            "-z-40 flex justify-center transition-opacity duration-500 ease-in-out",
+          )}
+        >
+          <div className="absolute bottom-0 h-px w-1/2 bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
+        </div>
+      )}
+
       <div className="container flex w-full items-center justify-between">
         <div className="flex flex-shrink-0 items-center gap-4">
           <Link
