@@ -1,11 +1,12 @@
-import { getPostBySlug } from "@/actions/get-posts";
-import Image from "next/image";
-import { notFound } from "next/navigation";
-import React from "react";
-import { MDXRemote } from "next-mdx-remote/rsc";
-import Link from "next/link";
 import { ArrowLeftIcon } from "lucide-react";
+import { MDXRemote } from "next-mdx-remote/rsc";
+import Image from "next/image";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+
+import { getPostBySlug } from "@/actions/get-posts";
 import { formatDate } from "@/lib/utils";
+import MDXContent from "@/components/mdx-content";
 
 export default async function BlogPage({
   params,
@@ -21,7 +22,7 @@ export default async function BlogPage({
   const { title, image, author, publishedAt } = metadata;
 
   return (
-    <section className="pb-24 pt-32">
+    <section className="py-24">
       <div className="container max-w-3xl">
         <Link
           href="/posts"
@@ -50,7 +51,7 @@ export default async function BlogPage({
         </header>
 
         <main className="prose dark:prose-invert mt-16">
-          <MDXRemote source={content} />
+          <MDXContent source={content} />
         </main>
       </div>
     </section>
