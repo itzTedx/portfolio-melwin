@@ -1,14 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="1000" height="1000"><svg version="1.1" id="SvgjsSvg1000" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#6D28D9;}
-</style>
-<g>
-	<rect x="125.6" y="321.9" class="st0" width="159.4" height="442.2"></rect>
-	<path class="st0" d="M874.4,374.2v393H715.1V454.7c0-21.2-5.6-42.2-17.6-59.7c-14.4-21-36-35.6-68.1-35.6
-		c-53.4,0-80.6,37.3-94.5,76.7c-7.8,22.2-11.2,45.8-11.2,69.4v382H364.5V312.2c12.7,5.3,64.5,34.5,123.9,9.6
-		c25-10.4,51.3-28.4,76.6-58.2c34.7-40.8,105.5-59.8,162.6-50.9C810.4,225.7,874.4,294.9,874.4,374.2z"></path>
-	<circle class="st0" cx="432.2" cy="202" r="89.4"></circle>
-</g>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="413.96" height="428.39"><svg id="SvgjsSvg1002" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 413.96 428.39">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#radial-gradient);
+      }
+    </style>
+    <radialGradient id="SvgjsRadialGradient1001" cx="161.53" cy="403.72" fx="161.53" fy="403.72" r="386.04" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b887fa"></stop>
+      <stop offset="1" stop-color="#5c02eb"></stop>
+    </radialGradient>
+  </defs>
+  <g id="SvgjsG1000" data-name="Layer 1">
+    <g>
+      <rect class="cls-1" y="115.71" width="88.12" height="244.46"></rect>
+      <path class="cls-1" d="M413.96,144.62v217.26h-88.07V189.13c0-11.72-3.1-23.33-9.73-33-7.96-11.61-19.9-19.68-37.65-19.68-29.52,0-44.56,20.62-52.24,42.4-4.31,12.27-6.19,25.32-6.19,38.37v211.18h-88.01V110.35c7.02,2.93,35.66,19.07,68.5,5.31,13.82-5.75,28.36-15.7,42.35-32.18,19.18-22.56,58.32-33.06,89.89-28.14,45.77,7.19,81.16,45.44,81.16,89.28Z"></path>
+      <circle class="cls-1" cx="169.5" cy="49.42" r="49.42"></circle>
+    </g>
+  </g>
 </svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
-@media (prefers-color-scheme: dark) { :root { filter: contrast(0.7407407407407407) brightness(2); } }
+@media (prefers-color-scheme: dark) { :root { filter: contrast(1) brightness(1.1); } }
 </style></svg>
