@@ -18,6 +18,7 @@ interface ProjectsCardProps {
     demo: string;
     image: string;
     slug: string;
+    icon: string;
   };
 }
 
@@ -46,8 +47,13 @@ export default function Project({ project }: ProjectsCardProps) {
 
         <div className="flex gap-4 p-4 md:gap-14 md:p-12">
           <aside className="max-sm:hidden">
-            <div className="mt-1 flex size-10 items-center justify-center rounded-md bg-muted font-bricolage text-2xl font-black text-accent sm:size-12">
-              V
+            <div className="relative mt-1 flex size-10 items-center justify-center rounded-md bg-muted sm:size-12">
+              <Image
+                height={36}
+                width={36}
+                alt={project.image + "logo"}
+                src={project.icon}
+              />
             </div>
             <div className="hidden sm:flex">
               <ShareIcons pathname={pathname} />
@@ -58,8 +64,13 @@ export default function Project({ project }: ProjectsCardProps) {
               {project.name}
             </h1>
             <div className="flex items-center gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-muted p-1 font-monument text-3xl font-black sm:hidden">
-                V
+              <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-muted p-1 sm:hidden">
+                <Image
+                  height={36}
+                  width={36}
+                  alt={project.image + "logo"}
+                  src={project.icon}
+                />
               </div>
               <div className="flex gap-1.5 max-sm:flex-col">
                 <span className="text-primary"> {project.tag} </span>
@@ -71,7 +82,7 @@ export default function Project({ project }: ProjectsCardProps) {
             <div className="mt-9 space-y-4 text-pretty font-bricolage text-foreground/80 sm:mt-12 md:text-xl md:leading-8">
               <p>{project.description}</p>
               <h5>Tools used:</h5>
-              <ul className="flex gap-3">
+              <ul className="flex flex-wrap gap-3">
                 {project.tools.map((tool, i) => (
                   <li key={i} className="flex gap-3 rounded-md border p-3 px-6">
                     <Image

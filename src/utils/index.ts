@@ -44,13 +44,13 @@ export const skillsData = [
   "Premiere Pro",
   "After Effects",
   "HTML",
+  "Illustrator",
   "CSS",
   "Javascript",
   "Typescript",
-  "React",
   "Next JS",
+  "Illustrator",
   "Tailwind",
-  "Git",
 ];
 
 export const projectsData = [
@@ -64,17 +64,26 @@ export const projectsData = [
     demo: "https://www.behance.net/gallery/203973883/Vogue-Fusion-Brand-Presentation",
     image: "/image/vogue.jpg",
     slug: "vogue-fusion-branding",
+    icon: "/png/vogue.png",
   },
   {
     id: 2,
     name: "Digitaldesk Website",
     description:
       "🎨 Thrilled to propose a sleek, modern, and elegant UI/UX design for Digitaldesk eCommerce platform. Our vision is to create a user-friendly experience that enhances online shopping 🛒 while reflecting the quality and professionalism of your brand. By integrating cutting-edge web development 💻 with your exceptional printing services, corporate gifts, signage, and marketing materials, we can elevate your digital presence to new heights 🚀.",
-    tools: ["Figma", "Illustrator", "Photoshop"],
+    tools: [
+      "Figma",
+      "Illustrator",
+      "Photoshop",
+      "Nextjs",
+      "Typescript",
+      "MySQL",
+    ],
     tag: "Web UI/UX & Development",
     demo: "https://digitaldesk.vercel.app",
     image: "/image/digitaldesk.jpg",
     slug: "digitaldesk-web-ui",
+    icon: "/png/digitaldesk.png",
   },
   {
     id: 3,
@@ -86,6 +95,7 @@ export const projectsData = [
     demo: "https://www.linkedin.com/posts/melwin-af_logodesign-branding-travelinspiration-activity-7232380839538380800-v0Lo",
     image: "/image/kalki.jpg",
     slug: "journey-of-kalki-logo",
+    icon: "/png/kalki.png",
   },
   {
     id: 4,
@@ -97,6 +107,7 @@ export const projectsData = [
     demo: "",
     image: "/image/crefin.jpg",
     slug: "app-good-food-social-media",
+    icon: "/png/placeholder.png",
   },
 ];
 

@@ -18,4 +18,5 @@ export type Projects = {
   demo: string;
   image: string;
   slug: string;
+  icon: string;
 };
