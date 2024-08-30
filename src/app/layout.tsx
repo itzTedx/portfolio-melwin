@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 
 import "../style/globals.css";
+import "../style/ui.css";
 
 import { bricolage, monument, plusJakarta } from "@/fonts/fonts";
 import { cn } from "@/lib/utils";

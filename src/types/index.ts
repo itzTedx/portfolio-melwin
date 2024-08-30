@@ -20,3 +20,17 @@ export type Projects = {
   slug: string;
   icon: string;
 };
+
+export type Post = {
+  metadata: PostMetadata;
+  content: string;
+};
+
+export type PostMetadata = {
+  title?: string;
+  summary?: string;
+  image?: string;
+  author?: string;
+  publishedAt?: string;
+  slug: string;
+};

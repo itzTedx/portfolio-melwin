@@ -33,13 +33,13 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
           "sticky top-0 mx-auto flex h-[35%] max-w-5xl flex-col px-[1rem] pt-36"
         }
       >
-        <span className="bg-background250 mx-1 px-6 pb-3 text-lg font-light text-muted backdrop-blur-md lg:mx-2.5">
+        <span className="mx-1 bg-background px-6 pb-3 text-lg font-light text-muted lg:mx-2.5">
           hello there!
         </span>
         <p
           ref={targetRef}
           className={
-            "bg-backgroun2/50 flex flex-wrap px-6 text-2xl font-bold text-foreground/20 backdrop-blur-md md:text-3xl lg:text-4xl xl:text-5xl"
+            "flex flex-wrap bg-background px-6 text-2xl font-bold text-foreground/20 md:text-3xl lg:text-4xl xl:text-5xl"
           }
         >
           {words.map((word, i) => {
@@ -54,7 +54,7 @@ export const TextRevealByWord: FC<TextRevealByWordProps> = ({
         </p>
         <p
           className={
-            "flex flex-wrap bg-background/20 px-6 pt-8 text-xl font-normal text-muted backdrop-blur-md lg:mx-2.5"
+            "flex flex-wrap bg-background px-6 pt-8 text-xl font-normal text-muted lg:mx-2.5"
           }
         >
           {description}
