@@ -31,7 +31,7 @@ export default function ProjectsCard({ project }: ProjectsCardProps) {
 
   return (
     <Card className="group overflow-hidden" key={project.id}>
-      <Link href={`projects/${project.slug}`}>
+      <a href={`projects/${project.slug}`}>
         <CardContent>
           <div className="relative aspect-[16/7]">
             <Image
@@ -51,7 +51,7 @@ export default function ProjectsCard({ project }: ProjectsCardProps) {
             </div>
           </div>
         </CardContent>
-      </Link>
+      </a>
     </Card>
   );
 }

@@ -65,6 +65,8 @@ export default function RootLayout({
   children: React.ReactNode;
   modal: React.ReactNode;
 }>) {
+  const pathname = `${process.env.BASE_URL}/`;
+
   return (
     <html lang="en" className="scroll-smooth">
       <head>
