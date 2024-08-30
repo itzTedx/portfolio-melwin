@@ -5,6 +5,7 @@ import Link from "next/link";
 import AboutMe from "./_components/about-me";
 import Education from "./_components/education";
 import { Timeline } from "./_components/timeline";
+import { VisionOSIcon } from "./_components/logo-interaction";
 
 export default function About() {
   const data = [
@@ -92,16 +93,20 @@ export default function About() {
   // #6d98e3
   return (
     <div className="bg-dot">
-      <span className="absolute inset-0 -z-50 bg-[radial-gradient(200px_100px_at_50%_0%,#bfdbfe_20%,#131e3100)] dark:bg-[radial-gradient(200px_100px_at_50%_0%,#131f33_20%,#e0f2fe00)] md:bg-[radial-gradient(500px_200px_at_50%_0%,#bfdbfe_20%,#e0f2fe00)] dark:md:bg-[radial-gradient(500px_200px_at_50%_0%,#131f33_20%,#131e3100)]" />
+      <Image
+        src="/hero.svg"
+        alt="Hero"
+        width={1572}
+        height={795}
+        className="absolute -top-24 -z-10 md:-top-36"
+      />
       <div className="mx-auto max-w-6xl space-y-24">
         <AboutMe />
+        {/* <VisionOSIcon /> */}
         <Education />
       </div>
       <div className="h-fit w-full">
         <Timeline data={data} />
-      </div>
-      <div className="">
-        <h5>Ready to </h5>
       </div>
     </div>
   );

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 466.94 466.94">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#radial-gradient);
+      }
+
+      .cls-2 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-3" width="466.94" height="466.94"/>
+    </clipPath>
+    <radialGradient id="radial-gradient" cx="188.02" cy="423" fx="188.02" fy="423" r="386.04" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#b887fa"/>
+      <stop offset="1" stop-color="#5c02eb"/>
+    </radialGradient>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g class="cls-2">
+      <path class="cls-1" d="M440.45,163.9v217.26h-88.07V208.4c0-11.72-3.1-23.33-9.73-33-7.96-11.61-19.9-19.68-37.65-19.68-29.52,0-44.56,20.62-52.24,42.4-4.31,12.27-6.19,25.32-6.19,38.37v211.18h-88.01V129.62c7.02,2.93,35.66,19.07,68.5,5.31,13.82-5.75,28.36-15.7,42.35-32.18,19.18-22.56,58.32-33.06,89.89-28.14,45.77,7.19,81.16,45.44,81.16,89.28Z"/>
+    </g>
+  </g>
+</svg>
