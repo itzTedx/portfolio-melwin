@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 
 import { ModeToggle } from "@/components/layout/theme-toggle";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
+import Logo from "./logo";
 
 function Header() {
   return (
@@ -26,9 +27,10 @@ function Header() {
         <div className="flex flex-shrink-0 items-center gap-4">
           <Link
             href="/"
-            className="-mx-4 px-4 py-2 font-bricolage text-3xl font-extrabold text-foreground"
+            className="relative h-10 max-sm:size-12 sm:aspect-[16/5]"
           >
-            Melwin af
+            <Logo variant="fullLogo" className="max-sm:hidden" />
+            <Logo variant="icon" className="sm:hidden" />
           </Link>
         </div>
 

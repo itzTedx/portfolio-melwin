@@ -316,6 +316,7 @@
       transform-origin: center;
 
       color: #f3f3f3;
+      transition: color 500ms ease;
 
       &:nth-child(1) {
         --scale_path_1: var(--scale);
@@ -330,6 +331,7 @@
   }
 
   &:is(:hover, :focus) .sparkle .path {
+    color: #f59e0b;
     animation: path 1.5s linear 0.5s infinite;
   }
 }
