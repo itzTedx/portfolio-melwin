@@ -136,7 +136,7 @@ export const BentoGridItem = ({
           {/* Hobbies section */}
           {id === 2 && <Hobbies />}
           {id === 3 && (
-            <div className="absolute left-0 z-10 h-full w-full bg-gradient-to-r from-muted/30 via-muted/50 to-transparent" />
+            <div className="absolute -left-4 z-10 h-full w-full bg-gradient-to-r from-muted/30 via-muted/50 to-transparent" />
           )}
           {/* Tech stack  */}
           {id === 3 && <TechStack left={leftLists} right={rightLists} />}
