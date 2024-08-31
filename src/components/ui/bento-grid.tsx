@@ -141,23 +141,32 @@ export const BentoGridItem = ({
           {/* Tech stack  */}
           {id === 3 && <TechStack left={leftLists} right={rightLists} />}
           {id === 6 && (
-            <div className="relative mx-auto mt-5">
-              <div
-                className={`absolute -bottom-5 right-0 ${
-                  copied ? "block" : "block"
-                }`}
-              >
-                <Lottie options={defaultOptions} height={200} width={400} />
-              </div>
-
-              <MagicButton
-                title={copied ? "Email is Copied!" : "Copy my email address"}
-                icon={<IoCopyOutline />}
-                position="left"
-                handleClick={handleCopy}
-                otherClasses="text-md h-12 pt-1"
+            <>
+              <Image
+                src="/section.svg"
+                alt="Hero"
+                width={1572}
+                height={795}
+                className="pointer-events-none absolute left-0 top-0 -z-10"
               />
-            </div>
+              <div className="relative mx-auto mt-5">
+                <div
+                  className={`absolute -bottom-5 right-0 ${
+                    copied ? "block" : "block"
+                  }`}
+                >
+                  <Lottie options={defaultOptions} height={200} width={400} />
+                </div>
+
+                <MagicButton
+                  title={copied ? "Email is Copied!" : "Copy my email address"}
+                  icon={<IoCopyOutline />}
+                  position="left"
+                  handleClick={handleCopy}
+                  otherClasses="text-md h-12 pt-1"
+                />
+              </div>
+            </>
           )}
         </div>
       </div>
