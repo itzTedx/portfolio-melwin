@@ -145,7 +145,8 @@ export const gridItems = [
       "A Passionate Designer with experience in creating Impactful Visual Content",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
-    imgClassName: "w-full h-full opacity-10 lg:opacity-100",
+    imgClassName:
+      "w-full h-full opacity-20 group-hover/bento:opacity-100 lg:opacity-100",
     titleClassName: "justify-end lg:opacity-0",
     img: "/melwin.jpg",
     spareImg: "",
