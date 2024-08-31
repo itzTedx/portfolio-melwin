@@ -142,10 +142,6 @@ export const BentoGridItem = ({
           {id === 3 && <TechStack left={leftLists} right={rightLists} />}
           {id === 6 && (
             <div className="relative mx-auto mt-5">
-              {/* button border magic from tailwind css buttons  */}
-              {/* add rounded-md h-8 md:h-8, remove rounded-full */}
-              {/* remove focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 */}
-
               <div
                 className={`absolute -bottom-5 right-0 ${
                   copied ? "block" : "block"
