@@ -288,7 +288,7 @@
   width: 60%;
   position: absolute;
   bottom: -20%;
-  z-index: -5;
+  z-index: 5;
   background-size: 200%;
   animation: runningRGB 2s infinite linear;
   filter: blur(calc(1 * var(--m)));
@@ -489,33 +489,6 @@
   100% {
     transform: rotate(0deg);
   }
-}
-
-@property --angle {
-  syntax: "<angle>";
-  initial-value: 0deg;
-  inherits: false;
-}
-
-html.lenis,
-html.lenis body {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-smooth iframe {
-  pointer-events: none;
 }
 
 .bg-dot {

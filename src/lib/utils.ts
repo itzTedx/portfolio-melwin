@@ -12,3 +12,9 @@ export function formatDate(date: string) {
     year: "numeric",
   });
 }
+
+export const getRandomPercentage = (): string =>
+  `${Math.floor(Math.random() * 80)}%`;
+
+export const getRandomRotation = (): string =>
+  `${(Math.random() * 12 - 6).toFixed(2)}deg`;

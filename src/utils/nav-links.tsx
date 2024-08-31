@@ -1,12 +1,18 @@
-import { Home, PenTool, PhoneCall, User2 } from "lucide-react";
+import {
+  Home,
+  MessageCircleHeart,
+  PenTool,
+  PhoneCall,
+  User2,
+} from "lucide-react";
 
 export const links = [
-  {
-    id: 0,
-    name: "Home",
-    link: "/",
-    icon: <Home />,
-  },
+  // {
+  //   id: 0,
+  //   name: "Home",
+  //   link: "/",
+  //   icon: <Home />,
+  // },
   {
     id: 1,
     name: "About",
@@ -19,12 +25,12 @@ export const links = [
     link: "/projects",
     icon: <PenTool />,
   },
-  // {
-  //   id: 3,
-  //   name: 'Blogs',
-  //   link: '/blogs',
-  //   icon: <Com />,
-  // },
+  {
+    id: 3,
+    name: "Blogs",
+    link: "/blogs",
+    icon: <MessageCircleHeart />,
+  },
   {
     id: 4,
     name: "Contact",

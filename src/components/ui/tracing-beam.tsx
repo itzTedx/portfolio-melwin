@@ -1,48 +1,48 @@
-'use client'
-import { cn } from '@/lib/utils'
-import { motion, useScroll, useSpring, useTransform } from 'framer-motion'
-import React, { useEffect, useRef, useState } from 'react'
+"use client";
+import { cn } from "@/lib/utils";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 
 export const TracingBeam = ({
   children,
   className,
 }: {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode;
+  className?: string;
 }) => {
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ['start start', '110% start'],
-  })
+    offset: ["start start", "110% start"],
+  });
 
-  const contentRef = useRef<HTMLDivElement>(null)
-  const [svgHeight, setSvgHeight] = useState(0)
+  const contentRef = useRef<HTMLDivElement>(null);
+  const [svgHeight, setSvgHeight] = useState(0);
 
   useEffect(() => {
     if (contentRef.current) {
-      setSvgHeight(contentRef.current.offsetHeight)
+      setSvgHeight(contentRef.current.offsetHeight);
     }
-  }, [])
+  }, []);
 
   const y1 = useSpring(
     useTransform(scrollYProgress, [0, 0.8], [50, svgHeight]),
     {
       stiffness: 500,
       damping: 90,
-    }
-  )
+    },
+  );
   const y2 = useSpring(
     useTransform(scrollYProgress, [0, 1], [50, svgHeight - 200]),
     {
       stiffness: 500,
       damping: 90,
-    }
-  )
+    },
+  );
 
   return (
-    <motion.div ref={ref} className={cn('relative w-full h-full ', className)}>
-      <div className="absolute -left-5 lg:left-20 top-3 lg:top-9">
+    <motion.div ref={ref} className={cn("relative h-full w-full", className)}>
+      <div className="absolute -left-5 top-3 lg:left-20 lg:top-9">
         <motion.div
           transition={{
             duration: 0.2,
@@ -51,29 +51,29 @@ export const TracingBeam = ({
           animate={{
             boxShadow:
               scrollYProgress.get() > 0
-                ? 'none'
-                : 'rgba(0, 0, 0, 0.20) 0px 3px 8px',
+                ? "none"
+                : "rgba(0, 0, 0, 0.20) 0px 3px 8px",
           }}
-          className="ml-[27px] size-4 rounded-full border border-primary shadow-sm flex items-center justify-center relative"
+          className="relative ml-[27px] flex size-4 items-center justify-center rounded-full border border-primary shadow-sm"
         >
-          <span className="absolute border rounded-full size-3 border-primary animate-ping" />
+          <span className="absolute size-3 animate-ping rounded-full border border-primary" />
           <motion.div
             transition={{
               duration: 0.2,
               delay: 0.5,
             }}
             animate={{
-              backgroundColor: scrollYProgress.get() > 5 ? 'white' : '#f5d0fe',
-              borderColor: scrollYProgress.get() > 5 ? 'white' : '#f5d0fe',
+              backgroundColor: scrollYProgress.get() > 5 ? "white" : "#f5d0fe",
+              borderColor: scrollYProgress.get() > 5 ? "white" : "#f5d0fe",
             }}
-            className="w-2 h-2 bg-white border rounded-full border-neutral-300"
+            className="h-2 w-2 rounded-full border border-neutral-300 bg-white"
           />
         </motion.div>
         <svg
           viewBox={`0 0 20 ${svgHeight}`}
           width="20"
           height={svgHeight} // Set the SVG height
-          className="block ml-4 "
+          className="ml-4 block"
           aria-hidden="true"
         >
           <motion.path
@@ -112,9 +112,9 @@ export const TracingBeam = ({
           </defs>
         </svg>
       </div>
-      <div ref={contentRef} className="max-w-6xl mx-auto">
+      <main ref={contentRef} className="mx-auto max-w-6xl">
         {children}
-      </div>
+      </main>
     </motion.div>
-  )
-}
+  );
+};

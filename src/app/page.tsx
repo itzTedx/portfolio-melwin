@@ -8,15 +8,15 @@ import Skills from "./_components/skills";
 
 export default function Home() {
   return (
-    <main>
+    <>
       <TracingBeam className="md:px-4">
         <HeroSection />
         <AboutSection />
-        <Experience />
         <Projects />
+        <Experience />
         <Skills />
+        <ContactSection />
       </TracingBeam>
-      <ContactSection />
-    </main>
+    </>
   );
 }

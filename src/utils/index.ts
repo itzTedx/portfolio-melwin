@@ -137,3 +137,69 @@ export const experiences = [
       "Assisted the lead video editor with various tasks including trimming scenes and color grading, adding sound effects, graphics, reviewing video footage prior to publication.",
   },
 ];
+
+export const gridItems = [
+  {
+    id: 1,
+    title:
+      "A Passionate Designer with experience in creating Impactful Visual Content",
+    description: "",
+    className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
+    imgClassName: "w-full h-full opacity-10 lg:opacity-100",
+    titleClassName: "justify-end lg:opacity-0",
+    img: "/melwin.jpg",
+    spareImg: "",
+  },
+  {
+    id: 2,
+    title: "Beyond the Design",
+    description: "My Interests and hobbies beyond the digital realm",
+    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
+    imgClassName: "",
+    titleClassName: "justify-start",
+    img: "",
+    spareImg: "",
+  },
+  {
+    id: 3,
+    title: "My Toolbox",
+    description: "I constantly try to improve",
+    className: "lg:col-span-2 md:col-span-3 md:row-span-2",
+    imgClassName: "",
+    titleClassName: "justify-center",
+    img: "",
+    spareImg: "",
+  },
+  {
+    id: 4,
+    title: "Tech enthusiast with a passion for designing & development.",
+    description: "",
+    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
+    imgClassName: "",
+    titleClassName: "justify-start",
+    img: "/grid-me.svg",
+    spareImg: "/b4.svg",
+  },
+
+  {
+    id: 5,
+    title: "Neighborhood",
+    description: "The Inside Scoop",
+    className: "md:col-span-3 md:row-span-2",
+    imgClassName:
+      "absolute left-1/2 -translate-x-1/2 h-full w-full object-cover bottom-0",
+    titleClassName: "justify-start ",
+    img: "/location.jpg",
+    spareImg: "/grid.svg",
+  },
+  {
+    id: 6,
+    title: "Do you want to start a project together?",
+    description: "",
+    className: "lg:col-span-2 md:col-span-3 md:row-span-1",
+    imgClassName: "",
+    titleClassName: "justify-center md:max-w-full max-w-60 text-center",
+    img: "",
+    spareImg: "",
+  },
+];
