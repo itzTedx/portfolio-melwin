@@ -23,7 +23,7 @@ export default function Content() {
 
 const ImageSection = () => {
   return (
-    <div className="group relative aspect-[16/12] w-full overflow-hidden rounded-lg sm:aspect-[5/4] lg:aspect-auto">
+    <div className="group relative aspect-[16/12] w-full overflow-hidden rounded-lg md:aspect-[5/4] lg:aspect-auto">
       <Image
         src={personalData.profile}
         fill
