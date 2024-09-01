@@ -6,6 +6,20 @@ import PostsCard from "./_components/posts-card";
 export const metadata: Metadata = {
   title: "Blogs",
   description: "Some of my works",
+  openGraph: {
+    type: "website",
+    url: `/blogs`,
+    title: "Blogs",
+    description: "Some of my works",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blogs",
+    description: "Some of my works",
+
+    creator: "@itzTedx_",
+  },
+  alternates: { canonical: `/blogs` },
 };
 
 export default async function PostsPage() {

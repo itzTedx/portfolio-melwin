@@ -9,6 +9,20 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Projects i worked on",
   description: "Some of my works",
+  openGraph: {
+    type: "website",
+    url: `/projects`,
+    title: "Projects i worked on",
+    description: "Some of my works",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Projects i worked on",
+    description: "Some of my works",
+
+    creator: "@itzTedx_",
+  },
+  alternates: { canonical: `/projects` },
 };
 
 export default async function ProjectsPage() {

@@ -35,7 +35,7 @@ export async function generateMetadata({
     openGraph: {
       images: posts?.metadata.image,
       type: "article",
-      url: `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${slug}`,
+      url: `/blogs/${slug}`,
       title: posts?.metadata.title,
       description: posts?.metadata.summary,
     },
