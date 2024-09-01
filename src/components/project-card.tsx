@@ -1,22 +1,12 @@
-import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
-import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
-interface ProjectCardProps {
-  project: {
-    id: number;
-    name: string;
-    description: string;
-    tools: string[];
-    demo: string;
-    image: string;
-    tag: string;
-    slug: string;
-  };
-}
+import { cn } from "@/lib/utils";
+import { ProjectMetadata } from "@/types";
 
-function ProjectCard({ project }: ProjectCardProps) {
+import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
+
+function ProjectCard({ project }: { project: ProjectMetadata }) {
   return (
     <div className="relative w-full rounded-lg border bg-gradient-to-r from-background to-primary-foreground">
       <div className="flex flex-row">
@@ -29,11 +19,7 @@ function ProjectCard({ project }: ProjectCardProps) {
           <div className="h-2 w-2 rounded-full bg-orange-400 lg:h-3 lg:w-3" />
           <div className="h-2 w-2 rounded-full bg-green-200 lg:h-3 lg:w-3" />
         </div>
-        {/* <NeonGradientCard className="items-center justify-center text-center">
-          <span className="pointer-events-none whitespace-pre-wrap text-muted-foreground text-center text-sm dark:drop-shadow-[0_5px_5px_rgba(0,0,0,0.8)] px-3 h-full">
-            {project.tag}
-          </span>
-        </NeonGradientCard> */}
+
         <p className="ml-3 text-center font-bricolage text-base text-accent lg:text-xl">
           {project.tag}
         </p>
@@ -46,26 +32,28 @@ function ProjectCard({ project }: ProjectCardProps) {
         >
           <div className="relative aspect-[16/11]">
             <Image
-              src={project.image}
-              alt={project.name}
+              src={project.image!}
+              alt={project.title!}
               fill
               className={cn("z-50 overflow-hidden object-cover")}
             />
             <Image
-              src={project.image}
-              alt={project.name}
+              src={project.image!}
+              alt={project.title!}
               fill
               className="object-cover opacity-35 blur-3xl"
               quality={1}
             />
             <div className="absolute bottom-0 z-50 flex w-full flex-grow flex-row items-end justify-between p-4 md:p-6">
               <h3 className="rounded-md px-2.5 py-1.5 font-bricolage text-sm font-bold tracking-wide text-amber-500 backdrop-blur-md sm:px-4 sm:py-3 sm:text-xl">
-                {project.name}
+                {project.company}
               </h3>
 
-              <div className="mr-3 flex">
-                <AnimatedTooltip tools={project.tools} />
-              </div>
+              {project.tools && (
+                <div className="mr-3 flex">
+                  <AnimatedTooltip tools={project.tools} />
+                </div>
+              )}
             </div>
           </div>
         </Link>

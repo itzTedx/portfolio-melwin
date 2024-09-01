@@ -1,4 +1,5 @@
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { formatDate } from "@/lib/utils";
 import { ProjectMetadata } from "@/types";
 import Image from "next/image";
 
@@ -7,14 +8,6 @@ export default function ProjectsCard({
 }: {
   project: ProjectMetadata;
 }) {
-  const date = new Date();
-  const month = date.toLocaleDateString("en-US", {
-    month: "long",
-  });
-  const year = date.getFullYear();
-
-  const formattedDate = `${month}, ${year}`;
-
   return (
     <Card className="group overflow-hidden">
       <a href={`projects/${project.slug}`}>
@@ -52,7 +45,9 @@ export default function ProjectsCard({
                   <span className="text-primary"> {project.tag} </span>
 
                   <div className="max-sm:hidden">✦</div>
-                  <span className="max-sm:text-xs"> {formattedDate}</span>
+                  <span className="max-sm:text-xs">
+                    {formatDate(project.publishedAt ?? "")}
+                  </span>
                 </div>
               </div>
             </div>

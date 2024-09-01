@@ -2,8 +2,10 @@ import { projectsData } from "@/utils";
 
 import ProjectCard from "@/components/project-card";
 import ProjectsTitle from "@/components/projects-title";
+import { getProjects } from "@/actions/get-project";
 
-const Projects = () => {
+const Projects = async () => {
+  const projects = await getProjects();
   return (
     <section id="projects" className="bg-dot relative z-50 my-12 lg:my-24">
       <div className="sticky -top-48 md:-top-36">
@@ -12,7 +14,7 @@ const Projects = () => {
 
       <div className="px-6 pt-24 lg:px-0">
         <div className="flex flex-col gap-4">
-          {projectsData.map((project, index) => (
+          {projects.map((project, index) => (
             <div
               id={`sticky-card-${index + 1}`}
               key={index}
