@@ -42,7 +42,6 @@ export async function generateMetadata({
 
       creator: "@itzTedx_",
     },
-    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL as string),
     alternates: { canonical: `/projects/${slug}` },
   };
 }

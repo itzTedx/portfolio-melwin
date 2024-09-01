@@ -14,9 +14,10 @@ import { Metadata } from "next";
 
 export async function generateStaticParams() {
   const posts = await getPosts();
-  const slugs = posts.map((post) => ({ slug: post.slug }));
 
-  return slugs;
+  return posts.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
 export async function generateMetadata({
@@ -46,7 +47,6 @@ export async function generateMetadata({
 
       creator: "@itzTedx_",
     },
-    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL as string),
     alternates: { canonical: `/blogs/${slug}` },
   };
 }
