@@ -6,12 +6,31 @@ import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import AnimatedBorderTrail from "@/components/ui/animated-trail-border";
 import TopGradient from "@/components/layout/top-gradient";
+import type { Metadata, ResolvingMetadata } from "next";
 
 export async function generateStaticParams() {
   const projects = await getProjects();
   const slugs = projects.map((project) => ({ slug: project.slug }));
 
   return slugs;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const slug = params.slug;
+
+  const project = await getProjectBySlug(params.slug);
+
+  return {
+    title: project?.metadata.title,
+    description: project?.metadata.summary,
+    openGraph: {
+      images: project?.metadata.image,
+    },
+  };
 }
 
 export default async function ProjectPage({

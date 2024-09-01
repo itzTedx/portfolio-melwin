@@ -4,6 +4,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import ProjectsCard from "./_components/projects-card";
 import AnimatedBorderTrail from "@/components/ui/animated-trail-border";
 import TopGradient from "@/components/layout/top-gradient";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects i worked on",
+  description: "Some of my works",
+};
 
 export default async function ProjectsPage() {
   const projects = await getProjects();

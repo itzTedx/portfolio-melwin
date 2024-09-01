@@ -1,7 +1,12 @@
 import { getPosts } from "@/actions/get-posts";
-import PostsWithSearch from "./_components/posts-with-search";
-import PostsCard from "./_components/posts-card";
 import TopGradient from "@/components/layout/top-gradient";
+import { Metadata } from "next";
+import PostsCard from "./_components/posts-card";
+
+export const metadata: Metadata = {
+  title: "Blogs",
+  description: "Some of my works",
+};
 
 export default async function PostsPage() {
   const posts = await getPosts();

@@ -1,8 +1,16 @@
-import { getProjectBySlug } from "@/actions/get-project";
+import { getProjectBySlug, getProjects } from "@/actions/get-project";
 import { FullScreenModal } from "@/components/full-screen-modal";
 import { notFound } from "next/navigation";
 import ModalContent from "./_components/modal-content";
 import ModalImage from "./_components/modal-image";
+
+export async function generateStaticParams() {
+  const projects = await getProjects();
+
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
 
 export default async function ProjectPage({
   params,
