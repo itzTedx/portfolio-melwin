@@ -29,7 +29,21 @@ export async function generateMetadata({
     description: project?.metadata.summary,
     openGraph: {
       images: project?.metadata.image,
+      type: "article",
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/projects/${slug}`,
+      title: project?.metadata.title,
+      description: project?.metadata.summary,
     },
+    twitter: {
+      card: "summary_large_image",
+      title: project?.metadata.title,
+      description: project?.metadata.summary,
+      images: project?.metadata.image,
+
+      creator: "@itzTedx_",
+    },
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL as string),
+    alternates: { canonical: `/projects/${slug}` },
   };
 }
 

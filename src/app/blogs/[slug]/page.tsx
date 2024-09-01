@@ -10,12 +10,45 @@ import { formatDate } from "@/lib/utils";
 import TopGradient from "@/components/layout/top-gradient";
 import { Card, CardContent } from "@/components/ui/card";
 import ShareIcons from "@/app/projects/_components/share-icons";
+import { Metadata } from "next";
 
 export async function generateStaticParams() {
   const posts = await getPosts();
   const slugs = posts.map((post) => ({ slug: post.slug }));
 
   return slugs;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const slug = params.slug;
+
+  const posts = await getPostBySlug(params.slug);
+
+  return {
+    title: posts?.metadata.title,
+    description: posts?.metadata.summary,
+    openGraph: {
+      images: posts?.metadata.image,
+      type: "article",
+      url: `${process.env.NEXT_PUBLIC_BASE_URL}/blogs/${slug}`,
+      title: posts?.metadata.title,
+      description: posts?.metadata.summary,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: posts?.metadata.title,
+      description: posts?.metadata.summary,
+      images: posts?.metadata.image,
+
+      creator: "@itzTedx_",
+    },
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL as string),
+    alternates: { canonical: `/blogs/${slug}` },
+  };
 }
 
 export default async function BlogPage({
