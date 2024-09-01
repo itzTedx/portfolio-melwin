@@ -73,9 +73,12 @@ export default function Project({ project }: { project: Project }) {
             </main>
             <div className="mt-9 space-y-4 text-pretty font-bricolage text-foreground/80 sm:mt-12 md:text-xl md:leading-8">
               <h5>Tools used:</h5>
-              <ul className="flex flex-wrap gap-3">
+              <ul className="flex flex-wrap gap-3 pb-4">
                 {tools?.map((tool, i) => (
-                  <li key={i} className="flex gap-3 rounded-md border p-3 px-6">
+                  <li
+                    key={i}
+                    className="flex items-center gap-3 rounded-md border p-3 px-6"
+                  >
                     <Image
                       height={40}
                       width={40}
@@ -87,7 +90,7 @@ export default function Project({ project }: { project: Project }) {
                   </li>
                 ))}
               </ul>
-              <div>
+              {externalLink && (
                 <Link
                   href={externalLink!}
                   target="_blank"
@@ -97,10 +100,10 @@ export default function Project({ project }: { project: Project }) {
                     "md:text-xl",
                   )}
                 >
-                  Live Preview{" "}
+                  Live Preview
                   <ExternalLink className="ml-2 size-4 md:size-5" />
                 </Link>
-              </div>
+              )}
             </div>
 
             <div className="sm:hidden">
