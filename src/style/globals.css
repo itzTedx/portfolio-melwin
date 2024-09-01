@@ -86,6 +86,10 @@
     @apply !bg-background text-foreground;
   }
 
+  .prose img {
+    @apply rounded-md;
+  }
+
   .prose pre {
     @apply overflow-x-auto rounded-lg bg-muted px-5 py-4 text-sm;
   }

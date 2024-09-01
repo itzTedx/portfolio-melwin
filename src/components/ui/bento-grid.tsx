@@ -1,17 +1,16 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { IoCopyOutline } from "react-icons/io5";
 import Lottie from "react-lottie";
 
 import MagicButton from "../magic-button";
 
-import { cn } from "@/lib/utils";
-import animationData from "@/data/confetti.json";
-import Image from "next/image";
-import Skills from "@/app/_components/skills";
 import Hobbies from "@/app/_components/hobbies";
 import TechStack from "@/app/_components/tech-stack";
+import animationData from "@/data/confetti.json";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export const BentoGrid = ({
   className,

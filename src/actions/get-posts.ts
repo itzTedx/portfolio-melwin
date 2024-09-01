@@ -2,7 +2,7 @@ import path from "path";
 import fs from "fs";
 import matter from "gray-matter";
 
-import { Post } from "@/types";
+import { Post, PostMetadata } from "@/types";
 
 const root = path.join(process.cwd(), "src", "content", "posts");
 
@@ -16,4 +16,32 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   } catch (error) {
     return null;
   }
+}
+
+export async function getPosts(limit?: number): Promise<PostMetadata[]> {
+  const files = fs.readdirSync(root);
+
+  const posts = files
+    .map((file) => getPostMetadata(file))
+    .sort((a, b) => {
+      if (new Date(a.publishedAt ?? "") < new Date(b.publishedAt ?? "")) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
+
+  if (limit) {
+    return posts.slice(0, limit);
+  }
+
+  return posts;
+}
+
+export function getPostMetadata(filepath: string): PostMetadata {
+  const slug = filepath.replace(/\.mdx$/, "");
+  const filePath = path.join(root, filepath);
+  const fileContent = fs.readFileSync(filePath, { encoding: "utf8" });
+  const { data } = matter(fileContent);
+  return { ...data, slug };
 }

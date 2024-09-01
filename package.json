@@ -19,6 +19,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.29",
     "gray-matter": "^4.0.3",
+    "image-size": "^1.1.1",
     "lenis": "^1.0.45",
     "lottie-react": "^2.4.0",
     "lucide-react": "^0.428.0",

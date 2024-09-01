@@ -1,18 +1,12 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardTitle,
-} from "@/components/ui/card";
-import { Projects } from "@/types";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { ProjectMetadata } from "@/types";
 import Image from "next/image";
-import Link from "next/link";
 
-interface ProjectsCardProps {
-  project: Projects;
-}
-
-export default function ProjectsCard({ project }: ProjectsCardProps) {
+export default function ProjectsCard({
+  project,
+}: {
+  project: ProjectMetadata;
+}) {
   const date = new Date();
   const month = date.toLocaleDateString("en-US", {
     month: "long",
@@ -22,14 +16,14 @@ export default function ProjectsCard({ project }: ProjectsCardProps) {
   const formattedDate = `${month}, ${year}`;
 
   return (
-    <Card className="group overflow-hidden" key={project.id}>
+    <Card className="group overflow-hidden">
       <a href={`projects/${project.slug}`}>
         <CardContent>
           <div className="relative aspect-[16/7]">
             <Image
-              src={project.image}
+              src={project.image!}
               fill
-              alt={project.description}
+              alt={project.summary!}
               className="object-cover"
             />
           </div>
@@ -38,20 +32,20 @@ export default function ProjectsCard({ project }: ProjectsCardProps) {
               <Image
                 height={36}
                 width={36}
-                alt={project.image + "logo"}
-                src={project.icon}
+                alt={project.title + "logo"}
+                src={project.companyLogo!}
               />
             </div>
             <div className="">
-              <CardTitle>{project.name}</CardTitle>
+              <CardTitle>{project.title}</CardTitle>
 
               <div className="flex gap-4 max-sm:mt-3 sm:gap-1.5">
                 <div className="relative flex size-12 shrink-0 items-center justify-center rounded-md bg-muted p-1 transition-colors duration-300 group-hover:bg-transparent sm:hidden">
                   <Image
                     height={36}
                     width={36}
-                    alt={project.image + "logo"}
-                    src={project.icon}
+                    alt={project.title + "logo"}
+                    src={project.companyLogo!}
                   />
                 </div>
                 <div className="flex max-sm:flex-col sm:gap-1.5">

@@ -9,17 +9,17 @@ export type SiteConfig = {
   };
 };
 
-export type Projects = {
-  id: number;
-  name: string;
-  description: string;
-  tools: string[];
-  tag: string;
-  demo: string;
-  image: string;
-  slug: string;
-  icon: string;
-};
+// export type Projects = {
+//   id: number;
+//   name: string;
+//   description: string;
+//   tools: string[];
+//   tag: string;
+//   demo: string;
+//   image: string;
+//   slug: string;
+//   icon: string;
+// };
 
 export type Post = {
   metadata: PostMetadata;
@@ -31,6 +31,24 @@ export type PostMetadata = {
   summary?: string;
   image?: string;
   author?: string;
+  publishedAt?: string;
+  slug: string;
+};
+
+export type Project = {
+  metadata: ProjectMetadata;
+  content: string;
+};
+
+export type ProjectMetadata = {
+  title?: string;
+  summary?: string;
+  image?: string;
+  tag?: string;
+  company?: string;
+  companyLogo?: string;
+  tools?: string[];
+  externalLink?: string;
   publishedAt?: string;
   slug: string;
 };

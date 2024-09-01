@@ -55,6 +55,18 @@ export const skillsData = [
 
 export const projectsData = [
   {
+    id: 0,
+    name: "Own Brand Logo",
+    description:
+      "Vogue Fusion offers stylish wholesale dresses at unbeatable prices. We cater to boutique owners, event planners, and fashion enthusiasts seeking quality and value. Discover a curated selection that blends elegance with affordability.",
+    tools: ["Illustrator", "Photoshop", "Figma"],
+    tag: "Logo Design",
+    demo: "https://www.behance.net/gallery/203973883/Vogue-Fusion-Brand-Presentation",
+    image: "/image/melwin.jpg",
+    slug: "melwin-brand-identity",
+    icon: "/logo/icon-dark.svg",
+  },
+  {
     id: 1,
     name: "Vogue Fusion Brand Identity",
     description:
