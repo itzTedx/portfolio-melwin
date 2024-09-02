@@ -12,7 +12,12 @@ export default function ContactPage() {
         className="absolute -top-24 -z-10 md:-top-36"
       />
       <div className="relative h-full w-full">
-        <Image src="/melwin.jpg" fill alt="" className="object-cover" />
+        <Image
+          src="/image/pexels-arts-1547813.jpg"
+          fill
+          alt=""
+          className="object-cover brightness-125 saturate-0 transition-all duration-500 hover:saturate-100"
+        />
       </div>
       <div className="container w-full">
         <ContactForm />

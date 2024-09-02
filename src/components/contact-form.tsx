@@ -65,7 +65,7 @@ export default function ContactForm({ setOpen }: ContactFormProps) {
 
     if (setOpen) setOpen(false);
     toast.success(`Thanks ${values.name}!`, {
-      description: `For reaching out me, `,
+      description: `will get back to you soon `,
     });
   }
 
@@ -121,7 +121,7 @@ export default function ContactForm({ setOpen }: ContactFormProps) {
                   <FormLabel>Message</FormLabel>
                   <FormControl>
                     <Textarea
-                      className="min-h-32"
+                      className="min-h-64"
                       {...field}
                       placeholder="Type something here"
                     />
