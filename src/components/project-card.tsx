@@ -27,6 +27,7 @@ function ProjectCard({ project }: { project: ProjectMetadata }) {
       <div className="overflow-hidden border-t-[2px] px-4 py-4 lg:px-8 lg:py-8">
         <Link
           href={`/projects/${project.slug}`}
+          title={project.title}
           scroll={false}
           className="flex flex-col overflow-hidden rounded-sm border"
         >
@@ -34,12 +35,15 @@ function ProjectCard({ project }: { project: ProjectMetadata }) {
             <Image
               src={project.image!}
               alt={project.title!}
+              title={project.title!}
               fill
+              quality={50}
               className={cn("z-50 overflow-hidden object-cover")}
             />
             <Image
               src={project.image!}
               alt={project.title!}
+              aria-hidden
               fill
               className="object-cover opacity-35 blur-3xl"
               quality={1}

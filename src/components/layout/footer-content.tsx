@@ -27,6 +27,7 @@ const ImageSection = () => {
       <Image
         src={personalData.profile}
         fill
+        quality={20}
         alt="Melwin af"
         className="cursor-pointer object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
       />

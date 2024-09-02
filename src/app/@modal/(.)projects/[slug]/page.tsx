@@ -12,48 +12,6 @@ export async function generateStaticParams() {
   return slugs;
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  const slug = params.slug;
-
-  const project = await getProjectBySlug(params.slug);
-
-  if (!project) return { title: "Projects of Melwin" };
-
-  const description = project.metadata.summary!.slice(0, 140) + "...";
-
-  return {
-    title: project?.metadata.title + "- Melwin Af",
-    description,
-    openGraph: {
-      type: "article",
-      images: {
-        url: project.metadata.image!,
-        alt: description,
-      },
-      url: `/projects/${slug}`,
-      title: project?.metadata.title,
-      description,
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: project?.metadata.title + "- Melwin Af",
-      description,
-      images: {
-        url: project.metadata.image!,
-        alt: description,
-      },
-
-      site: "@itzTedx_",
-      creator: "@itzTedx_",
-    },
-    alternates: { canonical: `/projects/${slug}` },
-  };
-}
-
 export default async function ProjectPage({
   params,
 }: {

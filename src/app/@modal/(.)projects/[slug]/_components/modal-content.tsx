@@ -1,6 +1,6 @@
 "use client";
 
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { Project, ProjectMetadata } from "@/types";
@@ -8,9 +8,11 @@ import { skillsImage } from "@/utils/skill-icons";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function ModalContent({ content }: { content: Project }) {
   const { metadata } = content;
+  const router = useRouter();
   return (
     <div
       className="relative flex h-full flex-col justify-between border-l bg-background p-6 pt-9 lg:p-9"
@@ -20,7 +22,7 @@ export default function ModalContent({ content }: { content: Project }) {
         <div className="h-px w-full bg-gradient-to-r from-transparent via-violet-500 to-transparent lg:h-full lg:w-[1px] lg:bg-gradient-to-b" />
       </div>
       <div>
-        <DialogTitle className="font-monument text-2xl font-bold tracking-wide text-amber-500 dark:text-amber-400 lg:text-4xl">
+        <DialogTitle className="font-bricolage text-xl font-bold text-amber-500 dark:text-amber-400 md:text-2xl lg:text-3xl">
           {metadata.title}
         </DialogTitle>
         <p className="mt-2 text-muted-foreground/80">{metadata.tag}</p>
@@ -48,6 +50,7 @@ export default function ModalContent({ content }: { content: Project }) {
           ))}
         </ul>
       </div>
+
       {metadata.externalLink && (
         <Link
           className={cn(
