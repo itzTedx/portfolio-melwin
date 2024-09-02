@@ -1,10 +1,4 @@
-import {
-  Home,
-  MessageCircleHeart,
-  PenTool,
-  PhoneCall,
-  User2,
-} from "lucide-react";
+import { Home, NotebookPen, PenTool, PhoneCall, UserRound } from "lucide-react";
 
 export const links = [
   // {
@@ -17,7 +11,7 @@ export const links = [
     id: 1,
     name: "About",
     link: "/about",
-    icon: <User2 />,
+    icon: <UserRound />,
   },
   {
     id: 2,
@@ -29,7 +23,7 @@ export const links = [
     id: 3,
     name: "Blogs",
     link: "/blogs",
-    icon: <MessageCircleHeart />,
+    icon: <NotebookPen />,
   },
   {
     id: 4,

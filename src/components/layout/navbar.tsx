@@ -1,13 +1,13 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 import { motion } from "framer-motion";
 
 import useScroll from "@/hooks/use-scroll";
 import { cn } from "@/lib/utils";
 import { links } from "@/utils/nav-links";
-import Link from "next/link";
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import { FloatingNav } from "./floating-navbar";
 import { useIsMounted } from "@/hooks/useIsMounted";

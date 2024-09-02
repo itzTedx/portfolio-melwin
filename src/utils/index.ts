@@ -43,13 +43,13 @@ export const skillsData = [
   "Adobe XD",
   "Premiere Pro",
   "After Effects",
-  "HTML",
   "Illustrator",
+  "HTML",
   "CSS",
   "Javascript",
-  "Typescript",
   "Next JS",
   "Illustrator",
+  "Photoshop",
   "Tailwind",
 ];
 

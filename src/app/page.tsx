@@ -15,7 +15,7 @@ export default function Home() {
         <Projects />
         <Experience />
         <Skills />
-        <ContactSection />
+        {/* <ContactSection /> */}
       </TracingBeam>
     </>
   );
