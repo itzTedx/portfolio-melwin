@@ -5,7 +5,7 @@ import ProjectsTitle from "@/components/projects-title";
 import { getProjects } from "@/actions/get-project";
 
 const Projects = async () => {
-  const projects = await getProjects();
+  const projects = await getProjects(4);
   return (
     <section id="projects" className="bg-dot relative z-50 my-12 lg:my-24">
       <div className="sticky -top-48 md:-top-36">
