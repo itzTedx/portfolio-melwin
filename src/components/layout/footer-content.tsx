@@ -38,9 +38,9 @@ const Connect = () => {
   return (
     <div className="flex flex-col justify-between lg:col-span-2">
       <div className="relative flex md:justify-between lg:items-end lg:justify-start">
-        <div className="w-[7ch] text-[calc(7.143vw_+_1.071rem)] leading-[calc(7.143vw_+_1.071rem)]">
+        <h5 className="w-[7ch] text-[calc(7.143vw_+_1.071rem)] leading-[calc(7.143vw_+_1.071rem)]">
           {`LET'S CONNECT`}
-        </div>
+        </h5>
         <div className="absolute -top-1 right-3 z-50 md:top-0">
           {/* <div className="btn-rgb">Button</div> */}
 

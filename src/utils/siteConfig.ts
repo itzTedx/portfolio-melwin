@@ -4,7 +4,7 @@ export const siteConfig: SiteConfig = {
   name: "Portfolio of Melwin Af - Graphic Designer",
   shortName: "Melwin Af",
   description:
-    "Energetic visual creator looking for the opportunity to achieve my goal. Looking for a challenging career in a reputable organization where I can utilize the best of my skills and experiences allowing career growth and contribution to growth of organization.",
+    "Energetic visual creator seeking a challenging role in a reputable organization to utilize my skills and experience for mutual growth and success",
 
   url: "https://melwin.vercel.app",
   ogImage: "/og-image.jpg",

@@ -18,6 +18,7 @@ const Logo = ({ variant, className }: LogoProps) => {
             alt="Melwin's Logo"
             className="hidden object-contain dark:block"
             role="logo"
+            title="Melwin's Logo"
             aria-hidden
           />
           <Image
@@ -26,6 +27,7 @@ const Logo = ({ variant, className }: LogoProps) => {
             alt="Melwin's Logo"
             className="block object-contain dark:hidden"
             role="logo"
+            title="Melwin's Logo"
             aria-hidden
           />
         </div>
@@ -39,6 +41,7 @@ const Logo = ({ variant, className }: LogoProps) => {
             alt="Melwin's Logo"
             className="hidden object-contain dark:block"
             role="logo"
+            title="Melwin's Logo"
             aria-hidden
           />
           <Image
@@ -47,6 +50,7 @@ const Logo = ({ variant, className }: LogoProps) => {
             alt="Melwin's Logo"
             className="block object-contain dark:hidden"
             role="logo"
+            title="Melwin's Logo"
             aria-hidden
           />
         </div>
@@ -60,6 +64,7 @@ const Logo = ({ variant, className }: LogoProps) => {
             alt="Melwin's Logo"
             className="hidden object-contain dark:block"
             role="logo"
+            title="Melwin's Logo"
             aria-hidden
           />
           <Image
@@ -68,6 +73,7 @@ const Logo = ({ variant, className }: LogoProps) => {
             alt="Melwin's Logo"
             className="block object-contain dark:hidden"
             role="logo"
+            title="Melwin's Logo"
             aria-hidden
           />
         </div>
@@ -81,6 +87,7 @@ const Logo = ({ variant, className }: LogoProps) => {
             alt="Melwin's Logo"
             className="hidden object-contain dark:block"
             role="logo"
+            title="Melwin's Logo"
             aria-hidden
           />
           <Image
@@ -89,6 +96,7 @@ const Logo = ({ variant, className }: LogoProps) => {
             alt="Melwin's Logo"
             className="block object-contain dark:hidden"
             role="logo"
+            title="Melwin's Logo"
             aria-hidden
           />
         </div>

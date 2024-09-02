@@ -28,6 +28,8 @@ function HeroSection() {
         width={1572}
         height={795}
         className="absolute -top-24 -z-10 md:-top-36"
+        aria-hidden
+        priority
       />
 
       <div className="flex flex-col items-center justify-center py-6 pb-20 text-center md:py-10">

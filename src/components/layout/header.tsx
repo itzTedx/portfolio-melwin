@@ -25,6 +25,7 @@ function Header() {
       <div className="container flex w-full items-center justify-between">
         <div className="flex flex-shrink-0 items-center gap-4">
           <Link
+            title="Visit Homepage"
             href="/"
             className="relative h-10 max-sm:size-12 sm:aspect-[16/5]"
           >
@@ -41,7 +42,7 @@ function Header() {
               className="hover:bg-foreground-50 flex shrink-0 scale-100 gap-2 rounded-lg px-2 py-2 transition active:scale-95"
             >
               <div className="relative h-9 w-9">
-                <Image fill src="/phone.svg" alt="" />
+                <Image fill src="/phone.svg" alt="Call me" title="Call me" />
               </div>
               <div className="flex flex-col">
                 <span className="text-[8px] lg:text-[10px]">Call me now</span>

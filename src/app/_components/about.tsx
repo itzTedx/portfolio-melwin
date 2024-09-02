@@ -11,9 +11,9 @@ function AboutSection() {
       id="about"
       className="relative px-8 pb-6 md:py-12 lg:px-0 lg:py-16"
     >
-      <h5 className="mb-2 font-bricolage text-3xl font-bold text-accent">
+      <h2 className="mb-2 font-bricolage text-3xl font-bold text-accent">
         A Glimpse into my World
-      </h5>
+      </h2>
       <p className="mb-12 font-bricolage text-muted-foreground">
         More about who i am , what i do and what inspires me
       </p>

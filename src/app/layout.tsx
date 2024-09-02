@@ -17,8 +17,7 @@ import Provider from "@/provider";
 
 export const metadata: Metadata = {
   title: "Portfolio of Melwin Af - Graphic Designer",
-  description:
-    "Energetic visual creator looking for the opportunity to achieve my goal. Looking for a challenging career in a reputable organization where I can utilize the best of my skills and experiences allowing career growth and contribution to growth of organization.",
+  description: siteConfig.description,
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.png",
