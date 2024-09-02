@@ -29,25 +29,36 @@ export async function generateMetadata({
 
   const posts = await getPostBySlug(params.slug);
 
+  if (!posts) return { title: "posts of Melwin" };
+
+  const description = posts.metadata.summary!.slice(0, 140) + "...";
+
   return {
-    title: posts?.metadata.title,
-    description: posts?.metadata.summary,
+    title: posts?.metadata.title + "- Melwin Af",
+    description,
     openGraph: {
-      images: posts?.metadata.image,
       type: "article",
-      url: `/blogs/${slug}`,
+      images: {
+        url: posts.metadata.image!,
+        alt: description,
+      },
+      url: `/posts/${slug}`,
       title: posts?.metadata.title,
-      description: posts?.metadata.summary,
+      description,
     },
     twitter: {
       card: "summary_large_image",
-      title: posts?.metadata.title,
-      description: posts?.metadata.summary,
-      images: posts?.metadata.image,
+      title: posts?.metadata.title + "- Melwin Af",
+      description,
+      images: {
+        url: posts.metadata.image!,
+        alt: description,
+      },
 
+      site: "@itzTedx_",
       creator: "@itzTedx_",
     },
-    alternates: { canonical: `/blogs/${slug}` },
+    alternates: { canonical: `/posts/${slug}` },
   };
 }
 
