@@ -18,11 +18,15 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
   }
 }
 
-export async function getProjects(limit?: number): Promise<ProjectMetadata[]> {
+export async function getProjects(
+  limit?: number,
+  onlyFeatured: boolean = false,
+): Promise<ProjectMetadata[]> {
   const files = fs.readdirSync(root);
 
-  const posts = files
+  const projects = files
     .map((file) => getPostMetadata(file))
+    .filter((post) => !onlyFeatured || post.isFeatured)
     .sort((a, b) => {
       if (new Date(a.publishedAt ?? "") < new Date(b.publishedAt ?? "")) {
         return 1;
@@ -32,16 +36,17 @@ export async function getProjects(limit?: number): Promise<ProjectMetadata[]> {
     });
 
   if (limit) {
-    return posts.slice(0, limit);
+    return projects.slice(0, limit);
   }
 
-  return posts;
+  return projects;
 }
 
 export function getPostMetadata(filepath: string): ProjectMetadata {
   const slug = filepath.replace(/\.mdx$/, "");
   const filePath = path.join(root, filepath);
   const fileContent = fs.readFileSync(filePath, { encoding: "utf8" });
+
   const { data } = matter(fileContent);
   return { ...data, slug };
 }

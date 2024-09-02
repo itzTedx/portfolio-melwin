@@ -50,5 +50,6 @@ export type ProjectMetadata = {
   tools?: string[];
   externalLink?: string;
   publishedAt?: string;
+  isFeatured?: boolean;
   slug: string;
 };
