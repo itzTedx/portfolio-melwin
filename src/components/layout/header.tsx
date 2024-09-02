@@ -4,7 +4,6 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 import { ModeToggle } from "@/components/layout/theme-toggle";
-import { useMediaQuery } from "@/hooks/useMediaQuery";
 import Logo from "./logo";
 
 function Header() {
