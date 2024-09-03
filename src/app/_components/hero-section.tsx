@@ -44,6 +44,7 @@ function HeroSection() {
             role="button"
             target="_blank"
             href={personalData.resume}
+            prefetch={false}
           >
             <div className="dots_border" />
             <svg fill="none" viewBox="0 0 24 24" className="sparkle">
