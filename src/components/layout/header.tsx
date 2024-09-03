@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 
 import { ModeToggle } from "@/components/layout/theme-toggle";
 import Logo from "./logo";
+import { CommandMenu } from "./command";
 
 function Header() {
   return (

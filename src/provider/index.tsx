@@ -1,5 +1,5 @@
-import LenisProvider from '@/provider/lenis-provider'
-import { ThemeProvider } from '@/provider/theme-provider'
+import LenisProvider from "@/provider/lenis-provider";
+import { ThemeProvider } from "@/provider/theme-provider";
 
 export default function Provider({ children }: { children: React.ReactNode }) {
   return (
@@ -14,5 +14,5 @@ export default function Provider({ children }: { children: React.ReactNode }) {
         {children}
       </ThemeProvider>
     </>
-  )
+  );
 }

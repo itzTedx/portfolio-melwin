@@ -1,9 +1,10 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Dialog, DialogContent, DialogOverlay } from "@/components/ui/dialog";
+
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import { Dialog, DialogContent, DialogOverlay } from "./modal";
 
 export function FullScreenModal({
   children,

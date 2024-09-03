@@ -26,7 +26,7 @@ export async function generateMetadata({
 
   if (!project) return { title: "Projects of Melwin" };
 
-  const description = project.metadata.summary!.slice(0, 140) + "...";
+  const description = project.metadata.summary!.slice(0, 160) + "...";
 
   return {
     title: project?.metadata.title + "- Melwin Af",

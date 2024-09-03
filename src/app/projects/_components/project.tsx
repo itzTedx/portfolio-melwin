@@ -72,7 +72,7 @@ export default function Project({ project }: { project: Project }) {
               <MDXContent source={content} />
             </main>
             <div className="mt-9 space-y-4 text-pretty font-bricolage text-foreground/80 sm:mt-12 md:text-xl md:leading-8">
-              <h5>Tools used:</h5>
+              <h4>Tools used:</h4>
               <ul className="flex flex-wrap gap-3 pb-4">
                 {tools?.map((tool, i) => (
                   <li
