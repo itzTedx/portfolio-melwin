@@ -53,8 +53,16 @@ const Navbar = () => {
                 >
                   <span
                     className={cn(
+                      isActive && "z-10 text-muted-foreground",
+                      "hidden md:block",
+                    )}
+                  >
+                    {link.icon}
+                  </span>
+                  <span
+                    className={cn(
                       isActive && "z-10 text-foreground",
-                      "hidden sm:block",
+                      "hidden md:block",
                     )}
                   >
                     {link.name}
