@@ -28,7 +28,7 @@ const ImageSection = () => {
         src={personalData.profile}
         fill
         quality={20}
-        alt="Melwin af"
+        alt="Melwin's image"
         className="cursor-pointer object-cover grayscale transition-all duration-700 group-hover:scale-105 group-hover:grayscale-0"
       />
     </div>
@@ -46,7 +46,7 @@ const Connect = () => {
           {/* <div className="btn-rgb">Button</div> */}
 
           <Button className="btn-rgb gap-2 text-lg" asChild>
-            <Link href="/contact">
+            <Link href="/contact" aria-label="Get in Touch with me">
               <svg fill="none" viewBox="0 0 24 24" className="sparkle">
                 <path
                   className="path"
@@ -81,6 +81,7 @@ const Connect = () => {
       <div className="flex flex-col items-start gap-3 py-2 sm:gap-0 lg:flex-row lg:gap-3">
         <Link
           href="https://www.instagram.com/itzTed._x"
+          aria-label="Follow me on Instagram"
           target="_blank"
           rel="noopener noreferrer"
           className="transition-colors hover:text-muted-foreground md:text-xl"
@@ -89,6 +90,7 @@ const Connect = () => {
         </Link>
         <Link
           href="https://www.linkedin.com/in/melwin-af/"
+          aria-label="Follow me on Linkedin"
           target="_blank"
           className="transition-colors hover:text-muted-foreground md:text-xl"
         >
@@ -96,6 +98,7 @@ const Connect = () => {
         </Link>
         <Link
           href="https://www.behance.net/melwinaf"
+          aria-label="Follow me on Behance"
           rel="noopener noreferrer"
           className="transition-colors hover:text-muted-foreground md:text-xl"
         >

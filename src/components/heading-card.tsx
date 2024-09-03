@@ -1,13 +1,13 @@
-import AnimatedBorderTrail from '@/components/ui/animated-trail-border'
+import AnimatedBorderTrail from "@/components/ui/animated-trail-border";
 
 interface HeadingProps {
-  heading: string
+  heading: string;
 }
 
 export default function HeadingCard({ heading }: HeadingProps) {
   return (
-    <div className="flex items-center justify-center py-5 lg:pt-24 lg:pb-12 ">
-      <span className="w-[4.5rem] sm:w-24 h-[2px] bg-secondary" />
+    <h5 className="flex items-center justify-center py-5 lg:pb-12 lg:pt-24">
+      <span className="h-[2px] w-[4.5rem] bg-secondary sm:w-24" />
       <AnimatedBorderTrail
         trailSize="md"
         trailColor="#8b5cf6"
@@ -15,7 +15,7 @@ export default function HeadingCard({ heading }: HeadingProps) {
       >
         {heading}
       </AnimatedBorderTrail>
-      <span className="w-[4.5rem] sm:w-24 h-[2px] bg-secondary" />
-    </div>
-  )
+      <span className="h-[2px] w-[4.5rem] bg-secondary sm:w-24" />
+    </h5>
+  );
 }

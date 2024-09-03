@@ -2,22 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 
 import Social from "@/components/social-icons";
-import { buttonVariants } from "@/components/ui/button";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import HeroTextAnimation from "./hero-text-animation";
 
-import ContactForm from "@/components/contact-form";
-import {
-  Drawer,
-  DrawerContent,
-  DrawerDescription,
-  DrawerHeader,
-  DrawerTitle,
-  DrawerTrigger,
-} from "@/components/ui/drawer";
 import { cn } from "@/lib/utils";
 import { personalData } from "@/utils";
-import ContactButton from "./hero-contact-button";
 
 function HeroSection() {
   return (

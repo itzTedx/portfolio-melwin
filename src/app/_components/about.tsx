@@ -3,7 +3,6 @@ import { gridItems } from "@/utils";
 import dynamic from "next/dynamic";
 
 const Particles = dynamic(() => import("@/components/particles"));
-const Lightbox = dynamic(() => import("@/components/lightbox"));
 
 function AboutSection() {
   return (

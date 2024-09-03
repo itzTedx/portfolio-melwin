@@ -1,8 +1,6 @@
-import { projectsData } from "@/utils";
-
+import { getProjects } from "@/actions/get-project";
 import ProjectCard from "@/components/project-card";
 import ProjectsTitle from "@/components/projects-title";
-import { getProjects } from "@/actions/get-project";
 
 const Projects = async () => {
   const projects = await getProjects(4, true);

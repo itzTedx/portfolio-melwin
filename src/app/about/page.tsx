@@ -5,7 +5,6 @@ import Link from "next/link";
 import AboutMe from "./_components/about-me";
 import Education from "./_components/education";
 import { Timeline } from "./_components/timeline";
-import { VisionOSIcon } from "./_components/logo-interaction";
 
 export default function About() {
   const data = [
@@ -20,6 +19,7 @@ export default function About() {
             Link for my {``}
             <Link
               href="https://www.linkedin.com/in/melwin-af/"
+              aria-label="Link to my Portfolio"
               className={cn(
                 buttonVariants({ variant: "link" }),
                 "px-0 py-0 text-lg font-bold",

@@ -71,6 +71,7 @@ export const FloatingNav = ({
               <li key={`link=${idx}`}>
                 <Link
                   href={navItem.link}
+                  aria-label={`Visit ${navItem.name} Page`}
                   className={cn(
                     "relative flex items-center space-x-1 p-3 text-neutral-600 hover:text-neutral-500 dark:text-neutral-50 dark:hover:text-neutral-300",
                   )}

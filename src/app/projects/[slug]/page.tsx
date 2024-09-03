@@ -74,7 +74,7 @@ export default async function ProjectPage({
         variant="outline"
         className="rounded-full font-bricolage font-medium tracking-tight text-muted-foreground"
       >
-        <Link href="/projects">
+        <Link href="/projects" aria-label="Back to projects page">
           <ArrowLeft className="mr-2 size-4" /> Back to Projects
         </Link>
       </Button>

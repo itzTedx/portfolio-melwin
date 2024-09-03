@@ -29,6 +29,7 @@ function ProjectCard({ project }: { project: ProjectMetadata }) {
           href={`/projects/${project.slug}`}
           title={project.title}
           scroll={false}
+          aria-label={`Read More about ${project.title}`}
           className="flex flex-col overflow-hidden rounded-sm border"
         >
           <div className="relative aspect-[16/11]">

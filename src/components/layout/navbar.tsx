@@ -50,6 +50,7 @@ const Navbar = () => {
                 <Link
                   href={link.link}
                   className={"relative flex items-center gap-1.5 px-4"}
+                  aria-label={`Visit ${link.name} page`}
                 >
                   <span
                     className={cn(

@@ -22,6 +22,8 @@ export default function Social({ className }: { className?: string }) {
         href={personalData.instagram}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Follow me on Instagram"
+        title="Follow me on Instagram"
         className={cn(
           buttonVariants({
             variant: "outline",
@@ -36,6 +38,8 @@ export default function Social({ className }: { className?: string }) {
         href={personalData.linkedIn}
         target="_blank"
         rel="noopener noreferrer"
+        title="Follow me on Linkedin"
+        aria-label="Follow me on Linkedin"
         className={cn(
           buttonVariants({
             variant: "outline",
@@ -47,9 +51,11 @@ export default function Social({ className }: { className?: string }) {
         <FaLinkedin className="size-6" />
       </Link>
       <Link
-        href={personalData.instagram}
+        href={personalData.behance}
         target="_blank"
         rel="noopener noreferrer"
+        title="Follow me on Behance"
+        aria-label="Follow me on Behance"
         className={cn(
           buttonVariants({
             variant: "outline",
@@ -64,6 +70,8 @@ export default function Social({ className }: { className?: string }) {
         href={personalData.youtube}
         target="_blank"
         rel="noopener noreferrer"
+        title="Follow me on Youtube"
+        aria-label="Follow me on Youtube"
         className={cn(
           buttonVariants({
             variant: "outline",

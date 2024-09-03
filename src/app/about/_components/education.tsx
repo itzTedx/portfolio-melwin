@@ -18,6 +18,7 @@ function Education() {
       <Image
         src="/section.svg"
         alt="Hero"
+        aria-hidden
         width={1572}
         height={795}
         className="absolute top-0 -z-10"

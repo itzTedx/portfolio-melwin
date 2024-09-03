@@ -86,7 +86,7 @@ export default async function BlogPage({
           variant="outline"
           className="mb-8 rounded-full font-bricolage font-medium tracking-tight text-muted-foreground"
         >
-          <Link href="/blogs">
+          <Link href="/blogs" aria-label="Back to blogs">
             <ArrowLeft className="mr-2 size-4" /> Back to Blogs
           </Link>
         </Button>

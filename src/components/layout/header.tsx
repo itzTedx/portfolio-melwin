@@ -5,7 +5,6 @@ import { cn } from "@/lib/utils";
 
 import { ModeToggle } from "@/components/layout/theme-toggle";
 import Logo from "./logo";
-import { CommandMenu } from "./command";
 
 function Header() {
   return (
@@ -27,6 +26,7 @@ function Header() {
         <div className="flex flex-shrink-0 items-center gap-4">
           <Link
             title="Visit Homepage"
+            aria-label="Visit Homepage"
             href="/"
             className="relative h-10 max-sm:size-12 sm:aspect-[16/5]"
           >
@@ -40,6 +40,7 @@ function Header() {
           <div className="hidden lg:block">
             <Link
               href="tel:+971588102324"
+              aria-label="Call me now. Click to open Phone App"
               className="hover:bg-foreground-50 flex shrink-0 scale-100 gap-2 rounded-lg px-2 py-2 transition active:scale-95"
             >
               <div className="relative h-9 w-9">

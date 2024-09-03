@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function PostsCard({ post }: { post: PostMetadata }) {
   return (
     <Card className="group overflow-hidden">
-      <Link href={`blogs/${post.slug}`}>
+      <Link href={`blogs/${post.slug}`} aria-label={`Read about ${post.title}`}>
         <CardContent>
           <div className="relative aspect-[16/7]">
             <Image

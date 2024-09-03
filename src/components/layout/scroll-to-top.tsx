@@ -13,6 +13,7 @@ const ScrollToTop = () => {
 
   return (
     <button
+      aria-label="Scroll to top of the webpage"
       className={cn(
         "fixed bottom-2 z-[9999999] hidden transition-all duration-500 ease-in-out sm:bottom-4 sm:block",
         isScrolled ? "right-2 sm:right-4" : "-right-24",

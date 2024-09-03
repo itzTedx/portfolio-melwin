@@ -1,9 +1,9 @@
 "use client";
 
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
-import { Project, ProjectMetadata } from "@/types";
+import { Project } from "@/types";
 import { skillsImage } from "@/utils/skill-icons";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
@@ -43,6 +43,7 @@ export default function ModalContent({ content }: { content: Project }) {
                 width={40}
                 src={skillsImage(tool)}
                 alt={tool}
+                title={tool}
                 className="size-6"
               />
               <span className="max-sm:hidden">{tool}</span>
@@ -58,6 +59,7 @@ export default function ModalContent({ content }: { content: Project }) {
             "group relative flex flex-col items-start rounded-full border-0 px-6 py-4 outline outline-input hover:bg-muted/20 hover:outline-4",
           )}
           href={metadata.externalLink}
+          aria-label={"More about this project"}
           target="_blank"
           rel="noopener noreferrer"
         >

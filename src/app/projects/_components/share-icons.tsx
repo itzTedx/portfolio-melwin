@@ -28,6 +28,7 @@ export default function ShareIcons({ pathname }: { pathname: string }) {
         href={`https://twitter.com/intent/tweet?url=${pathname}`}
         target="_blank"
         rel="noopener noreferrer"
+        aria-label="Share it on twitter"
         className={cn(
           buttonVariants({
             variant: "outline",
@@ -41,6 +42,7 @@ export default function ShareIcons({ pathname }: { pathname: string }) {
       <Link
         href={`https://www.linkedin.com/sharing/share-offsite/?url=${pathname}`}
         target="_blank"
+        aria-label="Share this project on Linkedin"
         rel="noopener noreferrer"
         className={cn(
           buttonVariants({
@@ -56,6 +58,7 @@ export default function ShareIcons({ pathname }: { pathname: string }) {
       <Link
         href={pathname}
         onClick={handleCopyClick}
+        aria-label="Copy link"
         scroll={false}
         className={cn(
           buttonVariants({
@@ -73,6 +76,7 @@ export default function ShareIcons({ pathname }: { pathname: string }) {
         )}
       </Link>
       <Link
+        aria-label="Send this project to your friends"
         href={`mailto:?body=Hey!%0A%0ACheck%20out%20this%20awesome%20project:%20${pathname}`}
         className={cn(
           buttonVariants({

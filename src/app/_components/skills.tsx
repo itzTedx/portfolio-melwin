@@ -50,6 +50,7 @@ function Skills() {
                     <Image
                       src={skillsImage(skill)}
                       alt={skill}
+                      title={skill}
                       width={40}
                       height={40}
                       className="h-full w-auto"

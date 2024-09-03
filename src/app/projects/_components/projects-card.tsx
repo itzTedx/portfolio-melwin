@@ -10,7 +10,10 @@ export default function ProjectsCard({
 }) {
   return (
     <Card className="group overflow-hidden">
-      <a href={`projects/${project.slug}`}>
+      <a
+        href={`projects/${project.slug}`}
+        aria-label={`Open Project About ${project.title}`}
+      >
         <CardContent>
           <div className="relative aspect-[16/7]">
             <Image

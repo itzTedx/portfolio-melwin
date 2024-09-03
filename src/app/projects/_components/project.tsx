@@ -94,6 +94,7 @@ export default function Project({ project }: { project: Project }) {
                 <Link
                   href={externalLink!}
                   target="_blank"
+                  aria-label=""
                   rel="noopener noreferrer"
                   className={cn(
                     buttonVariants({ variant: "link" }),

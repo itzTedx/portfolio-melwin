@@ -11,12 +11,14 @@ export default function ModalImage({ content }: { content: ProjectMetadata }) {
       <Image
         src={content.image!}
         alt={content.title!}
+        title={content.title!}
         fill
         className={cn("z-50 overflow-hidden rounded-md object-cover")}
       />
       <Image
         src={content.image!}
         alt={content.title!}
+        title={content.title!}
         fill
         className="object-cover opacity-35 blur-3xl"
         quality={1}

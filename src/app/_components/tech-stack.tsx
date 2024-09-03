@@ -1,7 +1,7 @@
 "use client";
 
-import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 interface TechStackProps {
   left: string[];
