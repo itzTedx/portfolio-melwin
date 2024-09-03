@@ -1,3 +1,4 @@
+import { AnimatedTooltip } from "@/components/ui/animated-tooltip";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { formatDate } from "@/lib/utils";
 import { ProjectMetadata } from "@/types";
@@ -22,6 +23,11 @@ export default function ProjectsCard({
               alt={project.summary!}
               className="object-cover"
             />
+            {project.tools && (
+              <div className="absolute bottom-4 right-4 mr-3 flex">
+                <AnimatedTooltip tools={project.tools} />
+              </div>
+            )}
           </div>
           <div className="flex gap-4 p-4 transition-colors duration-300 group-hover:bg-muted/30 md:gap-8 md:p-8">
             <div className="relative flex size-12 shrink-0 items-center justify-center rounded-md bg-muted p-1 transition-colors duration-300 group-hover:bg-transparent max-sm:hidden md:size-14">

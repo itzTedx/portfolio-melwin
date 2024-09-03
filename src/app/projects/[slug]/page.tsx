@@ -1,12 +1,14 @@
 import { getProjectBySlug, getProjects } from "@/actions/get-project";
-import { Button } from "@/components/ui/button";
-import { notFound } from "next/navigation";
-import Project from "../_components/project";
-import { ArrowLeft } from "lucide-react";
-import Link from "next/link";
-import AnimatedBorderTrail from "@/components/ui/animated-trail-border";
 import TopGradient from "@/components/layout/top-gradient";
-import type { Metadata, ResolvingMetadata } from "next";
+import AnimatedBorderTrail from "@/components/ui/animated-trail-border";
+import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/utils/siteConfig";
+import { ArrowLeft } from "lucide-react";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { Graph } from "schema-dts";
+import Project from "../_components/project";
 
 export async function generateStaticParams() {
   const projects = await getProjects();
@@ -66,8 +68,43 @@ export default async function ProjectPage({
 
   if (!project) notFound();
 
+  const jsonLd: Graph = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Projects",
+            item: `${process.env.BASE_URL}/projects`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: project.metadata.title,
+          },
+        ],
+      },
+      {
+        "@type": "BlogPosting",
+        headline: project.metadata.title,
+        image: `${process.env.BASE_URL}${project.metadata.image}`,
+        description: project.metadata.summary,
+        editor: siteConfig.shortName,
+        genre: project.metadata.tag,
+        url: `${process.env.BASE_URL}/projects/${params.slug}`,
+        publisher: siteConfig.shortName,
+        dateCreated: project.metadata.publishedAt,
+        dateModified: project.metadata.publishedAt,
+        datePublished: project.metadata.publishedAt,
+      },
+    ],
+  };
+
   return (
-    <section className="bg-dot mx-auto max-w-screen-lg space-y-9 px-4 pb-24 transition-[max-width] duration-300 sm:px-12">
+    <article className="bg-dot mx-auto max-w-screen-lg space-y-9 px-4 pb-24 transition-[max-width] duration-300 sm:px-12">
       <TopGradient />
       <Button
         asChild
@@ -81,6 +118,10 @@ export default async function ProjectPage({
       <AnimatedBorderTrail duration="10s" trailSize="sm" trailColor="#8b5cf6">
         <Project project={project} />
       </AnimatedBorderTrail>
-    </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+    </article>
   );
 }

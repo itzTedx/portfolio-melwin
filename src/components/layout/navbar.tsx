@@ -41,7 +41,7 @@ const Navbar = () => {
         >
           <div className="absolute bottom-0 h-px w-1/2 bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
         </div>
-        <ul className="flex w-full flex-row items-center bg-transparent">
+        <menu className="flex w-full flex-row items-center bg-transparent">
           {links.map((link, index) => {
             const isActive = pathname.startsWith(link.link);
 
@@ -73,7 +73,7 @@ const Navbar = () => {
               </li>
             );
           })}
-        </ul>
+        </menu>
       </nav>
     );
 
@@ -88,7 +88,7 @@ const Span = () => {
       layoutId="pill-tab"
       transition={{ type: "spring", duration: 0.5 }}
       className={cn(
-        "absolute -bottom-4 left-1/2 z-0 -ml-[2px] size-2 -translate-x-1/2 rounded-full bg-amber-400 bg-gradient-to-br",
+        "absolute -bottom-4 left-1/2 z-0 ml-1.5 size-2 -translate-x-1/2 rounded-full bg-amber-400 bg-gradient-to-b",
       )}
     />
   );
@@ -98,6 +98,7 @@ const DesktopNavbar = () => {
   const pathname = usePathname();
   return (
     <nav
+      aria-label="Main Navigation"
       className={cn(
         "fixed left-1/2 top-3 z-[999999] hidden -translate-x-1/2 rounded-full px-5 py-3 transition-all duration-500 ease-in-out md:block",
         "bg-transparent backdrop-blur-0",
@@ -122,8 +123,18 @@ const DesktopNavbar = () => {
             <li key={link.id}>
               <Link
                 href={link.link}
+                aria-label={link.name}
                 className={"relative flex items-center gap-1.5 px-4"}
+                aria-current={isActive ? "page" : undefined}
               >
+                <span
+                  className={cn(
+                    isActive && "z-10 text-muted-foreground",
+                    "hidden md:block",
+                  )}
+                >
+                  {link.icon}
+                </span>
                 <span
                   className={cn(
                     isActive && "z-10 text-foreground",

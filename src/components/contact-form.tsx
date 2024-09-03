@@ -71,78 +71,82 @@ export default function ContactForm({ setOpen }: ContactFormProps) {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="w-full px-3 pb-4">
-        <AnimatedBorderTrail
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className="mx-auto w-full px-3 pb-4 sm:max-w-screen-sm"
+      >
+        {/* <AnimatedBorderTrail
           trailSize="sm"
           trailColor="#8b5cf6"
           className="w-full"
-        >
-          <div className="space-y-5 rounded-lg p-4 pb-6 text-foreground lg:p-5">
-            <div className="mb-9">
-              <h1 className="font-bricolage text-4xl font-bold">Contact Me</h1>
-              <p>
-                Write me a few words about your project. I&apos;ll get back to
-                you within 1 hour
-              </p>
-            </div>
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Your Name</FormLabel>
-                  <FormControl>
-                    <Input placeholder="Name" {...field} />
-                  </FormControl>
+        > */}
+        <div className="space-y-5 rounded-lg p-4 text-foreground sm:p-6 lg:p-5">
+          <header className="pb-4 lg:pb-9">
+            <h1 className="mb-3 font-bricolage text-4xl font-bold">
+              I&apos;d love to help
+            </h1>
+            <p className="text-muted-foreground">
+              Reach out and I&apos;ll get in touch within 1 hour.
+            </p>
+          </header>
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Your Name</FormLabel>
+                <FormControl>
+                  <Input placeholder="Name" {...field} />
+                </FormControl>
 
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input placeholder="name@mail.com" {...field} />
-                  </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Email</FormLabel>
+                <FormControl>
+                  <Input placeholder="name@mail.com" {...field} />
+                </FormControl>
 
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="message"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Message</FormLabel>
-                  <FormControl>
-                    <Textarea
-                      className="min-h-64"
-                      {...field}
-                      placeholder="Type something here"
-                    />
-                  </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Message</FormLabel>
+                <FormControl>
+                  <Textarea
+                    className="min-h-40"
+                    {...field}
+                    placeholder="Type something here"
+                  />
+                </FormControl>
 
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-            <div className="flex">
-              <Button
-                disabled={!form.formState.isValid}
-                type="submit"
-                className="w-full rounded-full py-3"
-              >
-                {loading ? <Loader className="animate-spin" /> : "Send Message"}
-              </Button>
-            </div>
+          <div className="flex">
+            <Button
+              disabled={!form.formState.isValid}
+              type="submit"
+              className="w-full rounded-full py-3"
+            >
+              {loading ? <Loader className="animate-spin" /> : "Send Message"}
+            </Button>
           </div>
-        </AnimatedBorderTrail>
+        </div>
+        {/* </AnimatedBorderTrail> */}
       </form>
     </Form>
   );

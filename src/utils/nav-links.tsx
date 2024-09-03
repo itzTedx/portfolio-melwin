@@ -11,33 +11,27 @@ export const links = [
     id: 1,
     name: "About",
     link: "/about",
-    icon: (
-      <UserRound className="mr-1 block size-5 sm:text-muted-foreground lg:hidden" />
-    ),
+    icon: <UserRound className="mr-1 block size-5 sm:text-muted-foreground" />,
   },
   {
     id: 2,
     name: "Projects",
     link: "/projects",
-    icon: (
-      <PenTool className="mr-1 block size-5 sm:text-muted-foreground lg:hidden" />
-    ),
+    icon: <PenTool className="mr-1 block size-5 sm:text-muted-foreground" />,
   },
   {
     id: 3,
     name: "Blogs",
     link: "/blogs",
     icon: (
-      <NotebookPen className="mr-1 block size-5 sm:text-muted-foreground lg:hidden" />
+      <NotebookPen className="mr-1 block size-5 sm:text-muted-foreground" />
     ),
   },
   {
     id: 4,
     name: "Contact",
     link: "/contact",
-    icon: (
-      <PhoneCall className="mr-1 block size-5 sm:text-muted-foreground lg:hidden" />
-    ),
+    icon: <PhoneCall className="mr-1 block size-5 sm:text-muted-foreground" />,
   },
 ];
 

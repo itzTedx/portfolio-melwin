@@ -17,6 +17,7 @@ function HeroSection() {
         height={795}
         className="absolute -top-24 -z-10 md:-top-36"
         aria-hidden
+        quality={50}
         priority
       />
 

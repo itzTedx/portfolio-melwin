@@ -18,3 +18,11 @@ export const getRandomPercentage = (): string =>
 
 export const getRandomRotation = (): string =>
   `${(Math.random() * 12 - 6).toFixed(2)}deg`;
+
+export function calculateReadingTime(text: string): string {
+  const wordsPerMinute = 200; // Average reading speed
+  const words = text.trim().split(/\s+/).length; // Count the number of words in the text
+  const minutes = Math.ceil(words / wordsPerMinute); // Calculate the time in minutes
+
+  return `${minutes} min read`;
+}

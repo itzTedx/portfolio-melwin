@@ -10,13 +10,13 @@ import { personalData } from "@/utils";
 export default function Content() {
   return (
     <>
-      <footer className="grid h-full w-full gap-x-6 bg-foreground px-4 py-4 text-background dark:bg-foreground/90 md:grid-cols-2 lg:grid-cols-3 lg:px-9 lg:py-8">
+      <div className="grid h-full w-full gap-x-6 bg-foreground px-4 py-4 text-background dark:bg-foreground/90 md:grid-cols-2 lg:grid-cols-3 lg:px-9 lg:py-8">
         <ImageSection />
         <Connect />
         <div className="mt-auto py-2">
           &copy; Portfolio of <span className="text-primary">Melwin Af</span>
         </div>
-      </footer>
+      </div>
     </>
   );
 }
@@ -37,11 +37,11 @@ const ImageSection = () => {
 
 const Connect = () => {
   return (
-    <div className="flex flex-col justify-between lg:col-span-2">
+    <nav className="flex flex-col justify-between lg:col-span-2">
       <div className="relative flex md:justify-between lg:items-end lg:justify-start">
-        <h5 className="w-[7ch] text-[calc(7.143vw_+_1.071rem)] leading-[calc(7.143vw_+_1.071rem)]">
+        <h6 className="w-[7ch] text-[calc(7.143vw_+_1.071rem)] leading-[calc(7.143vw_+_1.071rem)]">
           {`LET'S CONNECT`}
-        </h5>
+        </h6>
         <div className="absolute -top-1 right-3 z-50 md:top-0">
           {/* <div className="btn-rgb">Button</div> */}
 
@@ -105,6 +105,6 @@ const Connect = () => {
           Behance
         </Link>
       </div>
-    </div>
+    </nav>
   );
 };

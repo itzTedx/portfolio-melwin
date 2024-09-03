@@ -11,6 +11,8 @@ import TopGradient from "@/components/layout/top-gradient";
 import { Card, CardContent } from "@/components/ui/card";
 import ShareIcons from "@/app/projects/_components/share-icons";
 import { Metadata } from "next";
+import { Graph } from "schema-dts";
+import { siteConfig } from "@/utils/siteConfig";
 
 export async function generateStaticParams() {
   const posts = await getPosts();
@@ -72,13 +74,48 @@ export default async function BlogPage({
 
   if (!post) return notFound();
 
+  const jsonLd: Graph = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Blogs",
+            item: `${process.env.BASE_URL}/blogs`,
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: post.metadata.title,
+          },
+        ],
+      },
+      {
+        "@type": "BlogPosting",
+        headline: post.metadata.title,
+        image: `${process.env.BASE_URL}${post.metadata.image}`,
+        description: post.metadata.summary,
+        url: `${process.env.BASE_URL}/posts/${params.slug}`,
+
+        editor: siteConfig.shortName,
+        publisher: siteConfig.shortName,
+        dateCreated: post.metadata.publishedAt,
+        dateModified: post.metadata.publishedAt,
+        datePublished: post.metadata.publishedAt,
+      },
+    ],
+  };
+
   const { metadata, content } = post;
   const { title, image, author, publishedAt, summary } = metadata;
 
   const pathname = `${process.env.BASE_URL}/blogs/${slug}`;
 
   return (
-    <section className="py-12 md:py-6">
+    <article className="py-12 md:py-6">
       <TopGradient />
       <div className="container max-w-screen-lg">
         <Button
@@ -93,9 +130,12 @@ export default async function BlogPage({
         <Card className="group overflow-hidden">
           <CardContent>
             {image && (
-              <div className="relative aspect-video">
+              <figure className="relative aspect-video">
                 <Image src={image} fill alt={title!} className="object-cover" />
-              </div>
+                <figcaption className="sr-only" aria-hidden>
+                  {title}
+                </figcaption>
+              </figure>
             )}
 
             <div className="flex gap-4 p-4 md:gap-14 md:p-12">
@@ -151,6 +191,10 @@ export default async function BlogPage({
           </CardContent>
         </Card>
       </div>
-    </section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+    </article>
   );
 }

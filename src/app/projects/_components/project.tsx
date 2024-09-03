@@ -30,9 +30,12 @@ export default function Project({ project }: { project: Project }) {
   return (
     <Card className="group overflow-hidden">
       <CardContent>
-        <div className="relative aspect-video">
+        <figure className="relative aspect-video">
           <Image src={image!} fill alt={summary!} className="object-cover" />
-        </div>
+          <figcaption className="sr-only" aria-hidden>
+            {summary}
+          </figcaption>
+        </figure>
 
         <div className="flex gap-4 p-4 md:gap-14 md:p-12">
           <aside className="max-sm:hidden">
@@ -48,30 +51,34 @@ export default function Project({ project }: { project: Project }) {
               <ShareIcons pathname={pathname} />
             </div>
           </aside>
-          <article className="">
-            <h1 className="mb-4 font-bricolage text-3xl font-semibold leading-none tracking-tight md:text-4xl">
-              {title}
-            </h1>
-            <div className="flex items-center gap-4">
-              <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-muted p-1 sm:hidden">
-                <Image
-                  height={36}
-                  width={36}
-                  alt={company + "logo"}
-                  src={companyLogo!}
-                />
-              </div>
-              <div className="flex gap-1.5 max-sm:flex-col">
-                <span className="text-primary"> {tag} </span>
+          <div className="">
+            <header>
+              <h1 className="mb-4 font-bricolage text-3xl font-semibold leading-none tracking-tight md:text-4xl">
+                {title}
+              </h1>
+              <div className="flex items-center gap-4">
+                <div className="relative flex h-12 w-12 shrink-0 items-center justify-center rounded-md bg-muted p-1 sm:hidden">
+                  <Image
+                    height={36}
+                    width={36}
+                    alt={company + "logo"}
+                    src={companyLogo!}
+                  />
+                </div>
+                <div className="flex gap-1.5 max-sm:flex-col">
+                  <span className="text-primary"> {tag} </span>
 
-                <div className="max-sm:hidden">✦</div>
-                <span> {formatDate(publishedAt ?? "")}</span>
+                  <div className="max-sm:hidden">✦</div>
+                  <time> {formatDate(publishedAt ?? "")}</time>
+                </div>
               </div>
-            </div>
+            </header>
+
             <main className="prose mt-9 space-y-4 text-pretty font-bricolage text-foreground/80 dark:prose-invert sm:mt-12 md:text-xl md:leading-8">
               <MDXContent source={content} />
             </main>
-            <div className="mt-9 space-y-4 text-pretty font-bricolage text-foreground/80 sm:mt-12 md:text-xl md:leading-8">
+
+            <section className="mt-9 space-y-4 text-pretty font-bricolage text-foreground/80 sm:mt-12 md:text-xl md:leading-8">
               <h4>Tools used:</h4>
               <ul className="flex flex-wrap gap-3 pb-4">
                 {tools?.map((tool, i) => (
@@ -105,12 +112,12 @@ export default function Project({ project }: { project: Project }) {
                   <ExternalLink className="ml-2 size-4 md:size-5" />
                 </Link>
               )}
-            </div>
+            </section>
 
             <div className="sm:hidden">
               <ShareIcons pathname={pathname} />
             </div>
-          </article>
+          </div>
         </div>
       </CardContent>
     </Card>

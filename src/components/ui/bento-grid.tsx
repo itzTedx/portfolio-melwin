@@ -85,6 +85,7 @@ export const BentoGridItem = ({
               src={img}
               alt={img}
               title={img}
+              loading="lazy"
               className={cn(
                 imgClassName,
                 id === 5 && "transition-transform group-hover/bento:scale-150",
@@ -102,6 +103,7 @@ export const BentoGridItem = ({
               src={spareImg}
               alt={spareImg}
               title={spareImg}
+              loading="lazy"
               className={cn(
                 "h-full w-full object-cover object-center",
                 id === 5 && "transition-opacity group-hover/bento:opacity-0",
@@ -146,6 +148,9 @@ export const BentoGridItem = ({
               <Image
                 src="/section.svg"
                 alt="Hero"
+                quality={20}
+                loading="lazy"
+                priority={false}
                 aria-hidden
                 width={1572}
                 height={795}

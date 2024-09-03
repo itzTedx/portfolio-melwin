@@ -6,7 +6,7 @@ interface HeadingProps {
 
 export default function HeadingCard({ heading }: HeadingProps) {
   return (
-    <h5 className="flex items-center justify-center py-5 lg:pb-12 lg:pt-24">
+    <h4 className="flex items-center justify-center py-5 lg:pb-12 lg:pt-24">
       <span className="h-[2px] w-[4.5rem] bg-secondary sm:w-24" />
       <AnimatedBorderTrail
         trailSize="md"
@@ -16,6 +16,6 @@ export default function HeadingCard({ heading }: HeadingProps) {
         {heading}
       </AnimatedBorderTrail>
       <span className="h-[2px] w-[4.5rem] bg-secondary sm:w-24" />
-    </h5>
+    </h4>
   );
 }

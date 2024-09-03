@@ -22,7 +22,7 @@ function Skills() {
 
       <HeadingCard heading="Skills" />
 
-      <div className="relative my-12 w-full">
+      <ul className="relative my-12 w-full">
         <div className="pointer-events-none absolute left-0 top-0 z-50 h-full w-32 bg-gradient-to-r from-background to-transparent" />
         <div className="pointer-events-none absolute right-0 top-0 z-50 h-full w-32 bg-gradient-to-l from-background to-transparent" />
         <Marquee
@@ -35,7 +35,7 @@ function Skills() {
           direction="left"
         >
           {skillsData.map((skill, id) => (
-            <div
+            <li
               className="group relative m-3 flex size-36 h-fit min-w-fit cursor-pointer flex-col items-center justify-center rounded-md transition-all duration-500 hover:scale-[1.15] sm:m-5"
               key={id}
             >
@@ -59,10 +59,10 @@ function Skills() {
                   <p className="text-sm text-foreground">{skill}</p>
                 </div>
               </div>
-            </div>
+            </li>
           ))}
         </Marquee>
-      </div>
+      </ul>
     </section>
   );
 }
