@@ -1,13 +1,34 @@
 import ContactForm from "@/components/contact-form";
-import TopGradient from "@/components/layout/top-gradient";
 import OrbitingCircles from "@/components/orbiting-circles";
 import Social from "@/components/social-icons";
 import AnimatedBorderTrail from "@/components/ui/animated-trail-border";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/utils/siteConfig";
 import { ArrowLeft, Instagram, Linkedin, Pin } from "lucide-react";
+import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { BsWhatsapp } from "react-icons/bs";
+
+export const metadata: Metadata = {
+  title: "I'd love to help - Melwin Af",
+  description: "Reach out and I'll get in touch within 1 hour",
+  openGraph: {
+    images: siteConfig.ogImage,
+    type: "website",
+    url: `/contact`,
+    title: "I'd love to help - Melwin Af",
+    description: "Reach out and I'll get in touch within 1 hour",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "I'd love to help - Melwin Af",
+    description: "Reach out and I'll get in touch within 1 hour",
+    images: siteConfig.ogImage,
+    creator: "@itzTedx_",
+  },
+  alternates: { canonical: `/contact` },
+};
 
 export default function ContactPage() {
   return (
