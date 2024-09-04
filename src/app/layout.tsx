@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/react";
 
 import "../style/globals.css";
 import "../style/ui.css";
@@ -108,6 +109,7 @@ export default function RootLayout({
           </div>
           <BreakpointIndicator />
         </Provider>
+        <Analytics />
       </body>
     </html>
   );
