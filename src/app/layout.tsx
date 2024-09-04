@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "../style/globals.css";
 import "../style/ui.css";
@@ -110,6 +111,7 @@ export default function RootLayout({
           <BreakpointIndicator />
         </Provider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
