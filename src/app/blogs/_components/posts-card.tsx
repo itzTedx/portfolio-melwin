@@ -35,6 +35,7 @@ export default async function PostsCard({ post }: { post: PostMetadata }) {
                   width={36}
                   alt={"Melwin's avatar"}
                   src="/png/avatar.webp"
+                  className="origin-bottom transition duration-500 ease-in-out hover:scale-105 group-hover:rotate-6"
                 />
               </div>
             )}

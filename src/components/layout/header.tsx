@@ -3,8 +3,13 @@ import Link from "next/link";
 
 import { cn } from "@/lib/utils";
 
-import { ModeToggle } from "@/components/layout/theme-toggle";
 import Logo from "./logo";
+import { ModeToggle } from "@/components/layout/theme-toggle";
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
 function Header() {
   return (
@@ -23,7 +28,7 @@ function Header() {
       </div>
 
       <div className="container flex w-full items-center justify-between">
-        <div className="flex flex-shrink-0 items-center gap-4">
+        <div className="flex flex-shrink-0 items-center justify-center gap-4">
           <Link
             title="Visit Homepage"
             aria-label="Visit Homepage"
@@ -33,6 +38,22 @@ function Header() {
             <Logo variant="fullLogo" className="max-sm:hidden" />
             <Logo variant="icon" className="sm:hidden" />
           </Link>
+          <HoverCard openDelay={100}>
+            <HoverCardTrigger asChild>
+              <span className="relative size-2.5 rounded-full bg-green-500">
+                <span className="absolute inset-0 animate-ping rounded-full bg-green-500" />
+              </span>
+            </HoverCardTrigger>
+            <HoverCardContent
+              align="center"
+              side="right"
+              className="border-green-600 bg-green-950/30 text-sm text-green-100"
+            >
+              <span className="animate-text-gradient inline-flex bg-gradient-to-r from-green-200 via-green-200 to-green-50 bg-[200%_auto] bg-clip-text text-transparent">
+                Open to work
+              </span>
+            </HoverCardContent>
+          </HoverCard>
         </div>
 
         <div className="flex items-center gap-4">

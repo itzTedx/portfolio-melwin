@@ -34,8 +34,9 @@ export default function ProjectsCard({
               <Image
                 height={36}
                 width={36}
-                alt={project.title + "logo"}
+                alt={project.company + "'s logo"}
                 src={project.companyLogo!}
+                className="transition duration-500 ease-in-out group-hover:scale-110"
               />
             </div>
             <div className="">

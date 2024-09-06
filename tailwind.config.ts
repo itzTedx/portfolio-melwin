@@ -111,6 +111,11 @@ const config = {
               "rotate(360deg) translateY(calc(var(--radius) * 1px)) rotate(-360deg)",
           },
         },
+        "text-gradient": {
+          to: {
+            backgroundPosition: "200% center",
+          },
+        },
       },
       animation: {
         orbit: "orbit calc(var(--duration)*1s) linear infinite",
@@ -122,6 +127,7 @@ const config = {
           "background-position-spin 3000ms infinite alternate",
 
         flipWords: "flipWords 8s infinite",
+        "text-gradient": "text-gradient 1.5s linear infinite",
       },
     },
   },

@@ -28,7 +28,7 @@ export default async function PostsPage() {
   const posts = await getPosts();
 
   return (
-    <main className="bg-dot mx-auto max-w-3xl space-y-9 px-4 pb-12 transition-[max-width] duration-300 md:py-6">
+    <main className="bg-dot mx-auto min-h-screen max-w-3xl space-y-9 px-4 pb-12 transition-[max-width] duration-300 md:py-6 md:pb-24">
       <TopGradient />
       <header>
         <h1 className="font-bricolage text-3xl font-bold">Splash of colours</h1>
