@@ -1,6 +1,6 @@
 "use client";
 
-import { buttonVariants } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { Project } from "@/types";
@@ -51,6 +51,13 @@ export default function ModalContent({ content }: { content: Project }) {
           ))}
         </ul>
       </div>
+
+      <Button
+        variant="outline"
+        onClick={() => router.push(`/projects/${metadata.slug}`)}
+      >
+        Read More
+      </Button>
 
       {metadata.externalLink && (
         <Link
