@@ -96,7 +96,7 @@ export default function ContactForm({ setOpen }: ContactFormProps) {
               <FormItem>
                 <FormLabel>Your Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="Name" {...field} />
+                  <Input placeholder="Name" {...field} autoFocus />
                 </FormControl>
 
                 <FormMessage />
