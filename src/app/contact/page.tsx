@@ -56,7 +56,7 @@ export default function ContactPage() {
 
             {/* Inner Circles */}
             <OrbitingCircles
-              className="size-[40px] border-none bg-transparent"
+              className="size-[35px] border-none bg-transparent opacity-80"
               duration={20}
               borderClassName="stroke-primary/60"
               delay={30}
@@ -65,7 +65,7 @@ export default function ContactPage() {
               <BsWhatsapp />
             </OrbitingCircles>
             <OrbitingCircles
-              className="size-[40px] border-none bg-transparent"
+              className="size-[20px] border-none bg-transparent opacity-60"
               duration={20}
               borderClassName="stroke-primary/40"
               delay={10}
@@ -77,7 +77,7 @@ export default function ContactPage() {
 
             {/* Outer Circles (reverse) */}
             <OrbitingCircles
-              className="size-[40px] border-none bg-transparent"
+              className="size-[20px] border-none bg-transparent opacity-40"
               radius={160}
               borderClassName="stroke-primary/20"
               duration={20}
@@ -85,7 +85,7 @@ export default function ContactPage() {
               <Instagram />
             </OrbitingCircles>
             <OrbitingCircles
-              className="size-[30px] border-none bg-transparent"
+              className="size-[30px] border-none bg-transparent opacity-25"
               radius={200}
               borderClassName="stroke-primary/5"
               duration={20}

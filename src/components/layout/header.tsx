@@ -47,9 +47,9 @@ function Header() {
             <HoverCardContent
               align="center"
               side="right"
-              className="border-green-600 bg-green-950/30 text-sm text-green-100"
+              className="border-green-600 bg-green-950/30 font-bricolage text-sm font-bold text-green-100"
             >
-              <span className="animate-text-gradient inline-flex bg-gradient-to-r from-green-200 via-green-200 to-green-50 bg-[200%_auto] bg-clip-text text-transparent">
+              <span className="inline-flex animate-text-gradient bg-gradient-to-r from-green-200 via-green-200 to-green-50 bg-[200%_auto] bg-clip-text text-transparent">
                 Open to work
               </span>
             </HoverCardContent>
