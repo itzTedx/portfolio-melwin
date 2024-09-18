@@ -19,7 +19,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ({ slug, publishedAt, image }) => ({
       url: `${baseURL}/blogs/${slug}`,
       lastModified: publishedAt,
-      priority: 0.5,
+      priority: 0.8,
     }),
   );
 
