@@ -7,6 +7,7 @@
 - [x] Blogs Section design (f/[Project IDX](https://idx.dev/blog))
 - [ ] Implement intercepting routes for projects and contact section (f/[Web dev simplified](https://youtu.be/zDZBKEvU8b0?si=F0o4INbsmc4gpNkm))
 - [ ] Dynamic Navbar ([JSM](https://github.com/adrianhajdin/portfolio/blob/main/components/ui/FloatingNavbar.tsx#L12))
+- [ ] Random Lucifer Quotes ([Lucifer Quotes API](https://lucifer-quotes.vercel.app/))
 
 ## Some of my inspirations
 
