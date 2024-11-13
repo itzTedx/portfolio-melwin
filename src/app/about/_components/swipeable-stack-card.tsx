@@ -90,7 +90,7 @@ export default function SwipeableStackCards() {
         return (
           <CardRotate key={card.id} onSendToBack={() => sendToBack(card.id)}>
             <motion.div
-              className="h-full w-full rounded-lg"
+              className="relative h-full w-full rounded-lg"
               animate={{
                 rotateZ: (cards.length - index - 1) * 4,
                 scale: 1 + index * 0.06 - cards.length * 0.06,

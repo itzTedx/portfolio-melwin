@@ -12,6 +12,23 @@ import {
 } from "@/components/ui/hover-card";
 
 function Header() {
+  const getStatusMessageAndColor = () => {
+    const now = new Date();
+    const day = now.getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+    const hour = now.getHours();
+    const minute = now.getMinutes();
+
+    if (day === 0) {
+      return { message: "Enjoying Leave", status: "leave" }; // Purple for Sunday
+    } else if ((hour >= 9 && hour < 18) || (hour === 18 && minute === 0)) {
+      return { message: "Currently in Office", status: "working" }; // Yellow for working
+    } else {
+      return { message: "Free Now", status: "chilling" }; // Green for chilling
+    }
+  };
+
+  const { message, status } = getStatusMessageAndColor();
+
   return (
     <header
       className={cn(
@@ -40,17 +57,42 @@ function Header() {
           </Link>
           <HoverCard openDelay={100}>
             <HoverCardTrigger asChild>
-              <span className="relative size-2.5 rounded-full bg-green-500">
-                <span className="absolute inset-0 animate-ping rounded-full bg-green-500" />
+              <span
+                className={cn(
+                  "relative size-2.5 rounded-full",
+                  status === "leave" && "bg-purple-500",
+                  status === "working" && "bg-yellow-500",
+                  status === "chilling" && "bg-green-500",
+                )}
+              >
+                <span className="absolute inset-0 animate-ping rounded-full bg-inherit" />
               </span>
             </HoverCardTrigger>
             <HoverCardContent
               align="center"
               side="right"
-              className="border-green-600 bg-green-950/30 font-bricolage text-sm font-bold text-green-100"
+              className={cn(
+                "font-bricolage text-sm font-bold",
+                status === "leave" &&
+                  "border-purple-600 bg-purple-950/30 text-purple-100",
+                status === "working" &&
+                  "border-yellow-600 bg-yellow-950/30 text-yellow-100",
+                status === "chilling" &&
+                  "border-green-600 bg-green-950/30 text-green-100",
+              )}
             >
-              <span className="inline-flex animate-text-gradient bg-gradient-to-r from-green-200 via-green-200 to-green-50 bg-[200%_auto] bg-clip-text text-transparent">
-                Open to work
+              <span
+                className={cn(
+                  "inline-flex animate-text-gradient bg-gradient-to-r from-purple-200 via-purple-200 to-purple-50 bg-[200%_auto] bg-clip-text text-transparent",
+                  status === "leave" &&
+                    "from-purple-200 via-purple-200 to-purple-50",
+                  status === "working" &&
+                    "from-yellow-200 via-yellow-200 to-yellow-50",
+                  status === "chilling" &&
+                    "from-green-200 via-green-200 to-green-50",
+                )}
+              >
+                {message}
               </span>
             </HoverCardContent>
           </HoverCard>

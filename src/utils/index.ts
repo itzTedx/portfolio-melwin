@@ -125,7 +125,13 @@ export const projectsData = [
 
 export const experiences = [
   {
-    id: 1,
+    title: "Multimedia Designer",
+    company: "Ziron Media, Dubai.",
+    duration: "Sep'24 - Present",
+    description:
+      "I handle web development, graphic design, video editing, motion graphics, and UI/UX design. I create responsive websites, engaging visuals, and dynamic animations to elevate brands. My role combines technical skill and creativity to deliver cohesive digital experiences that resonate with our audience.",
+  },
+  {
     title: "Graphic Designer and Marketing",
     company: "Digital Desk, Dubai.",
     duration: "Jan’23 - Mar’24",
@@ -133,7 +139,7 @@ export const experiences = [
       "Conceptualize & produce captivating designs for digital & print media. Manage printing process & ensure high-quality output. Proficient in Adobe Creative Suite. Strong communication & organizational skills. Passionate about creativity & innovation.",
   },
   {
-    id: 2,
+    id: 3,
     title: "Graphic Designer",
     company: "Zoomin Editing Lab, Tamil Nadu.",
     duration: "May’20 - Dec’22",
@@ -141,7 +147,6 @@ export const experiences = [
       "Crafted bespoke designs tailored to local businesses, encompassing poster,title, logo, album, brochure, and social media post designs. Delivered visually compelling solutions that resonated with client`s brand identities and objectives.",
   },
   {
-    id: 3,
     title: "Designer and Junior Video Editor",
     company: "Dreampixel, Tamil Nadu",
     duration: "May’19 - Mar’20",
