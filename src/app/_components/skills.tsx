@@ -41,7 +41,7 @@ function Skills() {
               key={id}
               rotationFactor={12}
               isRevese
-              className="group relative m-3 rounded-lg sm:m-5"
+              className="group relative m-3 rounded-lg border hover:border-violet-500 sm:m-5"
             >
               <Spotlight
                 className="z-10 from-white/10 via-white/5 to-white/5 blur-2xl"
@@ -53,7 +53,7 @@ function Skills() {
                 }}
               />
               <li className="flex size-36 h-fit min-w-fit cursor-pointer flex-col items-center justify-center rounded-md transition-all duration-500 hover:scale-[1.15]">
-                <div className="h-full w-full rounded-md border bg-muted/50 shadow-none shadow-gray-50 transition-all duration-500 group-hover:border-violet-500">
+                <div className="h-full w-full rounded-md bg-muted/50 shadow-none shadow-gray-50 transition-all duration-500">
                   <div className="flex -translate-y-[1px] justify-center">
                     <div className="w-3/4">
                       <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
