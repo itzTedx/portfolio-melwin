@@ -1,37 +1,60 @@
 import { Home, NotebookPen, PenTool, PhoneCall, UserRound } from "lucide-react";
 
 export const links = [
-  // {
-  //   id: 0,
-  //   name: "Home",
-  //   link: "/",
-  //   icon: <Home />,
-  // },
+  {
+    id: 0,
+    name: "Home",
+    link: "/",
+    icon: (
+      <Home
+        className="mr-1 block size-5 sm:text-muted-foreground"
+        strokeWidth={2.5}
+      />
+    ),
+  },
   {
     id: 1,
     name: "About",
     link: "/about",
-    icon: <UserRound className="mr-1 block size-5 sm:text-muted-foreground" />,
+    icon: (
+      <UserRound
+        className="mr-1 block size-5 sm:text-muted-foreground"
+        strokeWidth={2.5}
+      />
+    ),
   },
   {
     id: 2,
     name: "Projects",
     link: "/projects",
-    icon: <PenTool className="mr-1 block size-5 sm:text-muted-foreground" />,
+    icon: (
+      <PenTool
+        className="mr-1 block size-5 sm:text-muted-foreground"
+        strokeWidth={2.5}
+      />
+    ),
   },
   {
     id: 3,
     name: "Blogs",
     link: "/blogs",
     icon: (
-      <NotebookPen className="mr-1 block size-5 sm:text-muted-foreground" />
+      <NotebookPen
+        className="mr-1 block size-5 sm:text-muted-foreground"
+        strokeWidth={2.5}
+      />
     ),
   },
   {
     id: 4,
     name: "Contact",
     link: "/contact",
-    icon: <PhoneCall className="mr-1 block size-5 sm:text-muted-foreground" />,
+    icon: (
+      <PhoneCall
+        className="mr-1 block size-5 sm:text-muted-foreground"
+        strokeWidth={2.5}
+      />
+    ),
   },
 ];
 
@@ -43,7 +66,7 @@ export const footerLinks = [
   },
   {
     name: "Instagram",
-    link: "https://www.instagram.com/itzTed._x",
+    link: "https://www.instagram.com/itzted._x",
     icon: <Home />,
   },
   {

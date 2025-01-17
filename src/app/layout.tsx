@@ -16,6 +16,10 @@ import Navbar from "@/components/layout/navbar";
 import ScrollToTop from "@/components/layout/scroll-to-top";
 import { Toaster } from "@/components/ui/sonner";
 import Provider from "@/provider";
+import { NavBar } from "@/components/layout/tubelight-navbar";
+import { Briefcase, FileText, Home } from "lucide-react";
+import { User } from "lucide-react";
+import { links } from "@/utils/nav-links";
 
 export const metadata: Metadata = {
   title: "Portfolio of Melwin Af - Graphic Designer",
@@ -60,7 +64,7 @@ export const viewport: Viewport = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
   modal,
 }: Readonly<{
@@ -100,7 +104,8 @@ export default function RootLayout({
           {/* <ScrollBar /> */}
           <div vaul-drawer-wrapper="">
             <Header />
-            <Navbar />
+
+            <NavBar items={links} />
             {children}
             {modal}
 
