@@ -5,6 +5,8 @@ import { skillsData } from "@/utils/";
 import { skillsImage } from "@/utils/skill-icons";
 
 import HeadingCard from "@/components/heading-card";
+import { Tilt } from "@/components/ui/tilt";
+import { Spotlight } from "@/components/ui/spotlight";
 
 function Skills() {
   return (
@@ -35,31 +37,44 @@ function Skills() {
           direction="left"
         >
           {skillsData.map((skill, id) => (
-            <li
-              className="group relative m-3 flex size-36 h-fit min-w-fit cursor-pointer flex-col items-center justify-center rounded-md transition-all duration-500 hover:scale-[1.15] sm:m-5"
+            <Tilt
               key={id}
+              rotationFactor={12}
+              isRevese
+              className="group relative m-3 rounded-lg sm:m-5"
             >
-              <div className="h-full w-full rounded-md border bg-muted/50 shadow-none shadow-gray-50 transition-all duration-500 group-hover:border-violet-500">
-                <div className="flex -translate-y-[1px] justify-center">
-                  <div className="w-3/4">
-                    <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
+              <Spotlight
+                className="z-10 from-white/10 via-white/5 to-white/5 blur-2xl"
+                size={248}
+                springOptions={{
+                  stiffness: 26.7,
+                  damping: 4.1,
+                  mass: 0.2,
+                }}
+              />
+              <li className="flex size-36 h-fit min-w-fit cursor-pointer flex-col items-center justify-center rounded-md transition-all duration-500 hover:scale-[1.15]">
+                <div className="h-full w-full rounded-md border bg-muted/50 shadow-none shadow-gray-50 transition-all duration-500 group-hover:border-violet-500">
+                  <div className="flex -translate-y-[1px] justify-center">
+                    <div className="w-3/4">
+                      <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-violet-500 to-transparent" />
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-center justify-center gap-3 p-6">
+                    <div className="size-8 sm:size-10">
+                      <Image
+                        src={skillsImage(skill)}
+                        alt={skill}
+                        title={skill}
+                        width={40}
+                        height={40}
+                        className="h-full w-auto"
+                      />
+                    </div>
+                    <p className="text-sm text-foreground">{skill}</p>
                   </div>
                 </div>
-                <div className="flex flex-col items-center justify-center gap-3 p-6">
-                  <div className="size-8 sm:size-10">
-                    <Image
-                      src={skillsImage(skill)}
-                      alt={skill}
-                      title={skill}
-                      width={40}
-                      height={40}
-                      className="h-full w-auto"
-                    />
-                  </div>
-                  <p className="text-sm text-foreground">{skill}</p>
-                </div>
-              </div>
-            </li>
+              </li>
+            </Tilt>
           ))}
         </Marquee>
       </ul>

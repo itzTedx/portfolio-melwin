@@ -3,6 +3,7 @@
 import React, { MutableRefObject, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { cn, getRandomPercentage, getRandomRotation } from "@/lib/utils";
+import { Gravity, MatterBody } from "@/components/ui/gravity";
 
 const hobbies = [
   { title: "Drawing", emoji: "✏️", left: "", top: "" },
@@ -28,7 +29,23 @@ export default function Hobbies() {
   const containerRef = useRef(null);
   return (
     <div className="absolute inset-0 -z-10" ref={containerRef}>
-      {hobbies.map((hobby) => (
+      <Gravity gravity={{ x: 0, y: 1 }} className="h-full w-full">
+        {hobbies.map((hobby) => (
+          <MatterBody
+            key={hobby.title}
+            matterBodyOptions={{ friction: 0.5, restitution: 0.2 }}
+            x={`${Math.floor(Math.random() * 10) * 10}%`}
+            y={`${Math.floor(Math.random() * 10) * 10}%`}
+          >
+            <div className="cursor-move rounded-md bg-muted/90 px-6 py-2 font-bricolage font-medium text-foreground">
+              <span className="">{hobby.title}</span>
+              <span>{hobby.emoji}</span>
+            </div>
+          </MatterBody>
+        ))}
+      </Gravity>
+
+      {/* {hobbies.map((hobby) => (
         <Card
           key={hobby.title}
           containerRef={containerRef}
@@ -39,7 +56,7 @@ export default function Hobbies() {
           left={getRandomPercentage()}
           className="cursor-move rounded-md bg-muted/90 px-6 py-2 font-bricolage font-medium text-foreground"
         />
-      ))}
+      ))} */}
     </div>
   );
 }
